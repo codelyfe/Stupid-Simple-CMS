@@ -39,13 +39,17 @@ if (!isset($_SESSION['UserData']['Username'])) {
 <br /><br />
     <h1 class="mb-4">(ADMIN) Stupid Simple CMS <a class="btn btn-dark" href="add-article.php">Add Article</a></h1>
 
-    <!-- Search Bar -->
-    <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Search articles" id="searchInputAdmin">
-        <button class="btn btn-outline-secondary" type="button" id="searchButtonAdmin">Search</button>
-    </div>
+
 
     <div class="mx-auto" style="max-width: 800px;">
+
+
+        <!-- Search Bar -->
+        <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Search articles" id="searchInputAdmin">
+        <button class="btn btn-outline-secondary" type="button" id="searchButtonAdmin">Search</button>
+        </div>
+
         <?php
         $articlesDir = 'blog-posts';
 
