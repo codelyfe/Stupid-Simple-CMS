@@ -414,7 +414,7 @@
     <!-- Search Bar -->
     <div class="input-group mb-3">
         <input type="text" class="form-control" placeholder="Search articles" id="searchInput">
-        <button class="btn btn-outline-secondary" type="button" id="searchButton">Search</button>
+        <button class="btn btn-outline-warning" type="button" id="searchButton">Search</button>
     </div>
 
         <?php

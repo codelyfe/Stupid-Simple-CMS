@@ -37,7 +37,7 @@ if (!isset($_SESSION['UserData']['Username'])) {
 <body class="text-center">
 <?php require_once 'layout/body-admin.php'; ?>
 <br /><br />
-    <h1 class="mb-4">(ADMIN) Stupid Simple CMS <a class="btn btn-dark" href="add-article.php">Add Article</a></h1>
+    <h1 class="mb-4"><a href="manage-articles.php" class="btn btn-primary">Manage Articles</a>-<a href="add-article.php" class="btn btn-primary">Submit an Article</a>-<a href="index.php" class="btn btn-warning">Blog</a></h1>
 
 
 
@@ -47,7 +47,7 @@ if (!isset($_SESSION['UserData']['Username'])) {
         <!-- Search Bar -->
         <div class="input-group mb-3">
         <input type="text" class="form-control" placeholder="Search articles" id="searchInputAdmin">
-        <button class="btn btn-outline-secondary" type="button" id="searchButtonAdmin">Search</button>
+        <button class="btn btn-outline-warning" type="button" id="searchButtonAdmin">Search</button>
         </div>
 
         <?php
