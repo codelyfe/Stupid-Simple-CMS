@@ -410,11 +410,6 @@
   <?php require_once 'layout/body.php'; ?>
     <br /><br />
 
-
-    <h1 class="mb-4">Stupid Simple CMS <a class="btn btn-dark" href="add-article.php">Submit an Article</a></h1>
-
-
-
     <div class="mx-auto" style="max-width: 800px;"> <!-- Add mx-auto class and set max-width -->
     <!-- Search Bar -->
     <div class="input-group mb-3">

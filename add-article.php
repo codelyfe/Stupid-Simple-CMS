@@ -80,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 <?php require_once 'layout/body-admin.php'; ?>
 <br /><br />
-    <h1 class="mx-auto" style="text-align: center;">Add Article <a  class="btn btn-danger" href="logout.php">Logout</a>-<a href="manage-articles.php" class="btn btn-dark">Manage Articles</a>-<a href="index.php" class="btn btn-dark">Go Back</a>-<a href="admin-edit.php" class="btn btn-dark">Admin Edit</a></h1>
+    <h1 class="mx-auto" style="text-align: center;">Add Article <a href="manage-articles.php" class="btn btn-primary">Manage Articles</a>-<a href="admin-edit.php" class="btn btn-primary">Admin Edit</a>-<a href="index.php" class="btn btn-warning">Blog</a></h1>
 
     <form method="post" action="add-article.php">
         <label for="title">Title:</label>
