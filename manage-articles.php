@@ -1,4 +1,3 @@
-<?php // Created by codelyfe ?>
 <?php
 session_start(); /* Starts the session */
 

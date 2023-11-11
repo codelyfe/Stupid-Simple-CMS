@@ -1,33 +1,9 @@
-<!--
-
- ____  ____  ____  ____  ____  ____  ____  ____ 
-||C ||||O ||||D ||||E ||||L ||||Y ||||F ||||E ||
-||__||||__||||__||||__||||__||||__||||__||||__||
-|/__\||/__\||/__\||/__\||/__\||/__\||/__\||/__\|
-
-      __________________________________  
-      |                                  |
-      |                                  |
-      |      By: Randal Burger Jr        |
-      |                                  |
-      |__________________________________|
-
-
- ____  ____  ____  ____  ____  ____  ____  ____ 
-||C ||||O ||||D ||||E ||||L ||||Y ||||F ||||E ||
-||__||||__||||__||||__||||__||||__||||__||||__||
-|/__\||/__\||/__\||/__\||/__\||/__\||/__\||/__\|
-
-
--->
 <!DOCTYPE html>
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-
-    <link rel="stylesheet" href="style.css">
   </head>
   <style>
     /**********************************************************************/
@@ -439,7 +415,7 @@
                 </h2>
 
                 <?php if (!empty($article['image_url'])) : ?>
-                    <img src="<?php echo $article['image_url']; ?>" alt="Article Image" class="img-fluid mb-3">
+                    <img style="  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('photographer.jpg'); height: 50%; background-position: center; background-repeat: no-repeat;background-size: cover;position: relative;" src="<?php echo $article['image_url']; ?>" alt="Article Image" class="img-fluid mb-3">
                 <?php endif; ?>
 
                 <p><?php echo $article['content']; ?></p>

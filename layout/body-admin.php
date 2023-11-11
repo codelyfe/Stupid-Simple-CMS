@@ -1,7 +1,8 @@
+<?php include 'text-content/english.php'; ?>
    <!-- Navigation Bar -->
    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">(ADMIN) Stupid Simple CMS </a>
+            <a class="navbar-brand" href="#"><?php echo $admintitle; ?></a>
             <a class="navbar-link btn btn-danger" href="logout.php">Logout</a>
 
             <!-- Add your other navigation items here -->
