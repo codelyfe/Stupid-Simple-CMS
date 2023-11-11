@@ -20,11 +20,13 @@ if (!isset($_SESSION['UserData']['Username'])) {
             color: white !important;
         }
     </style>
+    <?php require_once 'layout/header-admin.php'; ?>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body class="text-center">
-
+<?php require_once 'layout/body-admin.php'; ?>
+    <br /><br />
     <h1 class="my-4">Manage Articles <a href="add-article.php" class="btn btn-dark">Go Back</a></h1>
     
     <div class="container">
@@ -70,6 +72,6 @@ if (!isset($_SESSION['UserData']['Username'])) {
     </div>
 
     <!-- Bootstrap JS (optional) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="vendors/bootstrap-5.3.0/bootstrap@5.3.0_dist_js_bootstrap.bundle.min.js"></script>
 </body>
 </html>

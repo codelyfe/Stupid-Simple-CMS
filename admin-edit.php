@@ -21,7 +21,6 @@ if (!isset($_SESSION['UserData']['Username'])) {
     <style>
         /* Add your custom styles here if needed */
         body {
-            padding: 20px;
             background: #161616;
             color: white;
         }
@@ -33,10 +32,19 @@ if (!isset($_SESSION['UserData']['Username'])) {
             border-radius: 10px;
         }
     </style>
+    <?php require_once 'layout/header-admin.php'; ?>
 </head>
 <body class="text-center">
-
+<?php require_once 'layout/body-admin.php'; ?>
+<br /><br />
     <h1 class="mb-4">(ADMIN) Stupid Simple CMS <a class="btn btn-dark" href="add-article.php">Add Article</a></h1>
+
+    <!-- Search Bar -->
+    <div class="input-group mb-3">
+        <input type="text" class="form-control" placeholder="Search articles" id="searchInputAdmin">
+        <button class="btn btn-outline-secondary" type="button" id="searchButtonAdmin">Search</button>
+    </div>
+
     <div class="mx-auto" style="max-width: 800px;">
         <?php
         $articlesDir = 'blog-posts';
@@ -69,9 +77,6 @@ if (!isset($_SESSION['UserData']['Username'])) {
                 <p class="text-muted">Created at: <?php echo $article['created_at']; ?></p>
                 <button class="btn btn-primary edit-btn" data-article-id="<?php echo $articleId; ?>">Edit</button>
                 <button class="btn btn-success save-btn" data-article-id="<?php echo $articleId; ?>" style="display: none;">Save</button>
-
-
-
             </div>
             <?php
         }
@@ -87,6 +92,21 @@ if (!isset($_SESSION['UserData']['Username'])) {
     <!-- Custom JavaScript for AJAX editing -->
     <script>
         $(document).ready(function () {
+            // Handle search button click
+            $("#searchButtonAdmin").on("click", function () {
+                var searchTermAdmin = $("#searchInputAdmin").val().toLowerCase();
+
+                // Loop through articles and hide/show based on the search term
+                $(".article").each(function () {
+                    var articleTextAdmin = $(this).text().toLowerCase();
+                    if (articleTextAdmin.includes(searchTermAdmin)) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
+            });
+
             // Enable editing when the edit button is clicked
             $(".edit-btn").on("click", function () {
                 var articleId = $(this).data("article-id");

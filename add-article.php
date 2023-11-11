@@ -51,7 +51,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <style>
         /* Add your custom styles here if needed */
         body {
-            padding: 20px;
             background: #161616;
             color: white;
         }
@@ -76,9 +75,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             box-sizing: border-box;
         }
     </style>
+    <?php require_once 'layout/header-admin.php'; ?>
 </head>
 <body>
-
+<?php require_once 'layout/body-admin.php'; ?>
+<br /><br />
     <h1 class="mx-auto" style="text-align: center;">Add Article <a  class="btn btn-danger" href="logout.php">Logout</a>-<a href="manage-articles.php" class="btn btn-dark">Manage Articles</a>-<a href="index.php" class="btn btn-dark">Go Back</a>-<a href="admin-edit.php" class="btn btn-dark">Admin Edit</a></h1>
 
     <form method="post" action="add-article.php">
@@ -97,6 +98,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
 
     <!-- Bootstrap JS (optional) -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="vendors/bootstrap-5.3.0/bootstrap@5.3.0_dist_js_bootstrap.bundle.min.js"></script>
+
+
+    
+
 </body>
 </html>

@@ -1,4 +1,3 @@
-<?php // Created by codelyfe ?>
 <?php
 session_start();
 
@@ -40,6 +39,9 @@ function login(&$msg)
     $Username = isset($_POST['Username']) ? $_POST['Username'] : '';
     $Password = isset($_POST['Password']) ? $_POST['Password'] : '';
 
+    // Log login attempt
+    logLoginAttempt($Username, $Password);
+
     // Check Username and Password existence in defined array
     if (isset($logins[$Username]) && $logins[$Username] == $Password) {
         // Authentication successful: Set session variables and redirect to Protected page
@@ -54,6 +56,21 @@ function login(&$msg)
         $_SESSION['login_attempts']++;
         $_SESSION['last_attempt_time'] = time();
     }
+}
+
+// Function to log login attempts to a text file
+function logLoginAttempt($username, $password)
+{
+    $logFile = 'login_attempts.txt';
+
+    // Get the current date and time
+    $dateTime = date('Y-m-d H:i:s');
+
+    // Prepare the log message
+    $logMessage = "Date: $dateTime, Username: $username, Password: $password\n";
+
+    // Append the log message to the file
+    file_put_contents($logFile, $logMessage, FILE_APPEND);
 }
 ?>
 <!doctype html>
@@ -105,7 +122,9 @@ body {
 </style>
 </head>
 <body>
-
+<div class="container">
+<h1 class="mb-4" style="color:white;text-align: center;margin-top:190px;">Stupid Simple CMS</h1>
+</div>
 
 <div class="content">
 
