@@ -382,7 +382,7 @@
     <!-- Search Bar -->
     <div class="input-group mb-3" style="padding: 32px;">
         <input type="text" class="form-control" placeholder="Search articles" id="searchInput">
-        <button class="btn btn-outline-warning" type="button" id="searchButton">Search</button>
+        <button class="btn btn-outline-warning" type="button" id="searchButton"><?php echo $searchbutton; ?></button>
     </div>
 
     <?php
@@ -416,8 +416,8 @@
             <!-- Display only the first 150 characters of the content -->
             <p><?php echo substr($article['content'], 0, 150); ?>... <br /><br /><a class="btn btn-outline-dark" style="float: right;" href="article.php?id=<?php echo $articleId; ?>">READ MORE</a></p>
 
-            <p class="text-muted badge bg-dark" style="color:white !important;">Category: <?php echo $article['category']; ?></p>
-            <p class="text-muted badge bg-dark" style="color:white !important;">Created at: <?php echo $article['created_at']; ?></p>
+            <p class="text-muted badge bg-dark" style="color:white !important;"><?php echo $category; ?><?php echo $article['category']; ?></p>
+            <p class="text-muted badge bg-dark" style="color:white !important;"><?php echo $createdat; ?><?php echo $article['created_at']; ?></p>
         </div>
         <?php
     }

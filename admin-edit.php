@@ -1,3 +1,4 @@
+<?php include 'text-content/english.php'; ?>
 <?php 
 session_start();
 
@@ -35,13 +36,13 @@ if (!isset($_SESSION['UserData']['Username'])) {
 <body class="text-center">
     <?php require_once 'layout/body-admin.php'; ?>
     <br /><br />
-    <h1 class="mb-4">Article Editor <br /> <a href="add-article.php" class="btn btn-primary">Submit an Article</a> <a href="index.php" class="btn btn-warning">Blog</a></h1>
+    <h1 class="mb-4">Article Editor <br /> <a href="add-article.php" class="btn btn-primary">Submit an Article</a> <a href="index.php" class="btn btn-warning"><?php echo $blogbutton; ?></a></h1>
 
     <div class="mx-auto" style="max-width: 800px;">
         <!-- Search Bar -->
         <div class="input-group mb-3">
             <input type="text" class="form-control" placeholder="Search articles" id="searchInputAdmin">
-            <button class="btn btn-outline-warning" type="button" id="searchButtonAdmin">Search</button>
+            <button class="btn btn-outline-warning" type="button" id="searchButtonAdmin"><?php echo $searchbutton; ?></button>
         </div>
 
         <?php

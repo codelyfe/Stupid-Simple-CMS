@@ -70,7 +70,8 @@
             <p class="text-muted">Created at: <?php echo $article['created_at']; ?></p>
 
             <!-- Go Back Button -->
-            <a href="index.php" class="btn btn-primary">Go Back</a>
+            <a href="index.php" class="btn btn-outline-dark" style="float:right;">Go Back</a>
+            <br /><br />
         </div>
         <?php
     } else {
