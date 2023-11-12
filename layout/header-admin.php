@@ -2,7 +2,7 @@
         /* Add your custom styles here if needed */
         body{
             /* background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/denim.png') !important; */
-            background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/escheresque_ste.png') !important;
+            background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/dark_fish_skin.png') !important;
         }
         /* Style for mega menu */
         .mega-menu {
