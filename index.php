@@ -374,8 +374,8 @@
                                                                                     
   -->
 
-  <!--| TEST CONTENT BELOW THIS LINE |-->
-  <?php require_once 'layout/body.php'; ?>
+<!--| TEST CONTENT BELOW THIS LINE |-->
+<?php require_once 'layout/body.php'; ?>
 <br /><br />
 
 <div class="mx-auto" style="max-width: 800px;"> <!-- Add mx-auto class and set max-width -->
@@ -407,11 +407,13 @@
             </h2>
 
             <?php if (!empty($article['image_url'])) : ?>
-                <img style="height: 50%; background-position: center; background-repeat: no-repeat;background-size: cover;position: relative;" src="<?php echo $article['image_url']; ?>" alt="Article Image" class="img-fluid mb-3">
+                <a href="<?php echo $article['image_url']; ?>" data-bs-toggle="modal" data-bs-target="#imageModal">
+                    <img style="height: 50%; background-position: center; background-repeat: no-repeat; background-size: cover; position: relative;" src="<?php echo $article['image_url']; ?>" alt="Article Image" class="img-fluid mb-3">
+                </a>
             <?php endif; ?>
 
             <p><?php echo $article['content']; ?></p>
-            <p class="text-muted badge bg-dark" style="color:white !important;" >Created at: <?php echo $article['created_at']; ?></p>
+            <p class="text-muted badge bg-dark" style="color:white !important;">Created at: <?php echo $article['created_at']; ?></p>
         </div>
         <?php
     }
@@ -442,6 +444,28 @@
         });
     });
 </script>
+
+<!-- Bootstrap Modal for Image Zooming -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="" id="zoomedImage" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Handle modal image zooming
+    $('#imageModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);
+        var imageUrl = button.attr('href');
+        var modal = $(this);
+        modal.find('.modal-body #zoomedImage').attr('src', imageUrl);
+    });
+</script>
+
 
 
   <!--| TEST CONTENT ABOVE THIS LINE |-->
