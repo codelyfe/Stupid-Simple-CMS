@@ -414,7 +414,7 @@
             <?php endif; ?>
 
             <!-- Display only the first 150 characters of the content -->
-            <p><?php echo substr($article['content'], 0, 150); ?>... <a class="" style="text-align:center;" href="article.php?id=<?php echo $articleId; ?>">READ MORE</a></p>
+            <p><?php echo substr($article['content'], 0, 150); ?>... <br /><br /><a class="btn btn-outline-dark" style="float: right;" href="article.php?id=<?php echo $articleId; ?>">READ MORE</a></p>
 
             <p class="text-muted badge bg-dark" style="color:white !important;">Category: <?php echo $article['category']; ?></p>
             <p class="text-muted badge bg-dark" style="color:white !important;">Created at: <?php echo $article['created_at']; ?></p>
