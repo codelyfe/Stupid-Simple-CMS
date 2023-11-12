@@ -132,38 +132,38 @@ if (!isset($_SESSION['UserData']['Username'])) {
                 $(".save-btn[data-article-id='" + articleId + "']").show();
             }
 
-            // Function to save changes for a specific article
-            function saveChanges(articleId) {
-                var title = $(".editable[data-article-id='" + articleId + "'][data-field='title']").text();
-                var content = $(".editable[data-article-id='" + articleId + "'][data-field='content']").html(); // Use .html() to preserve formatting
-                var imageUrl = $(".article[data-article-id='" + articleId + "'] img").attr("src"); // Get the image URL
+             // Function to save changes for a specific article
+        function saveChanges(articleId) {
+            var title = $(".editable[data-article-id='" + articleId + "'][data-field='title']").text();
+            var content = $(".editable[data-article-id='" + articleId + "'][data-field='content']").html(); // Use .html() to preserve formatting
+            var imageUrl = $(".editable[data-article-id='" + articleId + "'][data-field='image_url']").text(); // Get the image URL from the editable field
 
-                // AJAX request to update the article
-                $.ajax({
-                    url: "update-article.php",
-                    type: "POST",
-                    data: {
-                        id: articleId,
-                        title: title,
-                        content: content,
-                        image_url: imageUrl // Include the image URL in the data
-                    },
-                    success: function (response) {
-                        // You can handle the response here, e.g., show a success message
-                        console.log(response);
+            // AJAX request to update the article
+            $.ajax({
+                url: "update-article.php",
+                type: "POST",
+                data: {
+                    id: articleId,
+                    title: title,
+                    content: content,
+                    image_url: imageUrl // Include the image URL in the data
+                },
+                success: function (response) {
+                    // You can handle the response here, e.g., show a success message
+                    console.log(response);
 
-                        // Disable editing after saving changes
-                        $(".editable[data-article-id='" + articleId + "']").attr("contenteditable", "false");
-                        $(".edit-btn[data-article-id='" + articleId + "']").show();
-                        $(".save-btn[data-article-id='" + articleId + "']").hide();
-                    },
-                    error: function (error) {
-                        // Handle the error, e.g., show an error message
-                        console.error(error);
-                    }
-                });
-            }
-        });
+                    // Disable editing after saving changes
+                    $(".editable[data-article-id='" + articleId + "']").attr("contenteditable", "false");
+                    $(".edit-btn[data-article-id='" + articleId + "']").show();
+                    $(".save-btn[data-article-id='" + articleId + "']").hide();
+                },
+                error: function (error) {
+                    // Handle the error, e.g., show an error message
+                    console.error(error);
+                }
+            });
+        }
+    });
     </script>
 </body>
 </html>
