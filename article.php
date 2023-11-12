@@ -31,7 +31,6 @@
         body {
             padding: 20px;
             background: #161616;
-           
         }
 
         .article {
@@ -60,6 +59,11 @@
 
             <?php if (!empty($article['image_url'])) : ?>
                 <img src="<?php echo $article['image_url']; ?>" alt="Article Image" class="img-fluid mb-3">
+            <?php endif; ?>
+
+            <!-- Display the Category -->
+            <?php if (!empty($article['category'])) : ?>
+                <p><strong>Category:</strong> <?php echo $article['category']; ?></p>
             <?php endif; ?>
 
             <p><?php echo $article['content']; ?></p>
