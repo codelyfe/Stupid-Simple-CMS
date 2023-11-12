@@ -380,7 +380,7 @@
 
 <div class="mx-auto" style="max-width: 800px;"> <!-- Add mx-auto class and set max-width -->
     <!-- Search Bar -->
-    <div class="input-group mb-3">
+    <div class="input-group mb-3" style="padding: 32px;">
         <input type="text" class="form-control" placeholder="Search articles" id="searchInput">
         <button class="btn btn-outline-warning" type="button" id="searchButton">Search</button>
     </div>
@@ -401,7 +401,7 @@
         $article = json_decode($content, true);
         $articleId = pathinfo($file, PATHINFO_FILENAME); // Extract article ID from filename
         ?>
-        <div class="article border p-3 text-left"> <!-- Add text-left class to the article container -->
+        <div class="article border p-3 text-left" style="margin: 32px;"> <!-- Add text-left class to the article container -->
             <h2>
                 <a class="" style="width: 100%;" href="article.php?id=<?php echo $articleId; ?>"><?php echo $article['title']; ?></a>
             </h2>

@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 <?php require_once 'layout/body-admin.php'; ?>
 <br /><br />
-    <h1 class="mx-auto" style="text-align: center;">Add Article <a href="manage-articles.php" class="btn btn-primary">Manage Articles</a>-<a href="admin-edit.php" class="btn btn-primary">Edit Articles</a>-<a href="index.php" class="btn btn-warning">Blog</a></h1>
+    <h1 class="mx-auto" style="text-align: center;">Add Article <a href="manage-articles.php" class="btn btn-primary">Manage Articles</a> <a href="admin-edit.php" class="btn btn-primary">Edit Articles</a> <a href="index.php" class="btn btn-warning">Blog</a></h1>
 
     <?php if (isset($error_message)): ?>
         <div class="alert alert-danger" role="alert">
