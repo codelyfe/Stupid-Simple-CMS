@@ -403,7 +403,8 @@
         ?>
         <div class="article border p-3 text-left" style="margin: 32px;">
             <h2>
-                <a class="" style="text-align:center;" href="article.php?id=<?php echo $articleId; ?>"><?php echo $article['title']; ?></a>
+                <?php echo $article['title']; ?>
+                <!--<a class="" style="text-align:center;" href="article.php?id=<?php //echo $articleId; ?>"><?php //echo $article['title']; ?></a>-->
             </h2>
 
             <?php if (!empty($article['image_url'])) : ?>
@@ -412,7 +413,9 @@
                 </a>
             <?php endif; ?>
 
-            <p><?php echo $article['content']; ?></p>
+            <!-- Display only the first 150 characters of the content -->
+            <p><?php echo substr($article['content'], 0, 150); ?>... <a class="" style="text-align:center;" href="article.php?id=<?php echo $articleId; ?>">READ MORE</a></p>
+
             <p class="text-muted badge bg-dark" style="color:white !important;">Category: <?php echo $article['category']; ?></p>
             <p class="text-muted badge bg-dark" style="color:white !important;">Created at: <?php echo $article['created_at']; ?></p>
         </div>
@@ -468,6 +471,7 @@
 </script>
 
 <?php require_once 'layout/footer.php'; ?>
+
 
   <!--| TEST CONTENT ABOVE THIS LINE |-->
   <!--
