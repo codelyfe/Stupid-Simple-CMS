@@ -3,7 +3,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $articleId = $_POST['id'];
     $title = $_POST['title'];
     $content = $_POST['content'];
-    $imageUrl = $_POST['image_url']; // Include the image URL
+    $imageUrl = $_POST['image_url'];
+    $category = $_POST['category']; // Include the category
 
     // Assuming your articles are stored in the 'blog-posts' directory
     $filename = "blog-posts/$articleId.json";
@@ -16,7 +17,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Update article properties
         $article['title'] = $title;
         $article['content'] = $content;
-        $article['image_url'] = $imageUrl; // Update the image URL
+        $article['image_url'] = $imageUrl;
+        $article['category'] = $category; // Update the category
         $article['created_at'] = date('Y-m-d H:i:s');
 
         // Write back to the JSON file

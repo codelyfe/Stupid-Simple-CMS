@@ -24,7 +24,7 @@
         }
         body{
             /* background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/denim.png') !important; */
-            background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/stardust.png') !important;
+            background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/tweed.png') !important;
         }
     </style>
    

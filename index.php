@@ -401,7 +401,7 @@
         $article = json_decode($content, true);
         $articleId = pathinfo($file, PATHINFO_FILENAME); // Extract article ID from filename
         ?>
-        <div class="article border p-3 text-left" style="margin: 32px;"> <!-- Add text-left class to the article container -->
+        <div class="article border p-3 text-left" style="margin: 32px;">
             <h2>
                 <a class="" style="text-align:center;" href="article.php?id=<?php echo $articleId; ?>"><?php echo $article['title']; ?></a>
             </h2>
@@ -413,6 +413,7 @@
             <?php endif; ?>
 
             <p><?php echo $article['content']; ?></p>
+            <p class="text-muted badge bg-dark" style="color:white !important;">Category: <?php echo $article['category']; ?></p>
             <p class="text-muted badge bg-dark" style="color:white !important;">Created at: <?php echo $article['created_at']; ?></p>
         </div>
         <?php

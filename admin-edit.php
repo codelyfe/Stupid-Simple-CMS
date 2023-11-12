@@ -64,7 +64,14 @@ if (!isset($_SESSION['UserData']['Username'])) {
                 <h2 class="editable" data-field="title" data-article-id="<?php echo $articleId; ?>">
                     <?php echo $article['title']; ?>
                 </h2>
-
+        
+                <p class="mt-2">
+                    Category:
+                    <span class="editable" data-field="category" data-article-id="<?php echo $articleId; ?>">
+                        <?php echo $article['category']; ?>
+                    </span>
+                </p>
+        
                 <?php if (!empty($article['image_url'])) : ?>
                     <img src="<?php echo $article['image_url']; ?>" alt="Article Image" class="img-fluid mb-3">
                     <p class="mt-2">
@@ -74,7 +81,7 @@ if (!isset($_SESSION['UserData']['Username'])) {
                         </span>
                     </p>
                 <?php endif; ?>
-
+        
                 <p class="editable" data-field="content" data-article-id="<?php echo $articleId; ?>">
                     <?php echo $article['content']; ?>
                 </p>
@@ -95,73 +102,75 @@ if (!isset($_SESSION['UserData']['Username'])) {
 
     <!-- Custom JavaScript for AJAX editing -->
     <script>
-        $(document).ready(function () {
-            // Handle search button click
-            $("#searchButtonAdmin").on("click", function () {
-                var searchTermAdmin = $("#searchInputAdmin").val().toLowerCase();
+    $(document).ready(function () {
+        // Handle search button click
+        $("#searchButtonAdmin").on("click", function () {
+            var searchTermAdmin = $("#searchInputAdmin").val().toLowerCase();
 
-                // Loop through articles and hide/show based on the search term
-                $(".article").each(function () {
-                    var articleTextAdmin = $(this).text().toLowerCase();
-                    if (articleTextAdmin.includes(searchTermAdmin)) {
-                        $(this).show();
-                    } else {
-                        $(this).hide();
-                    }
-                });
+            // Loop through articles and hide/show based on the search term
+            $(".article").each(function () {
+                var articleTextAdmin = $(this).text().toLowerCase();
+                if (articleTextAdmin.includes(searchTermAdmin)) {
+                    $(this).show();
+                } else {
+                    $(this).hide();
+                }
             });
+        });
 
-            // Enable editing when the edit button is clicked
-            $(".edit-btn").on("click", function () {
-                var articleId = $(this).data("article-id");
-                enableEditing(articleId);
+        // Enable editing when the edit button is clicked
+        $(".edit-btn").on("click", function () {
+            var articleId = $(this).data("article-id");
+            enableEditing(articleId);
+        });
+
+        // Save changes when the save button is clicked
+        $(".save-btn").on("click", function () {
+            var articleId = $(this).data("article-id");
+            saveChanges(articleId);
+        });
+
+        // Function to enable editing for a specific article
+        function enableEditing(articleId) {
+            $(".editable[data-article-id='" + articleId + "']").attr("contenteditable", "true");
+            $(".edit-btn[data-article-id='" + articleId + "']").hide();
+            $(".save-btn[data-article-id='" + articleId + "']").show();
+        }
+
+        // Function to save changes for a specific article
+        function saveChanges(articleId) {
+            var title = $(".editable[data-article-id='" + articleId + "'][data-field='title']").text().trim();
+            var content = $(".editable[data-article-id='" + articleId + "'][data-field='content']").html().trim(); // Use .html() to preserve formatting
+            var imageUrl = $(".editable[data-article-id='" + articleId + "'][data-field='image_url']").text().trim(); // Get the image URL from the editable field
+            var category = $(".editable[data-article-id='" + articleId + "'][data-field='category']").text().trim(); // Get the category from the editable field
+
+            // AJAX request to update the article
+            $.ajax({
+                url: "update-article.php",
+                type: "POST",
+                data: {
+                    id: articleId,
+                    title: title,
+                    content: content,
+                    image_url: imageUrl,
+                    category: category // Include the category in the data
+                },
+                success: function (response) {
+                    // You can handle the response here, e.g., show a success message
+                    console.log(response);
+
+                    // Disable editing after saving changes
+                    $(".editable[data-article-id='" + articleId + "']").attr("contenteditable", "false");
+                    $(".edit-btn[data-article-id='" + articleId + "']").show();
+                    $(".save-btn[data-article-id='" + articleId + "']").hide();
+                },
+                error: function (error) {
+                    // Handle the error, e.g., show an error message
+                    console.error(error);
+                }
             });
-
-            // Save changes when the save button is clicked
-            $(".save-btn").on("click", function () {
-                var articleId = $(this).data("article-id");
-                saveChanges(articleId);
-            });
-
-            // Function to enable editing for a specific article
-            function enableEditing(articleId) {
-                $(".editable[data-article-id='" + articleId + "']").attr("contenteditable", "true");
-                $(".edit-btn[data-article-id='" + articleId + "']").hide();
-                $(".save-btn[data-article-id='" + articleId + "']").show();
-            }
-
-            // Function to save changes for a specific article
-            function saveChanges(articleId) {
-                        var title = $(".editable[data-article-id='" + articleId + "'][data-field='title']").text().trim();
-                        var content = $(".editable[data-article-id='" + articleId + "'][data-field='content']").html().trim(); // Use .html() to preserve formatting
-                        var imageUrl = $(".editable[data-article-id='" + articleId + "'][data-field='image_url']").text().trim(); // Get the image URL from the editable field
-
-                        // AJAX request to update the article
-                        $.ajax({
-                            url: "update-article.php",
-                            type: "POST",
-                            data: {
-                                id: articleId,
-                                title: title,
-                                content: content,
-                                image_url: imageUrl // Include the image URL in the data
-                            },
-                            success: function (response) {
-                                // You can handle the response here, e.g., show a success message
-                                console.log(response);
-
-                                // Disable editing after saving changes
-                                $(".editable[data-article-id='" + articleId + "']").attr("contenteditable", "false");
-                                $(".edit-btn[data-article-id='" + articleId + "']").show();
-                                $(".save-btn[data-article-id='" + articleId + "']").hide();
-                            },
-                            error: function (error) {
-                                // Handle the error, e.g., show an error message
-                                console.error(error);
-                            }
-                        });
-                    }
-                });
-    </script>
+        }
+    });
+</script>
 </body>
 </html>

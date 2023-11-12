@@ -12,13 +12,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = $_POST['title'];
     $content = $_POST['content'];
     $imageUrl = $_POST['image_url'];
+    $category = $_POST['category']; // Include category
 
-    // Use HTML Purifier to sanitize content and image URL
+    // Use HTML Purifier to sanitize content, image URL, and category
     $config = HTMLPurifier_Config::createDefault();
     $purifier = new HTMLPurifier($config);
     $title = $purifier->purify($title);
     $content = $purifier->purify($content);
     $imageUrl = $purifier->purify($imageUrl);
+    $category = $purifier->purify($category);
 
     // Create a unique filename based on timestamp
     $filename = 'blog-posts/' . time() . '.json';
@@ -28,6 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         'title' => $title,
         'content' => $content,
         'image_url' => $imageUrl,
+        'category' => $category, // Include category in the article
         'created_at' => date('Y-m-d H:i:s'),
     ];
 
@@ -83,28 +86,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 <?php require_once 'layout/body-admin.php'; ?>
 <br /><br />
-    <h1 class="mx-auto" style="text-align: center;">Add Article <a href="manage-articles.php" class="btn btn-primary">Manage Articles</a> <a href="admin-edit.php" class="btn btn-primary">Edit Articles</a> <a href="index.php" class="btn btn-warning">Blog</a></h1>
+<h1 class="mx-auto" style="text-align: center;">Add Article <a href="manage-articles.php" class="btn btn-primary">Manage Articles</a> <a href="admin-edit.php" class="btn btn-primary">Edit Articles</a> <a href="index.php" class="btn btn-warning">Blog</a></h1>
 
-    <?php if (isset($error_message)): ?>
-        <div class="alert alert-danger" role="alert">
-            <?php echo $error_message; ?>
-        </div>
-    <?php endif; ?>
+<?php if (isset($error_message)): ?>
+    <div class="alert alert-danger" role="alert">
+        <?php echo $error_message; ?>
+    </div>
+<?php endif; ?>
 
-    <form method="post" action="add-article.php">
-        <label for="title">Title:</label>
-        <input type="text" id="title" name="title" class="form-control" required>
+<form method="post" action="add-article.php">
+    <label for="title">Title:</label>
+    <input type="text" id="title" name="title" class="form-control" required>
 
-        <label for="content">Content:</label>
-        <textarea id="content" name="content" class="form-control" required></textarea>
+    <label for="content">Content:</label>
+    <textarea id="content" name="content" class="form-control" required></textarea>
 
-        <label for="image_url">Image URL:</label>
-        <input type="text" id="image_url" name="image_url" class="form-control">
+    <label for="image_url">Image URL:</label>
+    <input type="text" id="image_url" name="image_url" class="form-control">
 
-        <button type="submit" class="btn btn-dark">Submit</button>
-    </form>
+    <label for="category">Category:</label>
+    <input type="text" id="category" name="category" class="form-control">
 
-    <!-- Bootstrap JS (optional) -->
-    <script src="vendors/bootstrap-5.3.0/bootstrap@5.3.0_dist_js_bootstrap.bundle.min.js"></script>
+    <button type="submit" class="btn btn-dark">Submit</button>
+</form>
+
+<!-- Bootstrap JS (optional) -->
+<script src="vendors/bootstrap-5.3.0/bootstrap@5.3.0_dist_js_bootstrap.bundle.min.js"></script>
 </body>
 </html>

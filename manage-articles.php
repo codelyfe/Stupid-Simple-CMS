@@ -65,11 +65,12 @@ if (!isset($_SESSION['UserData']['Username'])) {
         ?>
         <div class="article border p-3 text-left mb-3">
             <h4><?php echo $article['title']; ?></h4>
-            
+
             <?php if (!empty($article['image_url'])) : ?>
                 <img src="<?php echo $article['image_url']; ?>" alt="Article Image" class="img-fluid mb-3">
             <?php endif; ?>
-            
+
+            <p><strong>Category:</strong> <?php echo $article['category']; ?></p>
             <p><strong>Filename:</strong> <?php echo $filename; ?></p>
             <p><strong>Content:</strong> <?php echo $article['content']; ?></p>
             <form method="post" action="">
