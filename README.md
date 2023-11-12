@@ -9,9 +9,13 @@ Download and extract all of the files to your web server.
 
 ### Configure Site Settings
 
-- Text | text-centent/english.php
+- Text | text-centent/english.php - Text Variables
 
-- Style | style/global.php
+- Style | style/global.php - Global CSS
+
+- Style | layout/header.php - Global Header for Users
+
+- Style | style/header-admin.php - Global Header for Admins
 
 ### Setting up users
 

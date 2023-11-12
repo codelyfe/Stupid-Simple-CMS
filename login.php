@@ -30,9 +30,9 @@ function login(&$msg)
 {
     // Define username and associated password array
     $logins = array(
-        'admin' => 'admin',
-        'admin1' => 'admin1',
-        'admin2' => 'admin2'
+        'admin' => 'password',
+        'admin1' => 'password',
+        'admin2' => 'password'
     );
 
     // Check and assign submitted Username and Password to new variables
