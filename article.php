@@ -10,7 +10,7 @@
     $articleId = $_GET['id'] ?? null;
 
     if ($articleId) {
-        $filename = "$articlesDir/$articleId.txt";
+        $filename = "$articlesDir/$articleId.json";
 
         if (file_exists($filename)) {
             $content = file_get_contents($filename);

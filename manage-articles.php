@@ -48,7 +48,7 @@ if (!isset($_SESSION['UserData']['Username'])) {
             }
         }
 
-        $articleFiles = glob("$articlesDir/*.txt");
+        $articleFiles = glob("$articlesDir/*.json"); // Update file extension to json
 
         // Sort articles based on file modification time (most recent first)
         usort($articleFiles, function ($a, $b) {

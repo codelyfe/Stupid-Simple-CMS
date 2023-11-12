@@ -1,13 +1,12 @@
 <?php 
-session_start(); /* Starts the session */
+session_start();
 
 if (!isset($_SESSION['UserData']['Username'])) {
     header("location:login.php");
     exit;
 }
-
-// Created by codelyfe 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +18,6 @@ if (!isset($_SESSION['UserData']['Username'])) {
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 
     <style>
-        /* Add your custom styles here if needed */
         body {
             background: #161616;
             color: white;
@@ -35,26 +33,24 @@ if (!isset($_SESSION['UserData']['Username'])) {
     <?php require_once 'layout/header-admin.php'; ?>
 </head>
 <body class="text-center">
-<?php require_once 'layout/body-admin.php'; ?>
-<br /><br />
-    <h1 class="mb-4"><a href="manage-articles.php" class="btn btn-primary">Manage Articles</a>-<a href="add-article.php" class="btn btn-primary">Submit an Article</a>-<a href="index.php" class="btn btn-warning">Blog</a></h1>
-
-
+    <?php require_once 'layout/body-admin.php'; ?>
+    <br /><br />
+    <h1 class="mb-4"><a href="manage-articles.php" class="btn btn-primary">Manage Articles</a>-
+        <a href="add-article.php" class="btn btn-primary">Submit an Article</a>-
+        <a href="index.php" class="btn btn-warning">Blog</a></h1>
 
     <div class="mx-auto" style="max-width: 800px;">
-
-
         <!-- Search Bar -->
         <div class="input-group mb-3">
-        <input type="text" class="form-control" placeholder="Search articles" id="searchInputAdmin">
-        <button class="btn btn-outline-warning" type="button" id="searchButtonAdmin">Search</button>
+            <input type="text" class="form-control" placeholder="Search articles" id="searchInputAdmin">
+            <button class="btn btn-outline-warning" type="button" id="searchButtonAdmin">Search</button>
         </div>
 
         <?php
         $articlesDir = 'blog-posts';
 
         // Fetch articles from the directory
-        $articleFiles = glob("$articlesDir/*.txt");
+        $articleFiles = glob("$articlesDir/*.json"); // Update file extension to json
 
         // Sort articles based on file modification time (most recent first)
         usort($articleFiles, function ($a, $b) {
@@ -73,6 +69,12 @@ if (!isset($_SESSION['UserData']['Username'])) {
 
                 <?php if (!empty($article['image_url'])) : ?>
                     <img src="<?php echo $article['image_url']; ?>" alt="Article Image" class="img-fluid mb-3">
+                    <p class="mt-2">
+                        Image URL:
+                        <span class="editable" data-field="image_url" data-article-id="<?php echo $articleId; ?>">
+                            <?php echo $article['image_url']; ?>
+                        </span>
+                    </p>
                 <?php endif; ?>
 
                 <p class="editable" data-field="content" data-article-id="<?php echo $articleId; ?>">
@@ -133,7 +135,8 @@ if (!isset($_SESSION['UserData']['Username'])) {
             // Function to save changes for a specific article
             function saveChanges(articleId) {
                 var title = $(".editable[data-article-id='" + articleId + "'][data-field='title']").text();
-                var content = $(".editable[data-article-id='" + articleId + "'][data-field='content']").text();
+                var content = $(".editable[data-article-id='" + articleId + "'][data-field='content']").html(); // Use .html() to preserve formatting
+                var imageUrl = $(".article[data-article-id='" + articleId + "'] img").attr("src"); // Get the image URL
 
                 // AJAX request to update the article
                 $.ajax({
@@ -142,7 +145,8 @@ if (!isset($_SESSION['UserData']['Username'])) {
                     data: {
                         id: articleId,
                         title: title,
-                        content: content
+                        content: content,
+                        image_url: imageUrl // Include the image URL in the data
                     },
                     success: function (response) {
                         // You can handle the response here, e.g., show a success message

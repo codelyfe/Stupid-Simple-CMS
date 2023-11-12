@@ -1,7 +1,6 @@
 <?php
-session_start(); /* Starts the session */
+session_start();
 
-// Include HTML Purifier
 require_once 'vendors/htmlpurifier-4.15.0/HTMLPurifier.auto.php';
 
 if (!isset($_SESSION['UserData']['Username'])) {
@@ -12,28 +11,33 @@ if (!isset($_SESSION['UserData']['Username'])) {
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $title = $_POST['title'];
     $content = $_POST['content'];
-    $imageUrl = $_POST['image_url']; // New input field for image URL
+    $imageUrl = $_POST['image_url'];
 
-    // Create a unique filename based on timestamp
-    $filename = 'blog-posts/' . time() . '.txt';
-
-    // Use HTML Purifier to sanitize content
+    // Use HTML Purifier to sanitize content and image URL
     $config = HTMLPurifier_Config::createDefault();
     $purifier = new HTMLPurifier($config);
+    $title = $purifier->purify($title);
     $content = $purifier->purify($content);
+    $imageUrl = $purifier->purify($imageUrl);
+
+    // Create a unique filename based on timestamp
+    $filename = 'blog-posts/' . time() . '.json';
 
     // Save the article to the file
     $article = [
         'title' => $title,
         'content' => $content,
-        'image_url' => $imageUrl, // Save the image URL
+        'image_url' => $imageUrl,
         'created_at' => date('Y-m-d H:i:s'),
     ];
 
-    file_put_contents($filename, json_encode($article));
-
-    header('Location: add-article.php');
-    exit;
+    // Check if the file was written successfully
+    if (file_put_contents($filename, json_encode($article))) {
+        header('Location: add-article.php');
+        exit;
+    } else {
+        $error_message = 'Error saving the article. Please try again.';
+    }
 }
 ?>
 
@@ -81,6 +85,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <br /><br />
     <h1 class="mx-auto" style="text-align: center;">Add Article <a href="manage-articles.php" class="btn btn-primary">Manage Articles</a>-<a href="admin-edit.php" class="btn btn-primary">Edit Articles</a>-<a href="index.php" class="btn btn-warning">Blog</a></h1>
 
+    <?php if (isset($error_message)): ?>
+        <div class="alert alert-danger" role="alert">
+            <?php echo $error_message; ?>
+        </div>
+    <?php endif; ?>
+
     <form method="post" action="add-article.php">
         <label for="title">Title:</label>
         <input type="text" id="title" name="title" class="form-control" required>
@@ -88,19 +98,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <label for="content">Content:</label>
         <textarea id="content" name="content" class="form-control" required></textarea>
 
-        <label for="image_url">Image URL:</label> <!-- New input field for image URL -->
+        <label for="image_url">Image URL:</label>
         <input type="text" id="image_url" name="image_url" class="form-control">
 
         <button type="submit" class="btn btn-dark">Submit</button>
     </form>
 
-    
-
     <!-- Bootstrap JS (optional) -->
     <script src="vendors/bootstrap-5.3.0/bootstrap@5.3.0_dist_js_bootstrap.bundle.min.js"></script>
-
-
-    
-
 </body>
 </html>

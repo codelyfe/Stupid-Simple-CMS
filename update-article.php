@@ -3,17 +3,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $articleId = $_POST['id'];
     $title = $_POST['title'];
     $content = $_POST['content'];
+    $imageUrl = $_POST['image_url']; // Include the image URL
 
     // Assuming your articles are stored in the 'blog-posts' directory
-    $filename = "blog-posts/$articleId.txt";
+    $filename = "blog-posts/$articleId.json";
 
     if (file_exists($filename)) {
-        $article = [
-            'title' => $title,
-            'content' => $content,
-            'created_at' => date('Y-m-d H:i:s'),
-        ];
+        // Read existing JSON content
+        $jsonContent = file_get_contents($filename);
+        $article = json_decode($jsonContent, true);
 
+        // Update article properties
+        $article['title'] = $title;
+        $article['content'] = $content;
+        $article['image_url'] = $imageUrl; // Update the image URL
+        $article['created_at'] = date('Y-m-d H:i:s');
+
+        // Write back to the JSON file
         file_put_contents($filename, json_encode($article));
 
         echo json_encode(['status' => 'success']);

@@ -140,7 +140,7 @@ body {
     <td colspan="2" align="left" valign="top"><h3>Welcome To Our Chat Platform</h3></td>
     </tr>-->
     <tr>
-      <td><p>Are you in the wrong place? <a  class="btn btn-dark" style="text-decoration:none !important;" href="../"><i class="fa fa-comment" aria-hidden="true"></i>Go Back</a></p></td>
+      <td><p>Are you in the wrong place? <a  class="btn btn-danger" style="text-decoration:none !important;" href="../"><i class="fa fa-comment" aria-hidden="true"></i>Go Back</a></p></td>
     </tr>
     <tr>
       <!--<td align="right" valign="top">Username</td>-->
