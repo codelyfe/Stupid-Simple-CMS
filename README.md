@@ -13,6 +13,17 @@ Download and extract all of the files to your web server.
 
 - Style | style/global.php
 
+### Setting up users
+
+- login.php | Edit section seen in code below:
+
+```php
+    $logins = array(
+        'admin' => 'password',
+        'admin1' => 'password',
+        'admin2' => 'password'
+    );
+```
 ### Features
 
 - ADA Compliant Tool
