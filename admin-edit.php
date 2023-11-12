@@ -35,9 +35,7 @@ if (!isset($_SESSION['UserData']['Username'])) {
 <body class="text-center">
     <?php require_once 'layout/body-admin.php'; ?>
     <br /><br />
-    <h1 class="mb-4"><a href="manage-articles.php" class="btn btn-primary">Manage Articles</a>-
-        <a href="add-article.php" class="btn btn-primary">Submit an Article</a>-
-        <a href="index.php" class="btn btn-warning">Blog</a></h1>
+    <h1 class="mb-4"><a href="manage-articles.php" class="btn btn-primary">Manage Articles</a> <a href="add-article.php" class="btn btn-primary">Submit an Article</a> <a href="index.php" class="btn btn-warning">Blog</a></h1>
 
     <div class="mx-auto" style="max-width: 800px;">
         <!-- Search Bar -->
