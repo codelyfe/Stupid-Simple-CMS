@@ -1,6 +1,9 @@
     <style>
         /* Add your custom styles here if needed */
-
+        body{
+            /* background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/denim.png') !important; */
+            background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/escheresque_ste.png') !important;
+        }
         /* Style for mega menu */
         .mega-menu {
             position: static !important;
@@ -21,10 +24,6 @@
         .mega-menu .dropdown-menu .col {
             flex: 1;
             padding: 10px;
-        }
-        body{
-            /* background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/denim.png') !important; */
-            background-image: url('https://www.toptal.com/designers/subtlepatterns/uploads/escheresque_ste.png') !important;
         }
     </style>
    

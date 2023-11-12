@@ -1,3 +1,4 @@
+<?php include 'text-content/english.php'; ?>
 <?php
 session_start();
 
@@ -123,8 +124,8 @@ body {
 </head>
 <body>
 <div class="container">
-<h1 class="mb-4" style="color:white;text-align: center;margin-top:190px;">Stupid Simple CMS</h1>
-<p class="mb-4" style="color:white;text-align: center;">Join our story!</p>
+<h1 class="mb-4" style="color:white;text-align: center;margin-top:190px;"><?php echo $sitetitle; ?></h1>
+<p class="mb-4" style="color:white;text-align: center;"><?php echo $loginpagegreeting; ?></p>
 </div>
 
 <div class="content">

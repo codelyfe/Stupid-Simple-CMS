@@ -3,7 +3,7 @@
    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a class="navbar-brand" href="#"><?php echo $admintitle; ?></a>
-            <a class="navbar-link btn btn-danger" href="logout.php">Logout</a>
+            <a class="navbar-link btn btn-danger" href="logout.php"><?php echo $logoutbutton; ?></a>
 
             <!-- Add your other navigation items here -->
 
