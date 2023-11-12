@@ -9,11 +9,9 @@ Download and extract all of the files to your web server.
 
 ### Configure Site Settings
 
-- Text
-text-centent/english.php
+- Text | text-centent/english.php
 
-- Style
-style/global.php
+- Style | style/global.php
 
 ### Features
 
