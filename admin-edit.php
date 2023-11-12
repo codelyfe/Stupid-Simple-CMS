@@ -35,7 +35,7 @@ if (!isset($_SESSION['UserData']['Username'])) {
 <body class="text-center">
     <?php require_once 'layout/body-admin.php'; ?>
     <br /><br />
-    <h1 class="mb-4"><a href="manage-articles.php" class="btn btn-primary">Manage Articles</a> <a href="add-article.php" class="btn btn-primary">Submit an Article</a> <a href="index.php" class="btn btn-warning">Blog</a></h1>
+    <h1 class="mb-4">Article Editor <br /> <a href="add-article.php" class="btn btn-primary">Submit an Article</a> <a href="index.php" class="btn btn-warning">Blog</a></h1>
 
     <div class="mx-auto" style="max-width: 800px;">
         <!-- Search Bar -->
@@ -88,10 +88,56 @@ if (!isset($_SESSION['UserData']['Username'])) {
                 <p class="text-muted">Created at: <?php echo $article['created_at']; ?></p>
                 <button class="btn btn-primary edit-btn" data-article-id="<?php echo $articleId; ?>">Edit</button>
                 <button class="btn btn-success save-btn" data-article-id="<?php echo $articleId; ?>" style="display: none;">Save</button>
+                <br /><br />
+                <?php
+                $articlesDir = 'blog-posts';
+
+                if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
+                    $fileToDelete = $_POST['delete'];
+
+                    // Validate and sanitize the filename
+                    $fileToDelete = preg_replace('/[^a-zA-Z0-9_.]/', '', $fileToDelete);
+
+                    $filePath = "$articlesDir/$fileToDelete";
+
+                    if (file_exists($filePath)) {
+                        unlink($filePath);
+                        echo '<div class="alert alert-success">File deleted successfully.</div>';
+                    } else {
+                        echo '<div class="alert alert-danger">File not found or could not be deleted.</div>';
+                    }
+                }
+
+                $articleFiles = glob("$articlesDir/*.json"); // Update file extension to json
+
+                // Sort articles based on file modification time (most recent first)
+                usort($articleFiles, function ($a, $b) {
+                    return filemtime($b) - filemtime($a);
+                });
+
+                foreach ($articleFiles as $file) {
+                    $filename = basename($file);
+
+                    // Read and decode the JSON content
+                    $content = file_get_contents($file);
+                    $article = json_decode($content, true);
+
+                    ?>
+                        <form method="post" action="">
+                            <input type="hidden" name="delete" value="<?php echo $filename; ?>">
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
+                    <?php
+                }
+                ?>
+
+
             </div>
             <?php
         }
         ?>
+
+
     </div>
 
     <!-- Bootstrap JS (optional) -->
