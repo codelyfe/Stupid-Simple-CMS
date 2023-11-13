@@ -29,7 +29,6 @@
     <style>
         /* Add your custom styles here if needed */
         body {
-            padding: 20px;
             background: #161616;
         }
 
@@ -50,7 +49,7 @@
     </style>
 </head>
 <body>
-
+<?php require_once 'layout/body.php'; ?>
     <?php
     if ($articleId && file_exists($filename)) {
         ?>

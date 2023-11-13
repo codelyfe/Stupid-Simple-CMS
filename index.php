@@ -402,11 +402,11 @@
         $articleId = pathinfo($file, PATHINFO_FILENAME); // Extract article ID from filename
         ?>
         <div class="article border p-3 text-left" style="margin: 32px;">
-            <h2>
+            <h2 style="text-align:center !important;">
                 <?php echo $article['title']; ?>
                 <!--<a class="" style="text-align:center;" href="article.php?id=<?php //echo $articleId; ?>"><?php //echo $article['title']; ?></a>-->
             </h2>
-
+            <br />
             <?php if (!empty($article['image_url'])) : ?>
                 <a href="<?php echo $article['image_url']; ?>" data-bs-toggle="modal" data-bs-target="#imageModal">
                     <img style="height: 50%; background-position: center; background-repeat: no-repeat; background-size: cover; position: relative;" src="<?php echo $article['image_url']; ?>" alt="Article Image" class="img-fluid mb-3">
