@@ -7,7 +7,8 @@
 
 
    ----------
-   
+
+Watch the video on YouTube: [Stupid Simple CMS](https://youtu.be/GXIfVdy0rN0)   
 
 
 ## Installing Stupid Simple CMS
@@ -60,3 +61,5 @@ Download and extract all of the files to your web server.
 
 ### ADA Compliant Toolset
 ![StupidSimpleCMS1 Logo](https://i.ibb.co/fFfx8yP/Screenshot-11-12-2023-20-56-26.png)
+
+#### Created by Randal Burger ( codelyfe.github.io )
