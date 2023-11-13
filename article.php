@@ -47,6 +47,7 @@
             height: auto;
         }
     </style>
+    <?php require_once 'layout/header.php'; ?>
 </head>
 <body>
 <?php require_once 'layout/body.php'; ?>
