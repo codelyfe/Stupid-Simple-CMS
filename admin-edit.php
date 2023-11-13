@@ -105,13 +105,13 @@ if (!isset($_SESSION['UserData']['Username'])) {
                 </p>
                 
                 <p class="text-muted">Created at: <?php echo $article['created_at']; ?></p>
-                <button class="btn btn-primary edit-btn" data-article-id="<?php echo $articleId; ?>">Edit ( Live Ajax )</button>
+                <button class="btn btn-primary edit-btn" data-article-id="<?php echo $articleId; ?>">Edit <i class="fa-solid fa-file-pen"></i></button>
                 <button class="btn btn-success save-btn" data-article-id="<?php echo $articleId; ?>" style="display: none;">Save</button>
                 <br /><br />
                 <!-- Delete button for the current article -->
                 <form method="post" action="">
                     <input type="hidden" name="delete" value="<?php echo $articleId; ?>">
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                    <button type="submit" class="btn btn-danger">Delete <i class="fa-solid fa-trash-can"></i></button>
                 </form>
 
                 <br /><br />
