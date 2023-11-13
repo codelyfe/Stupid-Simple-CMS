@@ -2,13 +2,13 @@
 // ADMIN
 $admintitle = "(ADMIN) Stupid Simple CMS";
 $loginpagegreeting = "Join the virtual story today!";
-$submitanarticle = "Submit an Article";
+$submitanarticle = "Submit an Article <i class='fa-solid fa-feather'></i>";
 $logoutbutton = "Logout";
 $blogbutton = "Blog";
 // USER
 $sitetitle = "Stupid Simple CMS";
 $category = "Category: ";
-$createdat = "Created at: ";
-$searchbutton = "Search";
-$readmore="READ MORE";
+$createdat = "Created at: <i class='fa-regular fa-clock'></i> ";
+$searchbutton = "<i class='fa-solid fa-magnifying-glass'></i> Search";
+$readmore="READ MORE <i class='fa-solid fa-up-right-from-square'></i>";
 $goback="GO BACK";
