@@ -86,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 <?php require_once 'layout/body-admin.php'; ?>
 <br /><br />
-<h1 class="mx-auto" style="text-align: center;">Add Article <br /><a href="admin-edit.php" class="btn btn-primary">Edit Articles</a> <a href="index.php" class="btn btn-warning">Blog</a></h1>
+<h1 class="mx-auto" style="text-align: center;">Add Article <br /><a href="admin-edit.php" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i> Edit Articles</a> <a href="index.php" class="btn btn-warning">Blog <i class="fa-regular fa-rectangle-list"></i></a></h1>
 
 <?php if (isset($error_message)): ?>
     <div class="alert alert-danger" role="alert">
@@ -101,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <label for="content">Content:</label>
     <textarea id="content" name="content" class="form-control" required></textarea>
 
-    <label for="image_url">Image URL:</label>
+    <label for="image_url"><i class="fa-solid fa-image"></i> Image URL:</label>
     <input type="text" id="image_url" name="image_url" class="form-control">
 
     <label for="category">Category:</label>
