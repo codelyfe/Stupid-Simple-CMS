@@ -20,7 +20,7 @@ Download and extract all of the files to your web server.
 
 - Text | text-centent/english.php - Text Variables
 
-- Style | settings/global.php - Global Settings
+- Style | style/global.php - Global CSS
 
 - Style | layout/header.php - Global Header for Users
 
@@ -57,3 +57,6 @@ Download and extract all of the files to your web server.
 
 ### Login page
 ![StupidSimpleCMS1 Logo](https://i.ibb.co/fdv52JC/Screenshot-11-12-2023-20-43-03.png)
+
+### ADA Compliant Toolset
+![StupidSimpleCMS1 Logo](https://i.ibb.co/fFfx8yP/Screenshot-11-12-2023-20-56-26.png)
