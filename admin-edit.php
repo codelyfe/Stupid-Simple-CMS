@@ -39,7 +39,7 @@ if (!isset($_SESSION['UserData']['Username'])) {
 
     <div class="mx-auto" style="max-width: 800px;">
         <!-- Search Bar -->
-        <div class="input-group mb-3">
+        <div class="input-group mb-3" style="padding: 32px;">
             <input type="text" class="form-control" placeholder="Search articles" id="searchInputAdmin">
             <button class="btn btn-outline-warning" type="button" id="searchButtonAdmin"><?php echo $searchbutton; ?></button>
         </div>
@@ -78,7 +78,7 @@ if (!isset($_SESSION['UserData']['Username'])) {
             $articleId = pathinfo($file, PATHINFO_FILENAME); // Extract article ID from filename
             ?>
 
-            <div class="article border p-3 text-left" data-article-id="<?php echo $articleId; ?>">
+            <div class="article border p-3 text-left"  style="margin: 32px;" data-article-id="<?php echo $articleId; ?>">
                 <h2 class="editable" data-field="title" data-article-id="<?php echo $articleId; ?>">
                     <?php echo $article['title']; ?>
                 </h2>

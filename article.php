@@ -54,7 +54,7 @@
     if ($articleId && file_exists($filename)) {
         ?>
         <div class="article border p-3">
-            <h2><?php echo $article['title']; ?></h2>
+            <h2 style="text-align:center !important;"><?php echo $article['title']; ?></h2>
 
             <?php if (!empty($article['image_url'])) : ?>
                 <img src="<?php echo $article['image_url']; ?>" alt="Article Image" class="img-fluid mb-3">
