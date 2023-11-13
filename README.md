@@ -20,7 +20,7 @@ Download and extract all of the files to your web server.
 
 - Text | text-centent/english.php - Text Variables
 
-- Style | style/global.php - Global CSS
+- Style | settings/global.php - Global Settings
 
 - Style | layout/header.php - Global Header for Users
 
