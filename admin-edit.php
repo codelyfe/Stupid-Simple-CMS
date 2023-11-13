@@ -1,4 +1,3 @@
-<?php include 'text-content/english.php'; ?>
 <?php 
 session_start();
 

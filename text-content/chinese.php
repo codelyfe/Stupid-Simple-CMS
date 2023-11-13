@@ -10,3 +10,5 @@ $sitetitle = "简单的CMS";
 $category = "类别: ";
 $createdat = "创建于: ";
 $searchbutton = "搜索";
+$readmore = "阅读更多";
+$goback = "返回";

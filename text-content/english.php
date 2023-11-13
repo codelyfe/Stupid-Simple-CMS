@@ -10,3 +10,5 @@ $sitetitle = "Stupid Simple CMS";
 $category = "Category: ";
 $createdat = "Created at: ";
 $searchbutton = "Search";
+$readmore="READ MORE";
+$goback="GO BACK";

@@ -10,3 +10,5 @@ $sitetitle = "CMS Simple";
 $category = "Catégorie : ";
 $createdat = "Créé à : ";
 $searchbutton = "Rechercher";
+$readmore = "LIRE LA SUITE";
+$goback = "RETOURNER";

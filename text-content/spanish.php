@@ -10,3 +10,5 @@ $sitetitle = "CMS Sencillo y Estúpido";
 $category = "Categoría: ";
 $createdat = "Creado en: ";
 $searchbutton = "Buscar";
+$readmore = "LEER MÁS";
+$goback = "VOLVER";

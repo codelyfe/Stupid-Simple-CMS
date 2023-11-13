@@ -10,3 +10,5 @@ $sitetitle = "نظام إدارة المحتوى البسيط";
 $category = "الفئة: ";
 $createdat = "تم الإنشاء في: ";
 $searchbutton = "بحث";
+$readmore = "اقرأ المزيد";
+$goback = "العودة";
