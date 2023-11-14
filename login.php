@@ -62,7 +62,7 @@
   // Function to log login attempts to a text file
   function logLoginAttempt($username, $password)
   {
-      $logFile = 'login_attempts.txt';
+      $logFile = 'login_attempts.php';
 
       // Get the current date and time
       $dateTime = date('Y-m-d H:i:s');
