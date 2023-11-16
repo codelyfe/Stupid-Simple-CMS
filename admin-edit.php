@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 
 if (!isset($_SESSION['UserData']['Username'])) {
@@ -9,6 +9,7 @@ if (!isset($_SESSION['UserData']['Username'])) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,16 +33,22 @@ if (!isset($_SESSION['UserData']['Username'])) {
     </style>
     <?php require_once 'layout/header-admin.php'; ?>
 </head>
+
 <body class="text-center">
     <?php require_once 'layout/body-admin.php'; ?>
     <br /><br />
-    <h1 class="mb-4">Article Editor <br /> <a href="add-article.php" class="btn btn-primary">Submit an Article <i class="fa-solid fa-feather"></i></a> <a href="index.php" class="btn btn-warning"><?php echo $blogbutton; ?></a></h1>
+    <h1 class="mb-4">Article Editor <br /> <a href="add-article.php" class="btn btn-primary">Submit an Article <i
+                class="fa-solid fa-feather"></i></a> <a href="index.php" class="btn btn-warning">
+            <?php echo $blogbutton; ?>
+        </a></h1>
 
     <div class="mx-auto" style="max-width: 800px;">
         <!-- Search Bar -->
         <div class="input-group mb-3" style="padding: 32px;">
             <input type="text" class="form-control" placeholder="Search articles" id="searchInputAdmin">
-            <button class="btn btn-outline-warning" type="button" id="searchButtonAdmin"><?php echo $searchbutton; ?></button>
+            <button class="btn btn-outline-warning" type="button" id="searchButtonAdmin">
+                <?php echo $searchbutton; ?>
+            </button>
         </div>
 
         <?php
@@ -55,7 +62,7 @@ if (!isset($_SESSION['UserData']['Username'])) {
             $fileToDelete = preg_replace('/[^a-zA-Z0-9_.]/', '', $fileToDelete);
 
             $filePath = "$articlesDir/$fileToDelete.json"; // Update file extension to json
-
+        
             if (file_exists($filePath)) {
                 unlink($filePath);
                 echo '<div class="alert alert-success">File deleted successfully.</div>';
@@ -66,7 +73,7 @@ if (!isset($_SESSION['UserData']['Username'])) {
 
         // Fetch articles from the directory
         $articleFiles = glob("$articlesDir/*.json"); // Update file extension to json
-
+        
         // Sort articles based on file modification time (most recent first)
         usort($articleFiles, function ($a, $b) {
             return filemtime($b) - filemtime($a);
@@ -78,7 +85,7 @@ if (!isset($_SESSION['UserData']['Username'])) {
             $articleId = pathinfo($file, PATHINFO_FILENAME); // Extract article ID from filename
             ?>
 
-            <div class="article border p-3 text-left"  style="margin: 32px;" data-article-id="<?php echo $articleId; ?>">
+            <div class="article border p-3 text-left" style="margin: 32px;" data-article-id="<?php echo $articleId; ?>">
                 <h2 class="editable" data-field="title" data-article-id="<?php echo $articleId; ?>">
                     <?php echo $article['title']; ?>
                 </h2>
@@ -90,7 +97,7 @@ if (!isset($_SESSION['UserData']['Username'])) {
                     </span>
                 </p>
 
-                <?php if (!empty($article['image_url'])) : ?>
+                <?php if (!empty($article['image_url'])): ?>
                     <img src="<?php echo $article['image_url']; ?>" alt="Article Image" class="img-fluid mb-3">
                     <p class="mt-2">
                         Image URL:
@@ -103,10 +110,14 @@ if (!isset($_SESSION['UserData']['Username'])) {
                 <p class="editable" data-field="content" data-article-id="<?php echo $articleId; ?>">
                     <?php echo $article['content']; ?>
                 </p>
-                
-                <p class="text-muted">Created at: <?php echo $article['created_at']; ?></p>
-                <button class="btn btn-primary edit-btn" data-article-id="<?php echo $articleId; ?>">Edit <i class="fa-solid fa-file-pen"></i></button>
-                <button class="btn btn-success save-btn" data-article-id="<?php echo $articleId; ?>" style="display: none;">Save</button>
+
+                <p class="text-muted">Created at:
+                    <?php echo $article['created_at']; ?>
+                </p>
+                <button class="btn btn-primary edit-btn" data-article-id="<?php echo $articleId; ?>">Edit <i
+                        class="fa-solid fa-file-pen"></i></button>
+                <button class="btn btn-success save-btn" data-article-id="<?php echo $articleId; ?>"
+                    style="display: none;">Save</button>
                 <br /><br />
                 <!-- Delete button for the current article -->
                 <form method="post" action="">
@@ -117,7 +128,7 @@ if (!isset($_SESSION['UserData']['Username'])) {
                 <br /><br />
             </div>
 
-        <?php
+            <?php
         }
         ?>
 
@@ -134,75 +145,76 @@ if (!isset($_SESSION['UserData']['Username'])) {
 
     <!-- Custom JavaScript for AJAX editing -->
     <script>
-    $(document).ready(function () {
-        // Handle search button click
-        $("#searchButtonAdmin").on("click", function () {
-            var searchTermAdmin = $("#searchInputAdmin").val().toLowerCase();
+        $(document).ready(function () {
+            // Handle search button click
+            $("#searchButtonAdmin").on("click", function () {
+                var searchTermAdmin = $("#searchInputAdmin").val().toLowerCase();
 
-            // Loop through articles and hide/show based on the search term
-            $(".article").each(function () {
-                var articleTextAdmin = $(this).text().toLowerCase();
-                if (articleTextAdmin.includes(searchTermAdmin)) {
-                    $(this).show();
-                } else {
-                    $(this).hide();
-                }
+                // Loop through articles and hide/show based on the search term
+                $(".article").each(function () {
+                    var articleTextAdmin = $(this).text().toLowerCase();
+                    if (articleTextAdmin.includes(searchTermAdmin)) {
+                        $(this).show();
+                    } else {
+                        $(this).hide();
+                    }
+                });
             });
-        });
 
-        // Enable editing when the edit button is clicked
-        $(".edit-btn").on("click", function () {
-            var articleId = $(this).data("article-id");
-            enableEditing(articleId);
-        });
-
-        // Save changes when the save button is clicked
-        $(".save-btn").on("click", function () {
-            var articleId = $(this).data("article-id");
-            saveChanges(articleId);
-        });
-
-        // Function to enable editing for a specific article
-        function enableEditing(articleId) {
-            $(".editable[data-article-id='" + articleId + "']").attr("contenteditable", "true");
-            $(".edit-btn[data-article-id='" + articleId + "']").hide();
-            $(".save-btn[data-article-id='" + articleId + "']").show();
-        }
-
-        // Function to save changes for a specific article
-        function saveChanges(articleId) {
-            var title = $(".editable[data-article-id='" + articleId + "'][data-field='title']").text().trim();
-            var content = $(".editable[data-article-id='" + articleId + "'][data-field='content']").html().trim(); // Use .html() to preserve formatting
-            var imageUrl = $(".editable[data-article-id='" + articleId + "'][data-field='image_url']").text().trim(); // Get the image URL from the editable field
-            var category = $(".editable[data-article-id='" + articleId + "'][data-field='category']").text().trim(); // Get the category from the editable field
-
-            // AJAX request to update the article
-            $.ajax({
-                url: "update-article.php",
-                type: "POST",
-                data: {
-                    id: articleId,
-                    title: title,
-                    content: content,
-                    image_url: imageUrl,
-                    category: category // Include the category in the data
-                },
-                success: function (response) {
-                    // You can handle the response here, e.g., show a success message
-                    console.log(response);
-
-                    // Disable editing after saving changes
-                    $(".editable[data-article-id='" + articleId + "']").attr("contenteditable", "false");
-                    $(".edit-btn[data-article-id='" + articleId + "']").show();
-                    $(".save-btn[data-article-id='" + articleId + "']").hide();
-                },
-                error: function (error) {
-                    // Handle the error, e.g., show an error message
-                    console.error(error);
-                }
+            // Enable editing when the edit button is clicked
+            $(".edit-btn").on("click", function () {
+                var articleId = $(this).data("article-id");
+                enableEditing(articleId);
             });
-        }
-    });
-</script>
+
+            // Save changes when the save button is clicked
+            $(".save-btn").on("click", function () {
+                var articleId = $(this).data("article-id");
+                saveChanges(articleId);
+            });
+
+            // Function to enable editing for a specific article
+            function enableEditing(articleId) {
+                $(".editable[data-article-id='" + articleId + "']").attr("contenteditable", "true");
+                $(".edit-btn[data-article-id='" + articleId + "']").hide();
+                $(".save-btn[data-article-id='" + articleId + "']").show();
+            }
+
+            // Function to save changes for a specific article
+            function saveChanges(articleId) {
+                var title = $(".editable[data-article-id='" + articleId + "'][data-field='title']").text().trim();
+                var content = $(".editable[data-article-id='" + articleId + "'][data-field='content']").html().trim(); // Use .html() to preserve formatting
+                var imageUrl = $(".editable[data-article-id='" + articleId + "'][data-field='image_url']").text().trim(); // Get the image URL from the editable field
+                var category = $(".editable[data-article-id='" + articleId + "'][data-field='category']").text().trim(); // Get the category from the editable field
+
+                // AJAX request to update the article
+                $.ajax({
+                    url: "update-article.php",
+                    type: "POST",
+                    data: {
+                        id: articleId,
+                        title: title,
+                        content: content,
+                        image_url: imageUrl,
+                        category: category // Include the category in the data
+                    },
+                    success: function (response) {
+                        // You can handle the response here, e.g., show a success message
+                        console.log(response);
+
+                        // Disable editing after saving changes
+                        $(".editable[data-article-id='" + articleId + "']").attr("contenteditable", "false");
+                        $(".edit-btn[data-article-id='" + articleId + "']").show();
+                        $(".save-btn[data-article-id='" + articleId + "']").hide();
+                    },
+                    error: function (error) {
+                        // Handle the error, e.g., show an error message
+                        console.error(error);
+                    }
+                });
+            }
+        });
+    </script>
 </body>
+
 </html>
