@@ -19,7 +19,7 @@ if (!isset($_SESSION['UserData']['Username'])) {
 <?php require_once 'layout/body-admin.php'; ?>
 
 <div class="container" style="background-color:white;padding:50px;">
-<h1><u>Blog Design Panel</u></h1>
+<h1 class="badge bg-dark" style="font-size: 60px;text-align:center;">Blog Design Panel</h1>
     <br/>
     <label for="font_color"><h3>Font Color:</h3><br/></label>
     <input class="form-control" type="color" id="font_color">
