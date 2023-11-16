@@ -8,6 +8,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $xml->background = $_POST['background'];
     }
 
+    // Change font color
+    if (isset($_POST['fontcolor'])) {
+        $xml->fontcolor = $_POST['fontcolor'];
+    }
+
     // Change background image (URL)
     if (isset($_POST['background_image_url'])) {
         $imageUrl = $_POST['background_image_url'];

@@ -29,6 +29,18 @@
         $.ajax({
             type: 'GET',
             url: 'get_content.php',
+            data: { element: 'fontcolor' },
+            success: function(response) {
+                $('body').css('color', response);
+            },
+            error: function(xhr, status, error) {
+                console.error('Error fetching color:', error);
+            }
+        });
+
+        $.ajax({
+            type: 'GET',
+            url: 'get_content.php',
             data: { element: 'background_image' },
             success: function(response) {
                 console.log('Background image URL:', response); // Log received image URL
