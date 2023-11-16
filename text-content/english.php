@@ -1,6 +1,6 @@
 <?php
 // ADMIN
-$admintitle = "<i class='fa-solid fa-blog'></i> (ADMIN) Stupid Simple CMS";
+$admintitle = "<i class='fa-solid fa-blog'></i> (ADMIN) Stupid Simple CMS ( BETA )";
 $loginpagegreeting = "Join the virtual story today!";
 $submitanarticle = "Submit an Article <i class='fa-solid fa-feather'></i>";
 $logoutbutton = "Logout <i class='fa-solid fa-right-from-bracket'></i>";
