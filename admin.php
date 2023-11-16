@@ -9,7 +9,7 @@ if (!isset($_SESSION['UserData']['Username'])) {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Admin Panel</title>
+    <title>Blog Design Panel</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -19,7 +19,7 @@ if (!isset($_SESSION['UserData']['Username'])) {
 <?php require_once 'layout/body-admin.php'; ?>
 
 <div class="container-fluid" style="background-color:white;">
-    <h1>Admin Panel</h1>
+    <h1>Blog Design Panel</h1>
     <label for="background_color">Background Color:</label>
     <input type="color" id="background_color">
     <button onclick="changeBackgroundColor()">Change Color</button><br><br>

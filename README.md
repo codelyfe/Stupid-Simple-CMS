@@ -1,4 +1,4 @@
-# Stupid Simple CMS
+# Stupid Simple CMS ( BETA )
  Stupid Simple CMS - Created to be simple. Blog posting CMS.
 
 ![StupidSimpleCMS Logo](https://i.ibb.co/HpKWcSK/Screenshot-11-12-2023-20-34-08.png)
