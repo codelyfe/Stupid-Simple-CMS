@@ -19,15 +19,15 @@ if (!isset($_SESSION['UserData']['Username'])) {
 <?php require_once 'layout/body-admin.php'; ?>
 
 <div class="container" style="background-color:white;padding:50px;">
-<h1>Blog Design Panel</h1>
+<h1><u>Blog Design Panel</u></h1>
     <br/>
-    <label for="background_color">Background Color:</label>
+    <label for="background_color"><h3>Background Color:</h3><br/></label>
     <input class="form-control" type="color" id="background_color">
     <br/>
     <button class="btn btn-primary" onclick="changeBackgroundColor()">Change Color</button><br><br>
 
-    <label for="background_image">Background Image URL:</label>
-    <input class="form-control" type="text" id="background_image_url" placeholder="URL Goes here">
+    <label for="background_image"><h3>Background Image URL:</h3><br/> ( Note: Add <b>https://localhost/picture.jpg</b> to disable background image. )</label>
+    <input class="form-control" type="text" id="background_image_url" placeholder="URL Goes here...">
     <br/>
     <button class="btn btn-primary" onclick="changeBackgroundImage()">Change Image</button><br><br>
 
