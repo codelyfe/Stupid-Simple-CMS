@@ -14,6 +14,20 @@
     
     <script>
     $(document).ready(function() {
+
+      $.ajax({
+            type: 'GET',
+            url: 'get_content.php',
+            data: { element: 'background_image' },
+            success: function(response) {
+                console.log('Background image URL:', response); // Log received image URL
+                $('body').css('background-image', 'url(' + response + ')');
+            },
+            error: function(xhr, status, error) {
+                console.error('Error fetching background image:', error);
+            }
+        });
+
         $.ajax({
             type: 'GET',
             url: 'get_content.php',
@@ -38,18 +52,7 @@
             }
         });
 
-        $.ajax({
-            type: 'GET',
-            url: 'get_content.php',
-            data: { element: 'background_image' },
-            success: function(response) {
-                console.log('Background image URL:', response); // Log received image URL
-                $('body').css('background-image', 'url(' + response + ')');
-            },
-            error: function(xhr, status, error) {
-                console.error('Error fetching background image:', error);
-            }
-        });
+
     });
     </script>
   <style>
@@ -436,7 +439,7 @@
     <!-- Search Bar -->
     <div class="input-group mb-3" style="padding: 32px;">
         <input type="text" class="form-control" placeholder="Search articles" id="searchInput">
-        <button class="btn btn-outline-warning" type="button" id="searchButton"><?php echo $searchbutton; ?></button>
+        <button class="btn btn-light" type="button" id="searchButton"><?php echo $searchbutton; ?></button>
     </div>
 
     <?php

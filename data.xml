@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <content>
-    <background>#7b1414</background>
+    <background>#000000</background>
     <fontcolor>#000000</fontcolor>
-    <background_image>https://localhost/picture.jpg</background_image>
+    <background_image>https://cdn.pixabay.com/photo/2023/09/13/14/22/cactus-8251095_1280.jpg</background_image>
     <!-- Other content here -->
 </content>
