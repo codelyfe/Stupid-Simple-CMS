@@ -46,6 +46,7 @@ Download and extract all of the files to your web server.
 - Zoom in image
 - Delete Articles
 - View Article on seperate page
+- Simple Blog Designer ( More features coming soon )
 
 ### Adding an Article
 ![StupidSimpleCMS Logo](https://i.ibb.co/BccvTcB/Screenshot-11-12-2023-20-37-13.png)
