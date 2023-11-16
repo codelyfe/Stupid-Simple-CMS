@@ -9,6 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['element'])) {
         case 'background':
             echo $xml->background;
             break;
+        
         case 'background_image':
             if (isset($xml->background_image)) {
                 echo $xml->background_image;

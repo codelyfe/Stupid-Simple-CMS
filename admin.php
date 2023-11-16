@@ -19,7 +19,8 @@ if (!isset($_SESSION['UserData']['Username'])) {
 <?php require_once 'layout/body-admin.php'; ?>
 
 <div class="container-fluid" style="background-color:white;">
-    <h1>Blog Design Panel</h1>
+<h1>Blog Design Panel</h1>
+    
     <label for="background_color">Background Color:</label>
     <input type="color" id="background_color">
     <button onclick="changeBackgroundColor()">Change Color</button><br><br>
@@ -27,6 +28,7 @@ if (!isset($_SESSION['UserData']['Username'])) {
     <label for="background_image">Background Image URL:</label>
     <input type="text" id="background_image_url">
     <button onclick="changeBackgroundImage()">Change Image</button><br><br>
+
 </div>
 
     <script>
