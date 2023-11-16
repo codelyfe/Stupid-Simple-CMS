@@ -20,14 +20,16 @@ if (!isset($_SESSION['UserData']['Username'])) {
 
 <div class="container" style="background-color:white;padding:50px;">
 <h1>Blog Design Panel</h1>
-    
+    <br/>
     <label for="background_color">Background Color:</label>
-    <input type="color" id="background_color">
-    <button onclick="changeBackgroundColor()">Change Color</button><br><br>
+    <input class="form-control" type="color" id="background_color">
+    <br/>
+    <button class="btn btn-primary" onclick="changeBackgroundColor()">Change Color</button><br><br>
 
     <label for="background_image">Background Image URL:</label>
-    <input type="text" id="background_image_url">
-    <button onclick="changeBackgroundImage()">Change Image</button><br><br>
+    <input class="form-control" type="text" id="background_image_url" placeholder="URL Goes here">
+    <br/>
+    <button class="btn btn-primary" onclick="changeBackgroundImage()">Change Image</button><br><br>
 
 </div>
 
