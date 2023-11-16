@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
     <?php
     $articlesDir = 'blog-posts';
     $articleId = $_GET['id'] ?? null;
@@ -25,12 +26,37 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <script>
+    $(document).ready(function() {
+        $.ajax({
+            type: 'GET',
+            url: 'get_content.php',
+            data: { element: 'background' },
+            success: function(response) {
+                $('body').css('background-color', response);
+            },
+            error: function(xhr, status, error) {
+                console.error('Error fetching background color:', error);
+            }
+        });
 
+        $.ajax({
+            type: 'GET',
+            url: 'get_content.php',
+            data: { element: 'background_image' },
+            success: function(response) {
+                console.log('Background image URL:', response); // Log received image URL
+                $('body').css('background-image', 'url(' + response + ')');
+            },
+            error: function(xhr, status, error) {
+                console.error('Error fetching background image:', error);
+            }
+        });
+    });
+    </script>
     <style>
         /* Add your custom styles here if needed */
-        body {
-            background: #161616;
-        }
+
 
         .article {
             max-width: 600px;
