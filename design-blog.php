@@ -24,17 +24,17 @@ if (!isset($_SESSION['UserData']['Username'])) {
     <label for="font_color"><h3>Font Color:</h3><br/></label>
     <input class="form-control" type="color" id="font_color">
     <br/>
-    <button class="btn btn-primary" onclick="changeFontColor()">Change Color</button><br><br>
+    <button class="btn btn-outline-dark" onclick="changeFontColor()">Change Color</button><br><br>
 
     <label for="background_color"><h3>Background Color:</h3><br/></label>
     <input class="form-control" type="color" id="background_color">
     <br/>
-    <button class="btn btn-primary" onclick="changeBackgroundColor()">Change Color</button><br><br>
+    <button class="btn btn-outline-dark" onclick="changeBackgroundColor()">Change Color</button><br><br>
 
     <label for="background_image"><h3>Background Image URL:</h3><br/> ( Note: Add <b>https://localhost/picture.jpg</b> to disable background image. )</label>
     <input class="form-control" type="text" id="background_image_url" placeholder="URL Goes here...">
     <br/>
-    <button class="btn btn-primary" onclick="changeBackgroundImage()">Change Image</button><br><br>
+    <button class="btn btn-outline-dark" onclick="changeBackgroundImage()">Change Image</button><br><br>
 
 </div>
 
