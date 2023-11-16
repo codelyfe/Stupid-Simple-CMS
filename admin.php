@@ -18,7 +18,7 @@ if (!isset($_SESSION['UserData']['Username'])) {
 <body>
 <?php require_once 'layout/body-admin.php'; ?>
 
-<div class="container-fluid" style="background-color:white;">
+<div class="container" style="background-color:white;padding:50px;">
 <h1>Blog Design Panel</h1>
     
     <label for="background_color">Background Color:</label>
