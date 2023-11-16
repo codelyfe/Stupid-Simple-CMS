@@ -19,19 +19,19 @@ if (!isset($_SESSION['UserData']['Username'])) {
 <?php require_once 'layout/body-admin.php'; ?>
 
 <div class="container" style="background-color:white;padding:50px;">
-<h1 class="badge bg-dark" style="font-size: 60px;text-align:center;">Blog Design Panel</h1>
-    <br/>
-    <label for="font_color"><h3>Font Color:</h3><br/></label>
+<h1 class="badge bg-dark" style="font-size: 60px;">Blog Design Panel</h1>
+    <br/><br/>
+    <label for="font_color"><h3><i class="fa-solid fa-gear"></i> Font Color:</h3><br/></label>
     <input class="form-control" type="color" id="font_color">
     <br/>
     <button class="btn btn-outline-dark" onclick="changeFontColor()">Change Color</button><br><br>
 
-    <label for="background_color"><h3>Background Color:</h3><br/></label>
+    <label for="background_color"><h3><i class="fa-solid fa-gear"></i> Background Color:</h3><br/></label>
     <input class="form-control" type="color" id="background_color">
     <br/>
     <button class="btn btn-outline-dark" onclick="changeBackgroundColor()">Change Color</button><br><br>
 
-    <label for="background_image"><h3>Background Image URL:</h3><br/> ( Note: Add <b>https://localhost/picture.jpg</b> to disable background image. )</label>
+    <label for="background_image"><h3><i class="fa-solid fa-gear"></i> Background Image URL:</h3><br/> ( Note: Add <b>https://localhost/picture.jpg</b> to disable background image. )</label>
     <input class="form-control" type="text" id="background_image_url" placeholder="URL Goes here...">
     <br/>
     <button class="btn btn-outline-dark" onclick="changeBackgroundImage()">Change Image</button><br><br>
