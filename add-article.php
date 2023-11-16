@@ -86,7 +86,7 @@
     <body>
     <?php require_once 'layout/body-admin.php'; ?>
     <br /><br />
-    <h1 class="mx-auto" style="text-align: center;">Add Article <br /><a href="admin.php" class="btn btn-primary"><i class="fa-solid fa-brush"></i> Design Blog</a> <a href="admin-edit.php" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i> Edit Articles</a> <a href="index.php" class="btn btn-warning">Blog <i class="fa-regular fa-rectangle-list"></i></a></h1>
+    <h1 class="mx-auto" style="text-align: center;">Add Article <br /><a href="design-blog.php" class="btn btn-primary"><i class="fa-solid fa-brush"></i> Design Blog</a> <a href="admin-edit.php" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i> Edit Articles</a> <a href="index.php" class="btn btn-warning">Blog <i class="fa-regular fa-rectangle-list"></i></a></h1>
 
     <?php if (isset($error_message)): ?>
         <div class="alert alert-danger" role="alert">

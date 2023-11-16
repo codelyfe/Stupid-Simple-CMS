@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <content>
     <background>#000000</background>
-    <background_image>1280.jpg</background_image>
+    <background_image>https://localhost/picture.jpg</background_image>
     <!-- Other content here -->
 </content>
