@@ -1,4 +1,11 @@
     <?php
+    /*
+    ┏┓┏┓┳┓┏┓┓ ┓┏┏┓┏┓
+    ┃ ┃┃┃┃┣ ┃ ┗┫┣ ┣ 
+    ┗┛┗┛┻┛┗┛┗┛┗┛┻ ┗┛
+    */              
+    ?>
+    <?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $xmlFile = 'data.xml'; // Replace with your XML file name/location
         $xml = simplexml_load_file($xmlFile);

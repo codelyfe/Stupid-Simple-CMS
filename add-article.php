@@ -1,4 +1,11 @@
     <?php
+    /*
+    ┏┓┏┓┳┓┏┓┓ ┓┏┏┓┏┓
+    ┃ ┃┃┃┃┣ ┃ ┗┫┣ ┣ 
+    ┗┛┗┛┻┛┗┛┗┛┗┛┻ ┗┛
+    */              
+    ?>
+    <?php
     session_start();
 
     require_once 'vendors/htmlpurifier-4.15.0/HTMLPurifier.auto.php';
