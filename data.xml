@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <content>
-    <background>#d22828</background>
+    <background>#cb9a9a</background>
     <fontcolor>#000000</fontcolor>
-    <article_background_color>#ff5757</article_background_color>
+    <article_background_color>#9dced2</article_background_color>
     <background_image>https://localhost/picture.jpg</background_image> 
     <!-- Other content here -->
 </content>

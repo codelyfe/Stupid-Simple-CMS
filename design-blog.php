@@ -37,25 +37,31 @@
             <input class="form-control" type="color" id="font_color">
             <br />
             <button class="btn btn-outline-dark" onclick="changeFontColor()">Change Color</button><br><br>
-
+            
+            <hr/>
+            
             <label for="background_color">
                 <h3><i class="fa-solid fa-gear"></i> Background Color:</h3><br />
             </label>
             <input class="form-control" type="color" id="background_color">
             <br />
             <button class="btn btn-outline-dark" onclick="changeBackgroundColor()">Change Color</button><br><br>
-
+            
+            <hr/>
+            
             <label for="background_image">
                 <h3><i class="fa-solid fa-gear"></i> Background Image URL:</h3><br /> ( Note: Add <b>https://localhost/picture.jpg</b> to disable background image. )<br/> Use transparent images for flexable color schemes.
             </label>
             <input class="form-control" type="text" id="background_image_url" placeholder="URL Goes here...">
             <br />
             <button class="btn btn-outline-dark" onclick="changeBackgroundImage()">Change Image</button><br><br>
-
+            
+            <hr/>
+            
             <br/>
             <label for="article_background_color">
             <h3><i class="fa-solid fa-gear"></i> Article Background Color:</h3>
-            </label>
+            </label><br/>
             <input class="form-control" type="color" id="article_background_color">
             <br/>
             <button class="btn btn-outline-dark" onclick="changeArticleBackgroundColor()">Change Color</button><br><br>
