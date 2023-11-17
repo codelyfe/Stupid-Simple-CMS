@@ -49,10 +49,12 @@ Download and extract all of the files to your web server.
 - Delete Articles
 - View Article on seperate page
 - Simple Blog Designer ( More features coming soon )
+```
 -- Font Color
 -- Background Color ( Body )
 -- Background image ( Body )
 -- Background Color ( .article ) 
+```
 
 ### Adding an Article
 ![StupidSimpleCMS Logo](https://i.ibb.co/BccvTcB/Screenshot-11-12-2023-20-37-13.png)
