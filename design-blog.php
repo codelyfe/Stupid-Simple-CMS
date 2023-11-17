@@ -52,6 +52,13 @@
             <br />
             <button class="btn btn-outline-dark" onclick="changeBackgroundImage()">Change Image</button><br><br>
 
+                <br/>
+                <label for="article_background_color">Article Background Color:</label>
+                <input class="form-control" type="color" id="article_background_color">
+                <br/>
+                <button class="btn btn-primary" onclick="changeArticleBackgroundColor()">Change Color</button><br><br>
+       
+
         </div>
 
         <script>
@@ -83,6 +90,21 @@
                     },
                     error: function (xhr, status, error) {
                         console.error('Error changing background color:', error);
+                    }
+                });
+            }
+
+            function changeArticleBackgroundColor() {
+                var color = $('#article_background_color').val();
+                $.ajax({
+                    type: 'POST',
+                    url: 'save_changes.php',
+                    data: { article_background_color: color }, // Use a different key to identify article background color
+                    success: function(response) {
+                        alert('Article Background color changed successfully!');
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Error changing article background color:', error);
                     }
                 });
             }

@@ -21,6 +21,10 @@
                 echo $xml->fontcolor;
                 break;
 
+            case 'article_background':
+                echo $xml->article_background_color;
+                break;
+
             case 'background_image':
                 if (isset($xml->background_image)) {
                     echo $xml->background_image;

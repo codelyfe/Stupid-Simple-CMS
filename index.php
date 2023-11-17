@@ -59,6 +59,25 @@
             }
         });
 
+        // Fetch current article background color from XML file
+        $.ajax({
+                type: 'GET',
+                url: 'get_content.php',
+                data: {
+                    element: 'article_background' // This should match the key in get_content.php
+                },
+                success: function(response) {
+                     console.log('DIV Background Color:', response);
+                    // Update the background color of .article elements
+                    $('.article').css('background-color', response);
+                    
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error fetching content:', error);
+                }
+            });
+
+
 
     });
     </script>
@@ -411,7 +430,7 @@
 
         .article {
             margin-bottom: 20px;
-            background: white;
+            /*background: white;*/
             color: black;
             border-radius: 10px;
         }

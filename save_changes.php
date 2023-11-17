@@ -20,6 +20,11 @@
             $xml->fontcolor = $_POST['fontcolor'];
         }
 
+        // Article Background Color
+        if (isset($_POST['article_background_color'])) {
+            $xml->article_background_color = $_POST['article_background_color'];
+        }
+
         // Change background image (URL)
         if (isset($_POST['background_image_url'])) {
             $imageUrl = $_POST['background_image_url'];
