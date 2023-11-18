@@ -63,6 +63,8 @@ Download and extract all of the files to your web server.
 
 * Settings are stored in data.xml *
 ```
+- Custom JS editor
+- Custom CSS editor
 
 ### Adding an Article
 ![StupidSimpleCMS Logo](https://i.ibb.co/BccvTcB/Screenshot-11-12-2023-20-37-13.png)
