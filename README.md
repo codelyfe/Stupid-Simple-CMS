@@ -65,6 +65,7 @@ Download and extract all of the files to your web server.
 ```
 - Custom JS editor
 - Custom CSS editor
+- File Manager ( Delete | Copy Url | Rename)
 
 ### Adding an Article
 ![StupidSimpleCMS Logo](https://i.ibb.co/BccvTcB/Screenshot-11-12-2023-20-37-13.png)
