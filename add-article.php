@@ -94,14 +94,14 @@
     <?php require_once 'layout/navbar-admin.php'; ?>
     <br /><br />
     <h1 class="mx-auto" style="text-align: center;">Add Article <br /><a href="../file-manager/" class="btn btn-dark"><i class="fa-solid fa-brush" style="color: #ffc107;"></i> File Manager</a> <a href="design-blog.php" class="btn btn-dark"><i class="fa-solid fa-brush" style="color: #ffc107;"></i> Design Blog</a> <a href="admin-edit.php" class="btn btn-dark"><i class="fa-solid fa-pen-to-square" style="color: #ffc107;"></i> Edit Articles</a> <a href="index.php" class="btn btn-dark"><i class="fa-regular fa-rectangle-list" style="color: #ffc107;"></i> Blog</a></h1>
-
+    <br/>
     <?php if (isset($error_message)): ?>
         <div class="alert alert-danger" role="alert">
             <?php echo $error_message; ?>
         </div>
     <?php endif; ?>
 
-    <form method="post" action="add-article.php">
+    <form method="post" action="add-article.php" style="background: black;padding: 30px; border-radius: 10px;">
         <label for="title">Title:</label>
         <input placeholder="Interesting Title" type="text" id="title" name="title" class="form-control" required>
 
