@@ -104,7 +104,7 @@
                 },
                 success: function(response) {
                      console.log('DIV Button Font Color:', response);
-                    // Update the background color of .article elements
+                    // Update the font color of .article elements
                     $('.article-btn').css('color', response);
                     
                 },
