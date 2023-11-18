@@ -8,7 +8,7 @@ if ($files) {
     foreach ($files as $file) {
         if (is_file($file)) {
             $filename = basename($file);
-            $fileUrl = 'http://yourdomain.com/' . $uploadFolder . $filename; // Change this URL to match your domain and folder structure
+            $fileUrl = 'https://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/' . $uploadFolder . $filename;
 
             $html .= '<li>' . $filename . 
                      ' <button onclick="deleteFile(\'' . $filename . '\')">Delete</button>' .
