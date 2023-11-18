@@ -113,7 +113,7 @@
                     url: 'save_changes.php',
                     data: { article_btn_background_color: color },
                     success: function (response) {
-                        alert('Font color changed successfully!');
+                        alert('Button Background color changed successfully!');
                     },
                     error: function (xhr, status, error) {
                         console.error('Error changing font color:', error);
