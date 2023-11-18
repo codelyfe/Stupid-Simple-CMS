@@ -93,7 +93,7 @@
     <body>
     <?php require_once 'layout/body-admin.php'; ?>
     <br /><br />
-    <h1 class="mx-auto" style="text-align: center;">Add Article <br /><a href="design-blog.php" class="btn btn-success"><i class="fa-solid fa-brush"></i> Design Blog</a> <a href="admin-edit.php" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i> Edit Articles</a> <a href="index.php" class="btn btn-warning">Blog <i class="fa-regular fa-rectangle-list"></i></a></h1>
+    <h1 class="mx-auto" style="text-align: center;">Add Article <br /><a href="design-blog.php" class="btn btn-dark"><i class="fa-solid fa-brush" style="color: #ffc107;"></i> Design Blog</a> <a href="admin-edit.php" class="btn btn-dark"><i class="fa-solid fa-pen-to-square" style="color: #ffc107;"></i> Edit Articles</a> <a href="index.php" class="btn btn-dark"><i class="fa-regular fa-rectangle-list" style="color: #ffc107;"></i> Blog</a></h1>
 
     <?php if (isset($error_message)): ?>
         <div class="alert alert-danger" role="alert">
@@ -108,7 +108,7 @@
         <label for="content">Content:</label>
         <textarea placeholder="What story can we share?" id="content" name="content" class="form-control" required></textarea>
 
-        <label for="image_url"><i class="fa-solid fa-image"></i> Image URL: Save on space and bandwidth using ( 3rd Party ) <a href="https://imgbb.com" target="_blank">Upload Images Here</a></label>
+        <label for="image_url"><i class="fa-solid fa-image"></i> Image URL: Save on space and bandwidth using ( 3rd Party ) <a href="https://imgbb.com" style="color: var(--bs-yellow);text-decoration: none;font-weight: 500;" target="_blank">Upload Images Here</a></label>
         <input type="text" id="image_url" name="image_url" class="form-control" placeholder="https://i.ibb.co/D8ZdBrd/bear-8364583-1280.png">
 
         <label for="category">Category:</label>
