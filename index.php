@@ -467,7 +467,7 @@
         .article {
             margin-bottom: 20px;
             /*background: white;*/
-            color: black;
+            /*color: black;*/
             border-radius: 10px;
         }
     </style>
