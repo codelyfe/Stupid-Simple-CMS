@@ -42,7 +42,7 @@
     <body class="text-center">
         <?php require_once 'layout/body-admin.php'; ?>
         <br /><br />
-        <h1 class="mb-4">Article Editor <br /> <a href="add-article.php" class="btn btn-primary">Submit an Article <i class="fa-solid fa-feather"></i></a> <a href="index.php" class="btn btn-warning"><?php echo $blogbutton; ?></a></h1>
+        <h1 class="mb-4">Article Editor <br /> <a href="add-article.php" class="btn btn-dark"><i class="fa-solid fa-feather" style="color: #ffc107;"></i> Submit an Article</a> <a href="index.php" class="btn btn-dark"><i class='fa-regular fa-rectangle-list' style="color: #ffc107;"></i> <?php echo $blogbutton; ?></a></h1>
 
         <div class="mx-auto" style="max-width: 800px;">
             <!-- Search Bar -->

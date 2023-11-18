@@ -2,9 +2,9 @@
 // ADMIN
 $admintitle = "<i class='fa-solid fa-blog'></i> (ADMIN) Stupid Simple CMS ( BETA )";
 $loginpagegreeting = "Join the virtual story today!";
-$submitanarticle = "Submit an Article <i class='fa-solid fa-feather'></i>";
+$submitanarticle = "Submit an Article";
 $logoutbutton = "Logout <i class='fa-solid fa-right-from-bracket'></i>";
-$blogbutton = "Blog <i class='fa-regular fa-rectangle-list'></i>";
+$blogbutton = "Blog";
 // USER
 $sitetitle = "<i class='fa-solid fa-blog'></i> Stupid Simple CMS ( BETA )";
 $category = "Category: ";
