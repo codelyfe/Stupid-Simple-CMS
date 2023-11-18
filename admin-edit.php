@@ -40,7 +40,7 @@
         <?php require_once 'layout/header-admin.php'; ?>
     </head>
     <body class="text-center">
-        <?php require_once 'layout/body-admin.php'; ?>
+        <?php require_once 'layout/navbar-admin.php'; ?>
         <br /><br />
         <h1 class="mb-4">Article Editor <br /> <a href="add-article.php" class="btn btn-dark"><i class="fa-solid fa-feather" style="color: #ffc107;"></i> Submit an Article</a> <a href="index.php" class="btn btn-dark"><i class='fa-regular fa-rectangle-list' style="color: #ffc107;"></i> <?php echo $blogbutton; ?></a></h1>
 

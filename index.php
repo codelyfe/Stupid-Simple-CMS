@@ -494,7 +494,7 @@
   -->
 
 <!--| TEST CONTENT BELOW THIS LINE |-->
-<?php require_once 'layout/nav-bar.php'; ?>
+<?php require_once 'layout/navbar.php'; ?>
 <br /><br />
 
 <div class="mx-auto" style="max-width: 800px;"> <!-- Add mx-auto class and set max-width -->

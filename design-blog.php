@@ -26,7 +26,7 @@
     </head>
 
     <body>
-        <?php require_once 'layout/body-admin.php'; ?>
+        <?php require_once 'layout/navbar-admin.php'; ?>
         <br />
         <div class="container" style="background-color:white;padding:50px;border-radius:10px;">
             
