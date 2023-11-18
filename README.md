@@ -1,6 +1,10 @@
 # Stupid Simple CMS ( BETA )
  Stupid Simple CMS - Created to be simple. Blog posting CMS.
 
+```
+PHP: 7.4 - 8.0+
+```
+
  DEMO: https://shipwr3ck.com/blog/
 
 ![StupidSimpleCMS Logo](https://i.ibb.co/HpKWcSK/Screenshot-11-12-2023-20-34-08.png)
