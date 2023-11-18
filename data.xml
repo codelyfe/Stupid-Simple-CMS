@@ -2,7 +2,7 @@
 <content>
     <background>#000000</background>
     <fontcolor>#ffffff</fontcolor>
-    <article_background_color>#b071da</article_background_color>
+    <article_background_color>#000000</article_background_color>
     <article_btn_background_color>#6064d7</article_btn_background_color>
     <background_image>https://localhost/picture.jpg</background_image> 
     <article_btn_font_color>#ffffff</article_btn_font_color>

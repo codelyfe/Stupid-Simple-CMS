@@ -29,8 +29,11 @@
         <?php require_once 'layout/body-admin.php'; ?>
         <br />
         <div class="container" style="background-color:white;padding:50px;border-radius:10px;">
+            
             <h1 class="badge bg-dark" style="font-size: 60px;">Blog Design Panel</h1>
+            
             <br /><br />
+            
             <label for="font_color">
                 <h3><i class="fa-solid fa-gear"></i> Font Color:</h3><br />
             </label>
@@ -44,6 +47,7 @@
                 <h3><i class="fa-solid fa-gear"></i> Background Color:</h3><br />
             </label>
             <input class="form-control" type="color" id="background_color">
+  
             <br />
             <button class="btn btn-outline-dark" onclick="changeBackgroundColor()">Change Color</button><br><br>
             
