@@ -3,6 +3,7 @@
     <background>#cb9a9a</background>
     <fontcolor>#000000</fontcolor>
     <article_background_color>#9dced2</article_background_color>
+    <article_btn_background_color>#d52020</article_btn_background_color>
     <background_image>https://localhost/picture.jpg</background_image> 
     <!-- Other content here -->
 </content>

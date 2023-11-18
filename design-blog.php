@@ -65,11 +65,36 @@
             <input class="form-control" type="color" id="article_background_color">
             <br/>
             <button class="btn btn-outline-dark" onclick="changeArticleBackgroundColor()">Change Color</button><br><br>
-       
+
+            <hr/>
+            
+            <br/>
+            <label for="article_btn_background_color">
+            <h3><i class="fa-solid fa-gear"></i> Article Button Background Color:</h3>
+            </label><br/>
+            <input class="form-control" type="color" id="article_btn_background_color">
+            <br/>
+            <button class="btn btn-outline-dark" onclick="changeArticleBtnBackgroundColor()">Change Color</button><br><br>
+
 
         </div>
 
         <script>
+
+            function changeArticleBtnBackgroundColor() {
+                var color = $('#article_btn_background_color').val();
+                $.ajax({
+                    type: 'POST',
+                    url: 'save_changes.php',
+                    data: { article_btn_background_color: color },
+                    success: function (response) {
+                        alert('Font color changed successfully!');
+                    },
+                    error: function (xhr, status, error) {
+                        console.error('Error changing font color:', error);
+                    }
+                });
+            }
 
             function changeFontColor() {
                 var color = $('#font_color').val();
