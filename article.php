@@ -34,33 +34,103 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
         <script>
-            $(document).ready(function () {
-                $.ajax({
-                    type: 'GET',
-                    url: 'get_content.php',
-                    data: { element: 'background' },
-                    success: function (response) {
-                        $('body').css('background-color', response);
-                    },
-                    error: function (xhr, status, error) {
-                        console.error('Error fetching background color:', error);
-                    }
-                });
+    $(document).ready(function() {
 
-                $.ajax({
-                    type: 'GET',
-                    url: 'get_content.php',
-                    data: { element: 'background_image' },
-                    success: function (response) {
-                        console.log('Background image URL:', response); // Log received image URL
-                        $('body').css('background-image', 'url(' + response + ')');
-                    },
-                    error: function (xhr, status, error) {
-                        console.error('Error fetching background image:', error);
-                    }
-                });
+      $.ajax({
+            type: 'GET',
+            url: 'get_content.php',
+            data: { element: 'background_image' },
+            success: function(response) {
+                console.log('Background image URL:', response); // Log received image URL
+                $('body').css('background-image', 'url(' + response + ')');
+            },
+            error: function(xhr, status, error) {
+                console.error('Error fetching background image:', error);
+            }
+        });
+
+        $.ajax({
+            type: 'GET',
+            url: 'get_content.php',
+            data: { element: 'background' },
+            success: function(response) {
+                $('body').css('background-color', response);
+            },
+            error: function(xhr, status, error) {
+                console.error('Error fetching background color:', error);
+            }
+        });
+
+        $.ajax({
+            type: 'GET',
+            url: 'get_content.php',
+            data: { element: 'fontcolor' },
+            success: function(response) {
+                $('body').css('color', response);
+            },
+            error: function(xhr, status, error) {
+                console.error('Error fetching color:', error);
+            }
+        });
+
+        // Fetch current article background color from XML file
+        $.ajax({
+                type: 'GET',
+                url: 'get_content.php',
+                data: {
+                    element: 'article_background' // This should match the key in get_content.php
+                },
+                success: function(response) {
+                     console.log('DIV Background Color:', response);
+                    // Update the background color of .article elements
+                    $('.article').css('background-color', response);
+                    
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error fetching content:', error);
+                }
             });
-        </script>
+
+        //article-btn
+        $.ajax({
+                type: 'GET',
+                url: 'get_content.php',
+                data: {
+                    element: 'article_btn_background' // This should match the key in get_content.php
+                },
+                success: function(response) {
+                     console.log('DIV Button Background Color:', response);
+                    // Update the background color of .article elements
+                    $('.article-btn').css('background-color', response);
+                    
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error fetching content:', error);
+                }
+            });
+
+        //article-btn-font-color
+        $.ajax({
+                type: 'GET',
+                url: 'get_content.php',
+                data: {
+                    element: 'article_btnfc_background' // This should match the key in get_content.php
+                },
+                success: function(response) {
+                     console.log('DIV Button Font Color:', response);
+                    // Update the font color of .article elements
+                    $('.article-btn').css('color', response);
+                    
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error fetching content:', error);
+                }
+            });            
+
+
+
+    });
+    </script>
         <style>
             /* Add your custom styles here if needed */
 
