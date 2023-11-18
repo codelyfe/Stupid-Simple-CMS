@@ -84,4 +84,8 @@ Download and extract all of the files to your web server.
 ### Blog Designer ( Beta ) More features coming soon.
 ![StupidSimpleCMS1 Logo](https://i.ibb.co/VvrVjHZ/Screenshot-11-17-2023-17-59-41.png)
 
+### File Manager
+![StupidSimpleCMS1 Logo](https://i.ibb.co/yp4L8ky/Screenshot-11-18-2023-14-54-04.png)
+
+
 #### Created by Randal Burger ( codelyfe.github.io )
