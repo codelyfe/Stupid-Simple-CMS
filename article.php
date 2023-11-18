@@ -154,7 +154,7 @@
     </head>
 
     <body>
-        <?php require_once 'layout/body.php'; ?>
+        <?php require_once 'layout/navbar.php'; ?>
         <?php
         if ($articleId && file_exists($filename)) {
             ?>
