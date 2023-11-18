@@ -46,6 +46,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['js_content'])) {
 </form>
 
 </div>
-
+<?php require_once 'layout/footer.php'; ?>
 </body>
 </html>

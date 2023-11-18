@@ -195,6 +195,7 @@
 
         <!-- Bootstrap JS (optional) -->
         <script src="vendors/bootstrap-5.3.0/bootstrap@5.3.0_dist_js_bootstrap.bundle.min.js"></script>
+        <?php require_once 'layout/footer.php'; ?>
     </body>
 
     </html>
