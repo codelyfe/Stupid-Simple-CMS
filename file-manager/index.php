@@ -88,6 +88,17 @@
                 }
             });
         }
+
+        // Function to copy file URL to clipboard
+        function copyFileUrl(fileUrl) {
+            navigator.clipboard.writeText(fileUrl)
+                .then(() => {
+                    alert('File URL copied to clipboard: ' + fileUrl);
+                })
+                .catch(err => {
+                    console.error('Failed to copy: ', err);
+                });
+        }
     </script>
 </body>
 </html>
