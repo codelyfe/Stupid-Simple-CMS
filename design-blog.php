@@ -28,10 +28,11 @@
     <body>
         <?php require_once 'layout/navbar-admin.php'; ?>
         <br />
+        <h1 class="mx-auto" style="text-align: center;color:white;">Blog Design Panel <br /><a href="add-article.php" class="btn btn-dark"><i class="fa-solid fa-feather" style="color: #ffc107;"></i> Add Article</a> <a href="admin-edit.php" class="btn btn-dark"><i class="fa-solid fa-pen-to-square" style="color: #ffc107;"></i> Edit Articles</a> <a href="index.php" class="btn btn-dark"><i class="fa-regular fa-rectangle-list" style="color: #ffc107;"></i> Blog</a></h1>
+        <br />
         <div class="container" style="background-color:white;padding:50px;border-radius:10px;">
-            
-            <h1 class="badge bg-dark" style="font-size: 60px;">Blog Design Panel</h1>
-            
+
+
             <br /><br />
             
             <label for="font_color">
