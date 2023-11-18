@@ -71,4 +71,7 @@ Download and extract all of the files to your web server.
 ### ADA Compliant Toolset
 ![StupidSimpleCMS1 Logo](https://i.ibb.co/fFfx8yP/Screenshot-11-12-2023-20-56-26.png)
 
+### Blog Designer ( Beta ) More features coming soon.
+![StupidSimpleCMS1 Logo](https://i.ibb.co/VvrVjHZ/Screenshot-11-17-2023-17-59-41.png)
+
 #### Created by Randal Burger ( codelyfe.github.io )
