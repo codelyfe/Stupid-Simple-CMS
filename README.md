@@ -54,7 +54,7 @@ Download and extract all of the files to your web server.
 - View Article on seperate page
 - Simple Blog Designer ( More features coming soon )
 ```
--- Font Color
+-- Font Color ( Body )
 -- Background Color ( Body )
 -- Background image ( Body )
 -- Background Color ( .article ) 
