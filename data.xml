@@ -2,8 +2,8 @@
 <content>
     <background>#000000</background>
     <fontcolor>#000000</fontcolor>
-    <article_background_color>#000000</article_background_color>
-    <article_btn_background_color>#000000</article_btn_background_color>
+    <article_background_color>#c525d0</article_background_color>
+    <article_btn_background_color>#307218</article_btn_background_color>
     <article_btn_font_color>#ffffff</article_btn_font_color>
     <background_image>https://localhost/picture.jpg</background_image> 
     <!-- Other content here -->

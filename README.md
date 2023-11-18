@@ -60,6 +60,8 @@ Download and extract all of the files to your web server.
 -- Background Color ( .article ) 
 -- Background Color ( .article-btn ) 
 -- Font Color ( .article-btn ) 
+
+* Settings are stored in data.xml *
 ```
 
 ### Adding an Article
