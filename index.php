@@ -1451,5 +1451,7 @@ if (window.NodeList && !NodeList.prototype.forEach) {
     <!--| ===============END================ |-->
     <!--| ================================== |-->
     <!--| ================================== |-->
+    <script src="js/custom.js"></script>
+
   </body>
 </html>
