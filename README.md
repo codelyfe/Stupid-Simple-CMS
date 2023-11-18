@@ -59,6 +59,7 @@ Download and extract all of the files to your web server.
 -- Background image ( Body )
 -- Background Color ( .article ) 
 -- Background Color ( .article-btn ) 
+-- Font Color ( .article-btn ) 
 ```
 
 ### Adding an Article

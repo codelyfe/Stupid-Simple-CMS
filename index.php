@@ -95,6 +95,23 @@
                 }
             });
 
+        //article-btn-font-color
+        $.ajax({
+                type: 'GET',
+                url: 'get_content.php',
+                data: {
+                    element: 'article_btnfc_background' // This should match the key in get_content.php
+                },
+                success: function(response) {
+                     console.log('DIV Button Font Color:', response);
+                    // Update the background color of .article elements
+                    $('.article-btn').css('color', response);
+                    
+                },
+                error: function(xhr, status, error) {
+                    console.error('Error fetching content:', error);
+                }
+            });            
 
 
 
