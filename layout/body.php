@@ -9,7 +9,11 @@ include "text-content/{$selectlang}.php";
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
         <a class="navbar-brand" href="../"><?php echo $sitetitle; ?></a>
-        <a class="navbar-link btn btn-dark" href="add-article.php"><i class='fa-solid fa-feather' style="color: #ffc107;"></i> <?php echo $submitanarticle; ?></a>
+
+        <?php
+        echo '<a class="navbar-link btn btn-dark" href="add-article.php"><i class="fa-solid fa-feather" style="color: #ffc107;"></i> '.$submitanarticle.'</a>';      
+        ?>
+
     </div>
 </nav>
 
