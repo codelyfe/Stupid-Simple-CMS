@@ -17,11 +17,12 @@
     <style>
         li{
             font-size: 26px;
-            background: black;
-            color: white;
+            background: var(--bs-gray-400);
+            color: black;
             padding: 20px;
             margin-bottom: 10px;
             border-radius: 10px;
+            list-style: none;
         }
     </style>
 </head>
