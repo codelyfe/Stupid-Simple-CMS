@@ -1,4 +1,4 @@
-# Stupid Simple CMS ( BETA )
+# Stupid Simple CMS ( BETA ) Version 1.0
  Stupid Simple CMS - Created to be simple. Blog posting CMS.
 
 ```
