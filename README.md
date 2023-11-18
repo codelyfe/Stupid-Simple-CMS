@@ -2,7 +2,7 @@
  Stupid Simple CMS - Created to be simple. Blog posting CMS.
 
 ```
-PHP: 7.4 - 8.0+
+PHP: 7.4 => 8.0+
 ```
 
  DEMO: https://shipwr3ck.com/blog/
