@@ -10,10 +10,10 @@ if ($files) {
             $filename = basename($file);
             $fileUrl = 'https://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/' . $uploadFolder . $filename;
 
-            $html .= '<li>' . $filename . 
-                     ' <button onclick="deleteFile(\'' . $filename . '\')">Delete</button>' .
-                     ' <button onclick="renameFile(\'' . $filename . '\', prompt(\'Enter new name:\', \'' . $filename . '\'))">Rename</button>' .
-                     ' <button onclick="copyFileUrl(\'' . $fileUrl . '\')">Copy URL</button>' .
+            $html .= '<li styl="float:right;">' . $filename . 
+                     ' <button class="btn btn-danger" onclick="deleteFile(\'' . $filename . '\')">Delete</button>' .
+                     ' <button class="btn btn-success" onclick="renameFile(\'' . $filename . '\', prompt(\'Enter new name:\', \'' . $filename . '\'))">Rename</button>' .
+                     ' <button class="btn btn-primary" onclick="copyFileUrl(\'' . $fileUrl . '\')">Copy URL</button>' .
                      '</li>';
         }
     }
