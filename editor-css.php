@@ -40,7 +40,7 @@
     ?>
 
     <form method="post" action="">
-        <textarea class="form-control" name="css_content" rows="10" cols="50"><?php echo $cssContent; ?></textarea>
+        <textarea style="background: black;color: var(--bs-teal);" class="form-control" name="css_content" rows="10" cols="50"><?php echo $cssContent; ?></textarea>
         <br>
         <input class="form-control" type="submit" value="Save CSS">
     </form>

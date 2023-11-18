@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['js_content'])) {
 ?>
 
 <form method="post" action="">
-    <textarea class="form-control" name="js_content" rows="10" cols="50"><?php echo $jsContent; ?></textarea>
+    <textarea style="background: black;color: var(--bs-teal);" class="form-control" name="js_content" rows="10" cols="50"><?php echo $jsContent; ?></textarea>
     <br>
     <input class="form-control" type="submit" value="Save JavaScript">
 </form>
