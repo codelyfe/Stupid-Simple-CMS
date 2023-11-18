@@ -103,16 +103,16 @@
 
     <form method="post" action="add-article.php">
         <label for="title">Title:</label>
-        <input type="text" id="title" name="title" class="form-control" required>
+        <input placeholder="Interesting Title" type="text" id="title" name="title" class="form-control" required>
 
         <label for="content">Content:</label>
-        <textarea id="content" name="content" class="form-control" required></textarea>
+        <textarea placeholder="What story can we share?" id="content" name="content" class="form-control" required></textarea>
 
-        <label for="image_url"><i class="fa-solid fa-image"></i> Image URL:</label>
-        <input type="text" id="image_url" name="image_url" class="form-control">
+        <label for="image_url"><i class="fa-solid fa-image"></i> Image URL: Save on space and bandwidth using ( 3rd Party ) <a href="https://imgbb.com" target="_blank">Upload Images Here</a></label>
+        <input type="text" id="image_url" name="image_url" class="form-control" placeholder="https://i.ibb.co/D8ZdBrd/bear-8364583-1280.png">
 
         <label for="category">Category:</label>
-        <input type="text" id="category" name="category" class="form-control">
+        <input placeholder="News" type="text" id="category" name="category" class="form-control">
 
         <button type="submit" class="btn btn-dark">Submit</button>
     </form>
