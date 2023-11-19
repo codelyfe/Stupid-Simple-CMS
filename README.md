@@ -1,4 +1,4 @@
-# Stupid Simple CMS ( BETA )
+# Stupid Simple CMS ( Blogger )
  Stupid Simple CMS - Created to be simple. Blog posting CMS.
 
 ```
@@ -27,7 +27,7 @@ Download and extract all of the files to your web server.
 
 - Text | text-centent/english.php - Text Variables
 
-- Style | style/global.php - Global CSS
+- Style | settings/global.php - Global Language Select
 
 - Style | layout/header.php - Global Header for Users
 
