@@ -11,10 +11,12 @@ if ($files) {
             $fileUrl = 'https://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/' . $uploadFolder . $filename;
 
             $html .= '<li>' . $filename . 
-                     ' <button class="btn btn-danger" onclick="deleteFile(\'' . $filename . '\')"><i class="fa-solid fa-trash"></i></button>' .
-                     ' <button class="btn btn-dark" onclick="copyFileUrl(\'' . $fileUrl . '\')"><i class="fa-regular fa-clipboard"></i></button>' .
-                     ' <button class="btn btn-dark" onclick="renameFile(\'' . $filename . '\', prompt(\'Enter new name:\', \'' . $filename . '\'))">Rename</button>' .
-                     '</li>';
+                    ' <div style="float: right;">' .
+                    '     <button class="btn btn-danger" onclick="deleteFile(\'' . $filename . '\')"><i class="fa-solid fa-trash"></i></button>' .
+                    '     <button class="btn btn-dark" onclick="copyFileUrl(\'' . $fileUrl . '\')"><i class="fa-regular fa-clipboard"></i></button>' .
+                    '     <button class="btn btn-dark" onclick="renameFile(\'' . $filename . '\', prompt(\'Enter new name:\', \'' . $filename . '\'))">Rename</button>' .
+                    ' </div>' .
+                    '</li>';
         }
     }
 }
