@@ -78,6 +78,31 @@
 
     </div>
 
+
+
+    
+    <div class="container" style="background-color:white;padding:50px;border-radius:10px;">
+
+    <code>
+    <?php
+    $filename = 'help.txt';
+    $fileContent = file_get_contents($filename);
+
+    // Check if the file content was read successfully
+    if ($fileContent !== false) {
+        echo nl2br($fileContent); // Use nl2br to display line breaks in HTML
+    } else {
+        echo 'Failed to read the file.';
+    }
+    ?> 
+    </code>
+
+    </div>
+
+
+
+
+
     <script>
         const form = document.getElementById('command-form');
         const output = document.getElementById('terminal-output');
