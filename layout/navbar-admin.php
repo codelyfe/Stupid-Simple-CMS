@@ -8,7 +8,7 @@ include "text-content/{$selectlang}.php";
 <!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="../">
+        <a class="navbar-brand" href="../blog.php">
             <?php echo $admintitle; ?>
         </a>
         <a class="navbar-link btn btn-danger" href="logout.php">
