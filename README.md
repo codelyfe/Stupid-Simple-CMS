@@ -97,5 +97,8 @@ Download and extract all of the files to your web server.
 ### Unlimited Theme Possibilities
 ![StupidSimpleCMS1 Logo](https://i.ibb.co/NndgSMZ/Screenshot-11-18-2023-18-37-53.png)
 
+### Terminal ( Beta )
+![StupidSimpleCMS1 Logo](https://i.ibb.co/BBgLDgw/Screenshot-11-18-2023-21-50-19.png)
+
 
 #### Created by Randal Burger ( codelyfe.github.io )
