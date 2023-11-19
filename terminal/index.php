@@ -39,7 +39,32 @@
 <br /><br/>
 <h1 class="mx-auto" style="text-align: center;color:white;">Terminal <br /><a href="../add-article.php" class="btn btn-dark"><i class="fa-solid fa-feather" style="color: #ffc107;"></i> Add Article</a> <a href="../design-blog.php" class="btn btn-dark"><i class="fa-solid fa-brush" style="color: #ffc107;"></i> Design Blog</a> <a href="../editor-js.php" class="btn btn-dark"><i class="fa-brands fa-js" style="color: #ffc107;"></i> Custom JS</a> <a href="../editor-css.php" class="btn btn-dark"><i class="fa-brands fa-css3" style="color: #ffc107;"></i> Custom CSS</a> <a href="../admin-edit.php" class="btn btn-dark"><i class="fa-solid fa-pen-to-square" style="color: #ffc107;"></i> Edit Articles</a> <a href="../index.php" class="btn btn-dark"><i class="fa-regular fa-rectangle-list" style="color: #ffc107;"></i> Blog</a></h1>
 <br />
+
     <div id="terminal">
+
+    <label for="directory-path">Directory Path:</label>
+    <input type="text" id="directory-path">
+    <button id="change-path">Change Path</button>
+
+    <script>
+        $(document).ready(function() {
+            $('#change-path').on('click', function() {
+                var newPath = $('#directory-path').val();
+                $.ajax({
+                    type: 'POST',
+                    url: 'save_directory.php',
+                    data: { path: newPath },
+                    success: function(response) {
+                        alert('Directory path updated successfully!');
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Error updating directory path:', error);
+                    }
+                });
+            });
+        });
+    </script>
+
         <pre id="terminal-output">
             <!-- Terminal output goes here -->
         </pre>
