@@ -18,7 +18,7 @@
         /* Terminal styles */
         #terminal {
             width: 80%;
-            height: 400px;
+            height: 500px;
             margin: 20px auto;
             border: 1px solid #ccc;
             overflow-y: auto;
