@@ -68,7 +68,7 @@ Download and extract all of the files to your web server.
 - File Manager ( Delete | Copy Url | Rename )
 
 ### Adding an Article
-![StupidSimpleCMS Logo](https://i.ibb.co/BccvTcB/Screenshot-11-12-2023-20-37-13.png)
+![StupidSimpleCMS Logo](https://i.ibb.co/nrLx0P4/Screenshot-11-18-2023-18-30-13.png)
 
 ### Edit or Delete Articles ( Ajax )
 ![StupidSimpleCMS0 Logo](https://i.ibb.co/CsHSjJh/Screenshot-11-12-2023-20-39-47.png)
