@@ -41,7 +41,7 @@
     
 
     <!-- Ace editor container -->
-    <div id="editor"  style="padding:50px;"></div>
+    <div id="editor"></div>
 
     <!-- Save button -->
     <button id="save-button">Save</button>
