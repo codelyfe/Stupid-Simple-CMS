@@ -38,8 +38,8 @@
     <br />
     <input class="form-control" type="file" id="fileInput">
     <br/>
-    <button class="form-control" onclick="uploadFile()">Upload</button>
-    <br/>
+    <button class="btn btn-dark form-control" onclick="uploadFile()">Upload</button>
+    <br/><br/>
     <ul id="fileList">
         <!-- List of files will be displayed here -->
     </ul>
