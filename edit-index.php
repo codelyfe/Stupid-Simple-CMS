@@ -38,16 +38,15 @@
     <br />
 
 
-    <div class="container" style="background:#2f3129;padding:50px;border-radius:10px;">
+    
 
     <!-- Ace editor container -->
     <div id="editor"></div>
 
     <!-- Save button -->
-    <br/>
-    <button class="btn btn-dark" id="save-button">Save</button>
+    <button id="save-button">Save</button>
 
-    </div>
+
 
     <script>
         window.onload = function() {
