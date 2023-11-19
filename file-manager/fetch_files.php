@@ -17,13 +17,13 @@ if ($files) {
             if (in_array($fileExtension, $imageExtensions)) {
                 // If it's an image file, display thumbnail
                 $html .= '<li>' . 
-                         ' <img src="' . $fileUrl . '" alt="' . $filename . '" style="max-width: 100px; max-height: 100px;"> ' . $filename .
-                         ' <div style="float: right;">' .
-                         '     <button class="btn btn-danger" onclick="deleteFile(\'' . $filename . '\')"><i class="fa-solid fa-trash"></i></button>' .
-                         '     <button class="btn btn-dark" onclick="copyFileUrl(\'' . $fileUrl . '\')"><i class="fa-regular fa-clipboard"></i></button>' .
-                         '     <button class="btn btn-dark" onclick="renameFile(\'' . $filename . '\', prompt(\'Enter new name:\', \'' . $filename . '\'))">Rename</button>' .
-                         ' </div>' .
-                         '</li>';
+                        ' <a href="' . $fileUrl . '" data-bs-toggle="modal" data-bs-target="#imageModal"><img src="' . $fileUrl . '" alt="' . $filename . '" style="max-width: 100px; max-height: 100px; cursor: pointer;" onclick="displayImageInModal(\'' . $fileUrl . '\')"></a> ' . $filename .
+                        ' <div style="float: right;">' .
+                        '     <button class="btn btn-danger" onclick="deleteFile(\'' . $filename . '\')"><i class="fa-solid fa-trash"></i></button>' .
+                        '     <button class="btn btn-dark" onclick="copyFileUrl(\'' . $fileUrl . '\')"><i class="fa-regular fa-clipboard"></i></button>' .
+                        '     <button class="btn btn-dark" onclick="renameFile(\'' . $filename . '\', prompt(\'Enter new name:\', \'' . $filename . '\'))">Rename</button>' .
+                        ' </div>' .
+                        '</li>';
             } else {
                 // For non-image files, display the filename without thumbnail
                 $html .= '<li>' . $filename . 

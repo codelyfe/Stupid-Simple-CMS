@@ -13,6 +13,7 @@
     <link rel="stylesheet" type="text/css" href="../css/custom.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <?php require_once '../layout/header-admin-fm.php'; ?>
     <style>
         li{
@@ -44,6 +45,27 @@
     </ul>
 
 </div>
+
+<!-- Bootstrap Modal for Image Zooming -->
+<div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <div class="modal-body">
+                <img src="" id="zoomedImage" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Handle modal image zooming
+    $('#imageModal').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);
+        var imageUrl = button.attr('href');
+        var modal = $(this);
+        modal.find('.modal-body #zoomedImage').attr('src', imageUrl);
+    });
+</script>
 
 
 
