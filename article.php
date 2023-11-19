@@ -182,7 +182,7 @@
                 </p>
 
                 <!-- Go Back Button -->
-                <a href="index.php" class="btn article-btn" style="float:right;">
+                <a href="blog.php" class="btn article-btn" style="float:right;">
                     <?php echo $goback; ?>
                 </a>
                 <br /><br />

@@ -63,7 +63,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6 col-lg-3 text-center">
-                    <div class="mx-auto service-box mt-5"><i class="fa fa-diamond fa-4x text-primary mb-3 sr-icons" data-aos="zoom-in" data-aos-duration="200" data-aos-once="true"></i>
+                    <div class="mx-auto service-box mt-5"><i class="fa fa-code fa-4x text-primary mb-3 sr-icons" data-aos="zoom-in" data-aos-duration="200" data-aos-once="true"></i>
                         <h3 class="mb-3">Custom JS Editor</h3>
                         <p class="text-muted mb-0">Our templates are updated regularly so they don't break.</p>
                     </div>
