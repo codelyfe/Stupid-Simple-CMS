@@ -1,5 +1,2 @@
 # Prevent directory listing
 Options -Indexes
-
-# Deny from all
-Deny from all

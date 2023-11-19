@@ -86,7 +86,12 @@ Download and extract all of the files to your web server.
 ![StupidSimpleCMS1 Logo](https://i.ibb.co/VvrVjHZ/Screenshot-11-17-2023-17-59-41.png)
 
 ### File Manager
-![StupidSimpleCMS1 Logo](https://i.ibb.co/yp4L8ky/Screenshot-11-18-2023-14-54-04.png)
+![StupidSimpleCMS1 Logo](https://i.ibb.co/pb9QsX0/Screenshot-11-18-2023-18-34-21.png)
 
+### Custom CSS3 Editor
+![StupidSimpleCMS1 Logo](https://i.ibb.co/BZmW4Rb/Screenshot-11-18-2023-18-32-01.png)
+
+### Custom JS Editor
+![StupidSimpleCMS1 Logo](https://i.ibb.co/F7KsRVk/Screenshot-11-18-2023-18-35-15.png)
 
 #### Created by Randal Burger ( codelyfe.github.io )
