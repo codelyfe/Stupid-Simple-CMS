@@ -48,7 +48,7 @@
             <!-- Terminal output goes here -->
         </pre>
         <form id="command-form" action="" method="post">
-            <input type="text" id="terminal-input" name="command" autofocus autocomplete="off">
+            <input type="text" id="terminal-input" name="command" autofocus autocomplete="off" placeholder="PRESS ENTER TO SUBMIT">
         </form>
         <br/>
         <label for="directory-path">Directory Path:</label>
