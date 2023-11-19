@@ -36,7 +36,7 @@
                 </div>
             </div>
             <div class="col-lg-8 mx-auto">
-                <p class="text-faded mb-5">We can help you build better websites using the Bootstrap CSS framework! Just download your template and start going, no strings attached!</p><a class="btn btn-primary btn-xl" role="button" href="#services">Find Out More</a>
+                <p class="text-faded mb-5">Download a copy of this CMS today!</p> <a class="btn btn-primary btn-xl" role="button" href="#services">Find Out More</a>
             </div>
         </div>
     </header>
@@ -64,25 +64,25 @@
             <div class="row">
                 <div class="col-md-6 col-lg-3 text-center">
                     <div class="mx-auto service-box mt-5"><i class="fa fa-diamond fa-4x text-primary mb-3 sr-icons" data-aos="zoom-in" data-aos-duration="200" data-aos-once="true"></i>
-                        <h3 class="mb-3">Sturdy Templates</h3>
+                        <h3 class="mb-3">Custom JS Editor</h3>
                         <p class="text-muted mb-0">Our templates are updated regularly so they don't break.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 text-center">
                     <div class="mx-auto service-box mt-5"><i class="fa fa-paper-plane fa-4x text-primary mb-3 sr-icons" data-aos="zoom-in" data-aos-duration="200" data-aos-delay="200" data-aos-once="true"></i>
-                        <h3 class="mb-3">Ready to Ship</h3>
+                        <h3 class="mb-3">Custom CSS3 Editor</h3>
                         <p class="text-muted mb-0">You can use this theme as is, or you can make changes!</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 text-center">
                     <div class="mx-auto service-box mt-5"><i class="fa fa-newspaper-o fa-4x text-primary mb-3 sr-icons" data-aos="zoom-in" data-aos-duration="200" data-aos-delay="400" data-aos-once="true"></i>
-                        <h3 class="mb-3">Up to Date</h3>
+                        <h3 class="mb-3">Terminal ( Server )</h3>
                         <p class="text-muted mb-0">We update dependencies to keep things fresh.</p>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-3 text-center">
                     <div class="mx-auto service-box mt-5"><i class="fa fa-heart fa-4x text-primary mb-3 sr-icons" data-aos="fade" data-aos-duration="200" data-aos-delay="600" data-aos-once="true"></i>
-                        <h3 class="mb-3">Made with Love</h3>
+                        <h3 class="mb-3">Homepage Editor</h3>
                         <p class="text-muted mb-0">You have to make your websites with love these days!</p>
                     </div>
                 </div>
