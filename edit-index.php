@@ -12,6 +12,9 @@
         header("location:login.php");
         exit;
     }
+    header("Cache-Control: no-cache, no-store, must-revalidate"); // HTTP 1.1.
+    header("Pragma: no-cache"); // HTTP 1.0.
+    header("Expires: 0"); // Proxies.
     ?>
 <!DOCTYPE html>
 <html>
@@ -34,7 +37,7 @@
 <body>
     <?php require_once 'layout/navbar-admin.php'; ?>
     <br /><br/>
-    <h1 class="mx-auto" style="text-align: center;color:white;"><i class="fa-solid fa-code" style="color: #ffc107;"></i>  Edit Homepage <br /><a href="add-article.php" class="btn btn-dark"><i class="fa-solid fa-feather" style="color: #ffc107;"></i> Add Article</a> <a href="design-blog.php" class="btn btn-dark"><i class="fa-solid fa-brush" style="color: #ffc107;"></i> Design Blog</a> <a href="editor-js.php" class="btn btn-dark"><i class="fa-brands fa-js" style="color: #ffc107;"></i> Custom JS</a> <a href="editor-css.php" class="btn btn-dark"><i class="fa-brands fa-css3" style="color: #ffc107;"></i> Custom CSS</a> <a href="admin-edit.php" class="btn btn-dark"><i class="fa-solid fa-pen-to-square" style="color: #ffc107;"></i> Edit Articles</a> <a href="blog.php" class="btn btn-dark"><i class="fa-regular fa-rectangle-list" style="color: #ffc107;"></i> Blog</a></h1>
+    <h1 class="mx-auto" style="text-align: center;color:white;"><i class="fa-solid fa-code" style="color: #ffc107;"></i>  Edit Homepage <br /><a href="index.php" class="btn btn-dark"><i class="fa-solid fa-home" style="color: #ffc107;"></i> Go to Homepage</a> <a href="add-article.php" class="btn btn-dark"><i class="fa-solid fa-feather" style="color: #ffc107;"></i> Add Article</a> <a href="design-blog.php" class="btn btn-dark"><i class="fa-solid fa-brush" style="color: #ffc107;"></i> Design Blog</a> <a href="editor-js.php" class="btn btn-dark"><i class="fa-brands fa-js" style="color: #ffc107;"></i> Custom JS</a> <a href="editor-css.php" class="btn btn-dark"><i class="fa-brands fa-css3" style="color: #ffc107;"></i> Custom CSS</a> <a href="admin-edit.php" class="btn btn-dark"><i class="fa-solid fa-pen-to-square" style="color: #ffc107;"></i> Edit Articles</a> <a href="index.php" class="btn btn-dark"><i class="fa-regular fa-rectangle-list" style="color: #ffc107;"></i> Blog</a></h1>
     <br />
 
 
@@ -85,5 +88,10 @@
             });
         };
     </script>
+
+
+
+
+
 </body>
 </html>

@@ -8,7 +8,7 @@ include "text-content/{$selectlang}.php";
 <!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="../blog.php"><?php echo $sitetitle; ?></a>
+        <a class="navbar-brand" href="../index.php"><?php echo $sitetitle; ?></a>
 
         <?php
         echo '<a class="navbar-link btn btn-dark" href="add-article.php"><i class="fa-solid fa-feather" style="color: #ffc107;"></i> '.$submitanarticle.'</a>';      
