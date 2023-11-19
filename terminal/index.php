@@ -81,7 +81,7 @@
 
 
     
-    <div class="container" style="background-color:white;padding:50px;border-radius:10px;">
+    <div class="container" style="background-color:white;padding:50px;border-radius:10px;margin-bottom:50px;">
 
     <code>
     <?php
