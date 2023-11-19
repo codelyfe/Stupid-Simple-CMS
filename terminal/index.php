@@ -28,9 +28,9 @@
         }
         #terminal-input {
             width: 100%;
-            background-color: transparent;
+            background-color: var(--bs-gray-500);
             border: none;
-            color: #fff;
+            color: var(--bs-black);
         }
     </style>
 </head>
@@ -42,28 +42,7 @@
 
     <div id="terminal">
 
-    <label for="directory-path">Directory Path:</label>
-    <input type="text" id="directory-path">
-    <button id="change-path">Change Path</button>
 
-    <script>
-        $(document).ready(function() {
-            $('#change-path').on('click', function() {
-                var newPath = $('#directory-path').val();
-                $.ajax({
-                    type: 'POST',
-                    url: 'save_directory.php',
-                    data: { path: newPath },
-                    success: function(response) {
-                        alert('Directory path updated successfully!');
-                    },
-                    error: function(xhr, status, error) {
-                        console.error('Error updating directory path:', error);
-                    }
-                });
-            });
-        });
-    </script>
 
         <pre id="terminal-output">
             <!-- Terminal output goes here -->
@@ -71,6 +50,32 @@
         <form id="command-form" action="" method="post">
             <input type="text" id="terminal-input" name="command" autofocus autocomplete="off">
         </form>
+        <br/>
+        <label for="directory-path">Directory Path:</label>
+        <input type="text" id="directory-path" placeholder="../">
+        <button class="btn btn-dark" id="change-path">Change Path</button>
+
+        <script>
+            $(document).ready(function() {
+                $('#change-path').on('click', function() {
+                    var newPath = $('#directory-path').val();
+                    $.ajax({
+                        type: 'POST',
+                        url: 'save_directory.php',
+                        data: { path: newPath },
+                        success: function(response) {
+                            alert('Directory path updated successfully!');
+                        },
+                        error: function(xhr, status, error) {
+                            console.error('Error updating directory path:', error);
+                        }
+                    });
+                });
+            });
+        </script>
+
+
+
     </div>
 
     <script>
