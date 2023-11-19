@@ -94,4 +94,8 @@ Download and extract all of the files to your web server.
 ### Custom JS Editor
 ![StupidSimpleCMS1 Logo](https://i.ibb.co/F7KsRVk/Screenshot-11-18-2023-18-35-15.png)
 
+### Unlimited Theme Possibilities
+![StupidSimpleCMS1 Logo](https://i.ibb.co/NndgSMZ/Screenshot-11-18-2023-18-37-53.png)
+
+
 #### Created by Randal Burger ( codelyfe.github.io )
