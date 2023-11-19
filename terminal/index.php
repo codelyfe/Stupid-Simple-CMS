@@ -52,7 +52,7 @@
         </form>
         <br/>
         <label for="directory-path">Directory Path:</label>
-        <input type="text" id="directory-path" placeholder="../">
+        <input type="text" id="directory-path" placeholder="Example: ../">
         <button class="btn btn-dark" id="change-path">Change Path</button>
 
         <script>
