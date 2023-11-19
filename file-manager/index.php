@@ -18,8 +18,8 @@
     <style>
         li{
             font-size: 26px;
-            background: var(--bs-gray-400);
-            color: black;
+            background: var(--bs-gray-800);
+            color: white;
             padding: 20px;
             margin-bottom: 10px;
             border-radius: 10px;
