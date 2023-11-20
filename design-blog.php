@@ -58,7 +58,7 @@
             <label for="font_color">
                 <h3><i class="fa-solid fa-gear"></i> Font Color ( body ):</h3><br />
             </label>
-            <input class="form-control" type="color" id="font_color">
+            <input class="form-control" type="color" id="font_color"  value="<?php echo $fontColor; ?>">
             <br />
             <button class="btn btn-outline-dark" onclick="changeFontColor()">Change Color</button><br><br>
             
@@ -86,7 +86,10 @@
             <label for="background_color">
                 <h3><i class="fa-solid fa-gear"></i> Background Color ( body ):</h3><br />
             </label>
-            <input class="form-control" type="color" id="background_color">
+ 
+      
+            <input class="form-control" type="color" id="background_color" name="background_color" value="<?php echo $bgColor; ?>">
+
   
             <br />
             <button class="btn btn-outline-dark" onclick="changeBackgroundColor()">Change Color</button><br><br>
@@ -145,7 +148,7 @@
             <label for="article_background_color">
             <h3><i class="fa-solid fa-gear"></i> Article Background Color ( .article ):</h3>
             </label><br/>
-            <input class="form-control" type="color" id="article_background_color">
+            <input class="form-control" type="color" id="article_background_color"  value="<?php echo $artbgColor; ?>">
             <br/>
             <button class="btn btn-outline-dark" onclick="changeArticleBackgroundColor()">Change Color</button><br><br>
 
@@ -175,7 +178,7 @@
             <label for="article_btn_background_color">
             <h3><i class="fa-solid fa-gear"></i> Article Button Background Color ( .article-btn ):</h3>
             </label><br/>
-            <input class="form-control" type="color" id="article_btn_background_color">
+            <input class="form-control" type="color" id="article_btn_background_color"  value="<?php echo $articlebtnbackgroundcolor; ?>">
             <br/>
             <button class="btn btn-outline-dark" onclick="changeArticleBtnBackgroundColor()">Change Color</button><br><br>
 
@@ -206,7 +209,7 @@
             <label for="article_btn_font_color">
             <h3><i class="fa-solid fa-gear"></i> Article Button Font Color ( .article-btn ):</h3>
             </label><br/>
-            <input class="form-control" type="color" id="article_btn_font_color">
+            <input class="form-control" type="color" id="article_btn_font_color"  value="<?php echo $articlebtnfontcolor; ?>">
             <br/>
             <button class="btn btn-outline-dark" onclick="changeArticleBtnFontColor()">Change Color</button><br><br>
 
