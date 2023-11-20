@@ -37,7 +37,7 @@
             
             <?php
             // Path to your XML file
-            $xmlFile = 'data.xml';
+            $xmlFile = 'theme.xml';
 
             // Load XML file
             $xml = simplexml_load_file($xmlFile);
@@ -66,7 +66,7 @@
 
             <?php
             // Path to your XML file
-            $xmlFile = 'data.xml';
+            $xmlFile = 'theme.xml';
 
             // Load XML file
             $xml = simplexml_load_file($xmlFile);
@@ -98,7 +98,7 @@
             
             <?php
             // Path to your XML file
-            $xmlFile = 'data.xml';
+            $xmlFile = 'theme.xml';
 
             // Load XML file
             $xml = simplexml_load_file($xmlFile);
@@ -129,7 +129,7 @@
 
             <?php
             // Path to your XML file
-            $xmlFile = 'data.xml';
+            $xmlFile = 'theme.xml';
 
             // Load XML file
             $xml = simplexml_load_file($xmlFile);
@@ -159,7 +159,7 @@
 
             <?php
             // Path to your XML file
-            $xmlFile = 'data.xml';
+            $xmlFile = 'theme.xml';
 
             // Load XML file
             $xml = simplexml_load_file($xmlFile);
@@ -189,7 +189,7 @@
 
             <?php
             // Path to your XML file
-            $xmlFile = 'data.xml';
+            $xmlFile = 'theme.xml';
 
             // Load XML file
             $xml = simplexml_load_file($xmlFile);

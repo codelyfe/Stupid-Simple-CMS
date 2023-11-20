@@ -9,7 +9,7 @@
     if ($_SERVER['REQUEST_METHOD'] === 'GET' && isset($_GET['element'])) {
         $element = $_GET['element'];
 
-        $xmlFile = 'data.xml'; // Replace with your XML file path
+        $xmlFile = 'theme.xml'; // Replace with your XML file path
         $xml = simplexml_load_file($xmlFile);
 
         switch ($element) {
