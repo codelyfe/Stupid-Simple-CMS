@@ -35,6 +35,26 @@
 
             <br /><br />
             
+            <?php
+            // Path to your XML file
+            $xmlFile = 'data.xml';
+
+            // Load XML file
+            $xml = simplexml_load_file($xmlFile);
+
+            if ($xml !== false) {
+
+                // fontcolor
+                $fontColor = (string)$xml->fontcolor;
+                echo 'Font Color: ' . $fontColor . '<br>';
+                
+
+
+            } else {
+                echo 'Failed to load XML file.';
+            }
+            ?>
+
             <label for="font_color">
                 <h3><i class="fa-solid fa-gear"></i> Font Color ( body ):</h3><br />
             </label>
@@ -43,6 +63,25 @@
             <button class="btn btn-outline-dark" onclick="changeFontColor()">Change Color</button><br><br>
             
             <hr/>
+
+            <?php
+            // Path to your XML file
+            $xmlFile = 'data.xml';
+
+            // Load XML file
+            $xml = simplexml_load_file($xmlFile);
+
+            if ($xml !== false) {
+                // Background Color
+                $bgColor = (string)$xml->background;
+                echo 'Background: ' . $bgColor . '<br>';
+
+
+
+            } else {
+                echo 'Failed to load XML file.';
+            }
+            ?>
             
             <label for="background_color">
                 <h3><i class="fa-solid fa-gear"></i> Background Color ( body ):</h3><br />
@@ -54,6 +93,25 @@
             
             <hr/>
             
+            <?php
+            // Path to your XML file
+            $xmlFile = 'data.xml';
+
+            // Load XML file
+            $xml = simplexml_load_file($xmlFile);
+
+            if ($xml !== false) {
+
+            // background_image
+            $backgroundimage = (string)$xml->background_image;
+            echo 'Background Image: ' . $backgroundimage . '<br>';
+
+            } else {
+                echo 'Failed to load XML file.';
+            }
+            ?>
+
+
             <label for="background_image">
                 <h3><i class="fa-solid fa-gear"></i> Background Image URL ( body ):</h3><br /> ( Note: Add <b>https://localhost/picture.jpg</b> to disable background image. )<br/> Use transparent images for flexable color schemes.
             </label>
@@ -64,6 +122,26 @@
             <hr/>
             
             <br/>
+
+            <?php
+            // Path to your XML file
+            $xmlFile = 'data.xml';
+
+            // Load XML file
+            $xml = simplexml_load_file($xmlFile);
+
+            if ($xml !== false) {
+
+                // article_background_color
+                $artbgColor = (string)$xml->article_background_color;
+                echo 'Article Background Color: ' . $artbgColor . '<br>';
+
+
+            } else {
+                echo 'Failed to load XML file.';
+            }
+            ?>
+
             <label for="article_background_color">
             <h3><i class="fa-solid fa-gear"></i> Article Background Color ( .article ):</h3>
             </label><br/>
@@ -74,6 +152,26 @@
             <hr/>
             
             <br/>
+
+            <?php
+            // Path to your XML file
+            $xmlFile = 'data.xml';
+
+            // Load XML file
+            $xml = simplexml_load_file($xmlFile);
+
+            if ($xml !== false) {
+
+            // article_btn_background_color
+            $articlebtnbackgroundcolor = (string)$xml->article_btn_background_color;
+            echo ' Article Button Background Color: ' . $articlebtnbackgroundcolor . '<br>';
+
+
+            } else {
+                echo 'Failed to load XML file.';
+            }
+            ?>
+
             <label for="article_btn_background_color">
             <h3><i class="fa-solid fa-gear"></i> Article Button Background Color ( .article-btn ):</h3>
             </label><br/>
@@ -84,6 +182,27 @@
             <hr/>
             
             <br/>
+
+            <?php
+            // Path to your XML file
+            $xmlFile = 'data.xml';
+
+            // Load XML file
+            $xml = simplexml_load_file($xmlFile);
+
+            if ($xml !== false) {
+
+            // Article Button Font Color
+            $articlebtnfontcolor = (string)$xml->article_btn_font_color;
+            echo 'Article Button Font Color: ' . $articlebtnfontcolor . '<br>';
+
+
+            } else {
+                echo 'Failed to load XML file.';
+            }
+            ?>
+
+
             <label for="article_btn_font_color">
             <h3><i class="fa-solid fa-gear"></i> Article Button Font Color ( .article-btn ):</h3>
             </label><br/>
