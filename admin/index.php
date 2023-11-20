@@ -16,7 +16,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Site Settings</title>
+    <title>General Blog Settings</title>
     <link rel="stylesheet" type="text/css" href="../css/custom.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -34,10 +34,10 @@
 
     <form id="settings-form">
         <label for="site-title">Site Title:</label>
-        <input type="text" id="site-title" name="site-title" /><br><br>
+        <input class="form-control" type="text" id="site-title" name="site-title" /><br><br>
         
         <label for="copyright-info">Copyright Info:</label>
-        <input type="text" id="copyright-info" name="copyright-info" /><br><br>
+        <input class="form-control" type="text" id="copyright-info" name="copyright-info" /><br><br>
         
         <button class="btn btn-dark" type="submit">Save Settings</button>
     </form>
