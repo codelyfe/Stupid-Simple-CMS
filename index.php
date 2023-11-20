@@ -592,6 +592,9 @@
 
 <?php require_once 'layout/footer.php'; ?>
 
+<footer>
+<?php echo $siteCopyright; ?>
+</footer>
 
   <!--| TEST CONTENT ABOVE THIS LINE |-->
   <!--
