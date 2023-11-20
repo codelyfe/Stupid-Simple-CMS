@@ -114,6 +114,7 @@
             }
             ?>
 
+            <img src="<?php echo $backgroundimage; ?>" width="25%" /><br/><br/>
 
             <label for="background_image">
                 <h3><i class="fa-solid fa-gear"></i> Background Image URL ( body ):</h3><br /> ( Note: Add <b>https://localhost/picture.jpg</b> to disable background image. )<br/> Use transparent images for flexable color schemes.
