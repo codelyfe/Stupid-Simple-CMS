@@ -107,7 +107,7 @@
 
             // background_image
             $backgroundimage = (string)$xml->background_image;
-            echo 'Background Image: ' . $backgroundimage . '<br>';
+            //echo 'Background Image: ' . $backgroundimage . '<br>';
 
             } else {
                 echo 'Failed to load XML file.';
@@ -119,7 +119,7 @@
             <label for="background_image">
                 <h3><i class="fa-solid fa-gear"></i> Background Image URL ( body ):</h3><br /> ( Note: Add <b>https://localhost/picture.jpg</b> to disable background image. )<br/> Use transparent images for flexable color schemes.
             </label>
-            <input class="form-control" type="text" id="background_image_url" placeholder="URL Goes here...">
+            <input class="form-control" type="text" id="background_image_url" placeholder="<?php echo $backgroundimage; ?>">
             <br />
             <button class="btn btn-outline-dark" onclick="changeBackgroundImage()">Change Image</button><br><br>
             
