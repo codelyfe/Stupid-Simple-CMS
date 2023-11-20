@@ -1,4 +1,11 @@
 <?php
+    /*
+    ┏┓┏┓┳┓┏┓┓ ┓┏┏┓┏┓
+    ┃ ┃┃┃┃┣ ┃ ┗┫┣ ┣ 
+    ┗┛┗┛┻┛┗┛┗┛┗┛┻ ┗┛
+    */              
+    ?>
+<?php
 $uploadFolder = 'uploads/';
 
 if (isset($_FILES['file'])) {

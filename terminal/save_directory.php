@@ -1,4 +1,11 @@
 <?php
+    /*
+    ┏┓┏┓┳┓┏┓┓ ┓┏┏┓┏┓
+    ┃ ┃┃┃┃┣ ┃ ┗┫┣ ┣ 
+    ┗┛┗┛┻┛┗┛┗┛┗┛┻ ┗┛
+    */              
+    ?>
+<?php
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['path'])) {
     $newPath = $_POST['path'];
     
