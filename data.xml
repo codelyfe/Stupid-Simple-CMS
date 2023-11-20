@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <content>
-    <background>#cf2626</background>
+    <background>#000000</background>
     <fontcolor>#833434</fontcolor>
     <article_background_color>#ffffff</article_background_color>
     <article_btn_background_color>#6064d7</article_btn_background_color>
-    <background_image>https://cdn.pixabay.com/photo/2023/07/15/20/28/background-8129599_1280.jpg</background_image> 
+    <background_image>https://cdn.pixabay.com/photo/2023/09/16/18/18/wallpaper-8257343_1280.png</background_image> 
     <article_btn_font_color>#ffffff</article_btn_font_color>
 </content>
