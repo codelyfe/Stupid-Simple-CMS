@@ -133,7 +133,10 @@
     </script>
         <style>
             /* Add your custom styles here if needed */
-
+            body{
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                }
 
             .article {
                 max-width: 600px;
