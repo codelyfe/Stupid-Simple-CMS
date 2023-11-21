@@ -93,7 +93,13 @@
     <body>
     <?php require_once 'layout/navbar-admin.php'; ?>
     <br /><br />
-    <h1 class="mx-auto" style="text-align: center;">Add Article <br /><a href="../admin/" class="btn btn-dark"><i class="fa-solid fa-gear" style="color: #ffc107;"></i> General Settings</a> <a href="../terminal/" class="btn btn-dark"><i class="fa-solid fa-code" style="color: #ffc107;"></i> Terminal</a> <a href="../file-manager/" class="btn btn-dark"><i class="fa-solid fa-folder-open" style="color: #ffc107;"></i> File Manager</a> <a href="design-blog.php" class="btn btn-dark"><i class="fa-solid fa-brush" style="color: #ffc107;"></i> Design Blog</a> <a href="admin-edit.php" class="btn btn-dark"><i class="fa-solid fa-pen-to-square" style="color: #ffc107;"></i> Edit Articles</a> <a href="index.php" class="btn btn-dark"><i class="fa-regular fa-rectangle-list" style="color: #ffc107;"></i> Blog</a></h1>
+    <h1 class="mx-auto" style="text-align: center;">Add Article <br />
+    <a href="<?php echo $websiteUrl; ?>admin/" class="btn btn-dark"><i class="fa-solid fa-gear" style="color: #ffc107;"></i> General Settings</a> 
+    <a href="<?php echo $websiteUrl; ?>terminal/" class="btn btn-dark"><i class="fa-solid fa-code" style="color: #ffc107;"></i> Terminal</a> 
+    <a href="<?php echo $websiteUrl; ?>file-manager/" class="btn btn-dark"><i class="fa-solid fa-folder-open" style="color: #ffc107;"></i> File Manager</a> 
+    <a href="<?php echo $websiteUrl; ?>design-blog.php" class="btn btn-dark"><i class="fa-solid fa-brush" style="color: #ffc107;"></i> Design Blog</a> 
+    <a href="<?php echo $websiteUrl; ?>admin-edit.php" class="btn btn-dark"><i class="fa-solid fa-pen-to-square" style="color: #ffc107;"></i> Edit Articles</a> 
+    <a href="<?php echo $websiteUrl; ?>index.php" class="btn btn-dark"><i class="fa-regular fa-rectangle-list" style="color: #ffc107;"></i> Blog</a></h1>
     <br/>
     <?php if (isset($error_message)): ?>
         <div class="alert alert-danger" role="alert">
