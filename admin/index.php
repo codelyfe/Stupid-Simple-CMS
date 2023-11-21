@@ -36,8 +36,11 @@
         <label for="site-title">Site Title:</label>
         <input class="form-control" type="text" id="site-title" name="site-title" /><br><br>
         
-        <label for="copyright-info">Copyright Info:</label>
+        <label for="copyright-info">Copyright Url:</label>
         <input class="form-control" type="text" id="copyright-info" name="copyright-info" /><br><br>
+
+        <label for="website-url">Blog Url:</label>
+        <input class="form-control" type="text" id="website-url" name="website-url" /><br><br>
         
         <button class="btn btn-dark" type="submit">Save Settings</button>
     </form>
@@ -53,6 +56,7 @@
                 success: function(data) {
                     $('#site-title').val(data.title);
                     $('#copyright-info').val(data.copyright);
+                    $('#website-url').val(data.websiteurl);
                 },
                 error: function() {
                     console.log('Error fetching settings');

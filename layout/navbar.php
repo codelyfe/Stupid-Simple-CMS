@@ -15,6 +15,7 @@ $xml = simplexml_load_file($xmlFile);
 if ($xml !== false) {
 $siteTitle = (string)$xml->title;
 $siteCopyright = (string)$xml->copyright;
+$websiteUrl = (string)$xml->websiteurl;
 $currentYear = date('Y');
 } 
 else {
@@ -24,7 +25,7 @@ else {
 <!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="../index.php"><?php echo $siteTitle; ?></a>
+        <a class="navbar-brand" href="<?php echo $websiteUrl; ?>"><?php echo $siteTitle; ?></a>
 
         <?php
         echo '<a class="navbar-link btn btn-dark" href="add-article.php"><i class="fa-solid fa-feather" style="color: #ffc107;"></i> '.$submitanarticle.'</a>';      
