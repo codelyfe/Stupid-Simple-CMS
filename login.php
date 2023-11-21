@@ -145,7 +145,7 @@ function logLoginAttempt($username, $password)
       <?php echo $siteTitle; ?>
     </h1>
     <p class="mb-4" style="color:white;text-align: center;">
-      <?php echo $loginpagegreeting; ?>
+    <?php echo $greetingTxt; ?>
     </p>
   </div>
 

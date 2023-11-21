@@ -16,6 +16,7 @@ if ($xml !== false) {
 $siteTitle = (string)$xml->title;
 $siteCopyright = (string)$xml->copyright;
 $websiteUrl = (string)$xml->websiteurl;
+$greetingTxt = (string)$xml->greetingtxt;
 $currentYear = date('Y');
 } 
 else {

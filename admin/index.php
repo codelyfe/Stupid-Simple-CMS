@@ -48,6 +48,9 @@
 
         <label for="website-url">Blog Url ( Must end with / ):</label>
         <input class="form-control" type="text" id="website-url" name="website-url" /><br><br>
+
+        <label for="greeting-txt">Greeting Text ( Login Page ):</label>
+        <input class="form-control" type="text" id="greeting-txt" name="greeting-txt" /><br><br>
         
         <button class="btn btn-dark" type="submit">Save Settings</button>
     </form>
@@ -64,6 +67,7 @@
                     $('#site-title').val(data.title);
                     $('#copyright-info').val(data.copyright);
                     $('#website-url').val(data.websiteurl);
+                    $('#greeting-txt').val(data.greetingtxt);
                 },
                 error: function() {
                     console.log('Error fetching settings');

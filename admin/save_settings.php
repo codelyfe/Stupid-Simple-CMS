@@ -7,6 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $xml->title = $_POST['site-title'];
         $xml->copyright = $_POST['copyright-info'];
         $xml->websiteurl = $_POST['website-url'];
+        $xml->greetingtxt = $_POST['greeting-txt'];
 
         if ($xml->asXML($settingsFile)) {
             echo 'Settings saved successfully';
