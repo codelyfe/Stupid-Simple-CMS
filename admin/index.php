@@ -46,7 +46,7 @@
         <label for="copyright-info">Copyright Url:</label>
         <input class="form-control" type="text" id="copyright-info" name="copyright-info" /><br><br>
 
-        <label for="website-url">Blog Url:</label>
+        <label for="website-url">Blog Url ( Must end with / ):</label>
         <input class="form-control" type="text" id="website-url" name="website-url" /><br><br>
         
         <button class="btn btn-dark" type="submit">Save Settings</button>
