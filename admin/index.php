@@ -33,7 +33,7 @@
     <div class="container" style="background-color:white;padding:50px;border-radius:10px;">
 
     <form id="settings-form">
-        <label for="site-title">Site Title:</label>
+        <label for="site-title">Blog Title:</label>
         <input class="form-control" type="text" id="site-title" name="site-title" /><br><br>
         
         <label for="copyright-info">Copyright Url:</label>
