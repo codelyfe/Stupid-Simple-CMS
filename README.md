@@ -3,6 +3,7 @@
 
 ```
 PHP: 7.4 => 8.0+
+MYSQL: No Database Needed
 ```
 
  DEMO: https://shipwr3ck.com/blog/
