@@ -529,7 +529,7 @@
             <br />
             <?php if (!empty($article['image_url'])) : ?>
                 <a href="<?php echo $article['image_url']; ?>" data-bs-toggle="modal" data-bs-target="#imageModal">
-                  <img style="max-width: 100%; height: auto; background-position: center; background-repeat: no-repeat; background-size: cover; position: relative;" src="<?php echo $article['image_url']; ?>" alt="Article Image" class="img-fluid mb-3">
+                  <img style="width: 100%; height: auto; background-position: center; background-repeat: no-repeat; background-size: cover; position: relative;" src="<?php echo $article['image_url']; ?>" alt="Article Image" class="img-fluid mb-3">
                 </a>
             <?php endif; ?>
 
