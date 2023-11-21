@@ -132,12 +132,17 @@ function logLoginAttempt($username, $password)
       color: black;
     }
   </style>
+
+<?php require_once 'layout/header.php'; ?>
 </head>
 
+
+
 <body>
+<?php require_once 'layout/navbar.php'; ?>
   <div class="container">
     <h1 class="mb-4" style="color:white;text-align: center;margin-top:190px;">
-      <?php echo $sitetitle; ?>
+      <?php echo $siteTitle; ?>
     </h1>
     <p class="mb-4" style="color:white;text-align: center;">
       <?php echo $loginpagegreeting; ?>

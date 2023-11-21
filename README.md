@@ -1,4 +1,4 @@
-# Stupid Simple CMS ( Blogger )
+# (BETA) Stupid Simple CMS ( Blogger )
  Stupid Simple CMS - Created to be simple. Blog posting CMS.
 
 ```
