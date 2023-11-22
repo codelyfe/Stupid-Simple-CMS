@@ -24,6 +24,21 @@ Download and extract all of the files to your web server.
 - WWW/ <---- or 
 - htdocs/ <----
 
+
+### Edit site-settings.xml with the admin folder. ( Set WebsiteURL for website to work correct )
+
+```
+<?xml version="1.0"?>
+<settings>
+    <title>Stupid Simple CMS</title>
+    <copyright>Codelyfe.github.io</copyright>
+    <websiteurl>https://shipwr3ck.com/blog/</websiteurl>
+    <greetingtxt>Join the virtual story today!</greetingtxt>
+</settings>
+
+```
+
+
 ### Configure Site Settings
 
 - Text | text-centent/english.php - Text Variables
