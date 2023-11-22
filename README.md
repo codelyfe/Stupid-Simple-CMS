@@ -1,7 +1,7 @@
 # (BETA) Stupid Simple CMS ( Blogger )
  Stupid Simple CMS - Created to be simple. Blog posting CMS.
 
-### Last Updated: 11 - 21 - 2023
+### Last Updated: (11-21-2023)
 
 ```
 PHP: 7.4 => 8.0+
