@@ -35,7 +35,7 @@ Download and extract all of the files to your web server.
 <settings>
     <title>Stupid Simple CMS</title>
     <copyright>Codelyfe.github.io</copyright>
-    <websiteurl>shipwr3ck.com/blog/</websiteurl>
+    <websiteurl>https://shipwr3ck.com/blog/</websiteurl>
     <greetingtxt>Join the virtual story today!</greetingtxt>
 </settings>
 
