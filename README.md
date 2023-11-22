@@ -1,7 +1,7 @@
 # (BETA) Stupid Simple CMS ( Blogger )
  Stupid Simple CMS - Created to be simple. Blog posting CMS.
 
-### Last Updated: (11-21-2023)
+### Last Updated: (11-22-2023)
 
 ```
 PHP: 7.4 => 8.0+
@@ -30,12 +30,14 @@ Download and extract all of the files to your web server.
 
 ### Edit site-settings.xml within the admin folder. ( Set WebsiteURL for website to work correct )
 
+Leave out http:// or https://
+
 ```
 <?xml version="1.0"?>
 <settings>
     <title>Stupid Simple CMS</title>
     <copyright>Codelyfe.github.io</copyright>
-    <websiteurl>https://shipwr3ck.com/blog/</websiteurl>
+    <websiteurl>shipwr3ck.com/blog/</websiteurl>
     <greetingtxt>Join the virtual story today!</greetingtxt>
 </settings>
 
