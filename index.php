@@ -540,7 +540,7 @@
             <?php
               $qrurl = 'https://chart.googleapis.com/chart?cht=qr&chl=';    
               $are7 = '80x80';
-              echo '<img src="'.$qrurl.$websiteUrl.'/article.php?id='.$articleId.'&chs='.$are7.'&choe=UTF-8&chld=L|2" alt="">';
+              echo '<img src="'.$qrurl.$websiteUrl.'article.php?id='.$articleId.'&chs='.$are7.'&choe=UTF-8&chld=L|2" alt="">';
             ?> 
 
             <br />
