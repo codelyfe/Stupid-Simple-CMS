@@ -184,6 +184,14 @@
                     <?php echo $article['created_at']; ?>
                 </p>
 
+                <?php
+                $currentURL = $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+                $qrurl = 'https://chart.googleapis.com/chart?cht=qr&chl=http%3A%2F%2F';
+                $rssurl = htmlspecialchars($currentURL);
+                $are7 = '80x80';
+                echo '<img src="'.$qrurl.''.$rssurl.'&chs='.$are7.'&choe=UTF-8&chld=L|2" alt="">';
+                ?> 
+
                 <!-- Go Back Button -->
                 <a href="index.php" class="btn article-btn" style="float:right;">
                     <?php echo $goback; ?>
