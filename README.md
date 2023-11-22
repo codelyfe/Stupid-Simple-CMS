@@ -25,7 +25,7 @@ Download and extract all of the files to your web server.
 - htdocs/ <----
 
 
-### Edit site-settings.xml with the admin folder. ( Set WebsiteURL for website to work correct )
+### Edit site-settings.xml within the admin folder. ( Set WebsiteURL for website to work correct )
 
 ```
 <?xml version="1.0"?>
