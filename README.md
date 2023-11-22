@@ -102,7 +102,7 @@ Download and extract all of the files to your web server.
 ![StupidSimpleCMS1 Logo](https://i.ibb.co/BBgLDgw/Screenshot-11-18-2023-21-50-19.png)
 
 ### Share articles using QR code
-![StupidSimpleCMS1 Logo](https://i.ibb.co/BBgLDgw/Screenshot-11-18-2023-21-50-19.png)
+![StupidSimpleCMS1 Logo](https://i.ibb.co/Lr5GqdZ/Screenshot-11-21-2023-20-07-42.png)
 
 
 #### Created by Randal Burger ( codelyfe.github.io )
