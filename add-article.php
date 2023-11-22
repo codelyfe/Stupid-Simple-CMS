@@ -15,6 +15,8 @@
         exit;
     }
 
+    $username = $_SESSION['UserData']['Username'];
+
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $title = $_POST['title'];
         $content = $_POST['content'];
@@ -93,7 +95,8 @@
     <body>
     <?php require_once 'layout/navbar-admin.php'; ?>
     <br /><br />
-    <h1 class="mx-auto" style="text-align: center;">Add Article <br />
+    <p style="text-align: center;">Welcome, <?php echo htmlspecialchars($username); ?>! Are you ready to tell your story?</p>
+    <h1 class="mx-auto" style="text-align: center;">Add Article <br /> 
     <a href="<?php echo $websiteUrl; ?>admin/" class="btn btn-dark"><i class="fa-solid fa-gear" style="color: #ffc107;"></i> General Settings</a> 
     <a href="<?php echo $websiteUrl; ?>terminal/" class="btn btn-dark"><i class="fa-solid fa-code" style="color: #ffc107;"></i> Terminal</a> 
     <a href="<?php echo $websiteUrl; ?>file-manager/" class="btn btn-dark"><i class="fa-solid fa-folder-open" style="color: #ffc107;"></i> File Manager</a> 

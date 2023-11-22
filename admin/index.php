@@ -46,7 +46,7 @@
         <label for="copyright-info">Copyright Url:</label>
         <input class="form-control" type="text" id="copyright-info" name="copyright-info" /><br><br>
 
-        <label for="website-url">Blog Url ( Must end with / ):</label>
+        <label for="website-url">Blog Url: <br/>( Must end with / ( Ex. <b>https://your-url.com/blog/</b> or <b>https://your-url.com/</b> ) )</label><br/>
         <input class="form-control" type="text" id="website-url" name="website-url" /><br><br>
 
         <label for="greeting-txt">Greeting Text ( Login Page ):</label>
