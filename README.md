@@ -62,6 +62,9 @@ Download and extract all of the files to your web server.
         'admin2' => 'password'
     );
 ```
+
+### Updating to the newest version of Stupid Simple CMS consists of saving all the .xml files, your username and password array seen in example above, and the blog-posts folder until you upload the new version of Stupid Simple CMS to your website, then replacing the new .xml files with the ones you saved. 
+
 ### Features
 
 - ADA Compliant Tool
