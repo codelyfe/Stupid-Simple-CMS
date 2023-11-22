@@ -101,5 +101,8 @@ Download and extract all of the files to your web server.
 ### Terminal ( Beta )
 ![StupidSimpleCMS1 Logo](https://i.ibb.co/BBgLDgw/Screenshot-11-18-2023-21-50-19.png)
 
+### Share articles using QR code
+![StupidSimpleCMS1 Logo](https://i.ibb.co/BBgLDgw/Screenshot-11-18-2023-21-50-19.png)
+
 
 #### Created by Randal Burger ( codelyfe.github.io )
