@@ -538,10 +538,11 @@
 
 
             <?php
-              $qrurl = 'https://chart.googleapis.com/chart?cht=qr&chl=http%3A%2F%2F';    
+              $qrurl = 'https://chart.googleapis.com/chart?cht=qr&chl=';    
               $are7 = '80x80';
-              echo '<img src="'.$qrurl.$websiteUrl.'article.php?id='.$articleId.'&chs='.$are7.'&choe=UTF-8&chld=L|2" alt="">';
+              echo '<img src="'.$qrurl.$websiteUrl.'/article.php?id='.$articleId.'&chs='.$are7.'&choe=UTF-8&chld=L|2" alt="">';
             ?> 
+
             <br />
             <p class="text-muted badge bg-dark" style="color:white !important;"><?php echo $category; ?><?php echo $article['category']; ?></p>
             <p class="text-muted badge bg-dark" style="color:white !important;"><?php echo $createdat; ?><?php echo $article['created_at']; ?></p>
