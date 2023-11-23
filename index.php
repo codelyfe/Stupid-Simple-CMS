@@ -575,7 +575,7 @@ else {
 
             <!-- Social Buttons -->
             <a class="btn btn-secondary" href="#" onclick="copyToClipboard('<?php echo $websiteUrl; ?>article.php?id=<?php echo $articleId; ?>')" style="text-decoration: none;box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0), 0 1px 2px rgba(0, 0, 0, 0);border: 1px solid rgba(204, 204, 204, 0);border-bottom-color: rgba(179, 179, 179, 0);background-color: rgba(245, 245, 245, 0);background-image: linear-gradient(to bottom,rgba(255, 255, 255, 0),rgba(230, 230, 230, 0));">
-                <i class="fa fa-copy" style="color:black;font-size:30px;"></i>
+                <i class="fa-regular fa-clipboard" style="color:black;font-size:30px;"></i>
             </a>
             <a class="btn btn-secondary" style="text-decoration: none;box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0), 0 1px 2px rgba(0, 0, 0, 0);border: 1px solid rgba(204, 204, 204, 0);border-bottom-color: rgba(179, 179, 179, 0);background-color: rgba(245, 245, 245, 0);background-image: linear-gradient(to bottom,rgba(255, 255, 255, 0),rgba(230, 230, 230, 0));" href="https://www.facebook.com/sharer/sharer.php?app_id=113869198637480&sdk=joey&title=<?php echo $article['title']; ?>&u=<?php echo $websiteUrl; ?>article.php?id=<?php echo $articleId; ?>" target="_blank">
                 <i class="fa-brands fa-square-facebook" style="color:black;font-size:30px;"></i>
