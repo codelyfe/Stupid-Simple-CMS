@@ -45,6 +45,7 @@ else {
             
             <li><a href="<?php echo $websiteUrl; ?>admin-edit.php" class="dropdown-item"><i class="fa-solid fa-pen-to-square" style="color: #000000;"></i> Edit Articles</a></li> 
             <li><a href="<?php echo $websiteUrl; ?>index.php" class="dropdown-item"><i class="fa-regular fa-rectangle-list" style="color: #000000;"></i> Blog</a></li>
+            <li><a href="<?php echo $websiteUrl; ?>help/" class="dropdown-item"><i class="fa-solid fa-question" style="color: #000000;"></i> Help Desk</a></li>
             <li><hr class="dropdown-divider"></li>
 
             <li><a href="<?php echo $websiteUrl; ?>add-article.php" style="background: black;color: white;" class="dropdown-item"><i class="fa-solid fa-feather" style="color: #ffc107;"></i> Add Article</a></li>
