@@ -30,6 +30,7 @@
                 echo '<meta property="og:title" content="' . htmlspecialchars($article['title']) . '">';
                 echo '<meta property="og:description" content="' . htmlspecialchars(strip_tags($article['content'])) . '">';
                 echo '<meta property="og:image" content="' . htmlspecialchars(strip_tags($article['image_url'])) . '">'; // 
+                echo '<meta content="' . htmlspecialchars(strip_tags($article['image_url'])) . '" itemprop="image">';
             }
         }
         ?>
