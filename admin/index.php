@@ -64,15 +64,6 @@
         <button class="btn btn-dark" type="submit">Save Settings</button>
     </form>
 
-    <?php
-    //$descIndex = "Hello";
-
-     //echo '<meta name="description" content="' . $descIndex . '">';
-     //echo '<meta property="og:title" content="' . $descIndex . '">';
-     //echo '<meta property="og:description" content="' . $descIndex . '">';
-     //echo '<meta property="og:image" content="' . $descIndex . '">'; // 
-     //echo '<meta content="' . $descIndex . '" itemprop="image">';
-    ?>
     
     <script>
         $(document).ready(function() {
