@@ -55,7 +55,7 @@
 
                 // fontcolor
                 $fontColor = (string)$xml->fontcolor;
-                echo 'Font Color: ' . $fontColor . '<br>';
+                echo '<span class="badge bg-dark" style="float: right;padding: 12px;margin-bottom: 20px;">Font Color: <span style="color:#ffc107;">' . $fontColor . '</span></span><br>';
                 
 
 
@@ -83,7 +83,7 @@
             if ($xml !== false) {
                 // Background Color
                 $bgColor = (string)$xml->background;
-                echo 'Background: ' . $bgColor . '<br>';
+                echo '<span class="badge bg-dark" style="float: right;padding: 12px;margin-bottom: 20px;">Background: <span style="color:#ffc107;">' . $bgColor . '</span></span><br>';
 
 
 
@@ -147,7 +147,7 @@
 
                 // article_background_color
                 $artbgColor = (string)$xml->article_background_color;
-                echo 'Article Background Color: ' . $artbgColor . '<br>';
+                echo '<span class="badge bg-dark" style="float: right;padding: 12px;margin-bottom: 20px;">Article Background Color: <span style="color:#ffc107;">' . $artbgColor . '</span></span><br>';
 
 
             } else {
@@ -177,7 +177,7 @@
 
             // article_btn_background_color
             $articlebtnbackgroundcolor = (string)$xml->article_btn_background_color;
-            echo ' Article Button Background Color: ' . $articlebtnbackgroundcolor . '<br>';
+            echo '<span class="badge bg-dark" style="float: right;padding: 12px;margin-bottom: 20px;">Article Button Background Color: <span style="color:#ffc107;">' . $articlebtnbackgroundcolor . '</span></span><br>';
 
 
             } else {
@@ -207,7 +207,7 @@
 
             // Article Button Font Color
             $articlebtnfontcolor = (string)$xml->article_btn_font_color;
-            echo 'Article Button Font Color: ' . $articlebtnfontcolor . '<br>';
+            echo '<span class="badge bg-dark" style="float: right;padding: 12px;margin-bottom: 20px;">Article Button Font Color: <span style="color:#ffc107;">' . $articlebtnfontcolor . '</span></span><br>';
 
 
             } else {

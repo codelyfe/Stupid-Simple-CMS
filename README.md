@@ -92,6 +92,7 @@ Download and extract all of the files to your web server.
 - File Manager ( Delete | Copy Url | Rename )
 - QR Code for Articles
 - Help Desk
+- Share on social media
 
 ### Adding an Article
 ![StupidSimpleCMS Logo](https://i.ibb.co/nrLx0P4/Screenshot-11-18-2023-18-30-13.png)
@@ -131,5 +132,9 @@ Download and extract all of the files to your web server.
 
 ### Contact our help desk
 ![StupidSimpleCMS1 Logo](https://i.ibb.co/yn6qZ88/Screenshot-11-22-2023-22-56-41.png)
+
+### Social Sharing Buttons
+![StupidSimpleCMS1 Logo](https://i.ibb.co/CWyBQ9S/Screenshot-11-23-2023-09-06-18.png)
+
 
 #### Created by Randal Burger ( codelyfe.github.io )
