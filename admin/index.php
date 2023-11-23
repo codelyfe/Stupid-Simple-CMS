@@ -40,7 +40,7 @@
     <br />
     
 
-    <div class="container" style="background-color:white;padding:50px;border-radius:10px;">
+    <div class="container" style="background-color:white;padding:50px;border-radius:10px;margin-bottom:50px;">
 
     <form id="settings-form">
         <label for="site-title">Blog Title:</label>
@@ -61,7 +61,7 @@
         <label for="meta-img">Meta Image URL:</label>
         <input class="form-control" type="text" id="meta-img" name="meta-img" /><br><br>
         
-        <button class="btn btn-dark" type="submit">Save Settings</button>
+        <button class="btn btn-dark" type="submit" style="float: right;">Save Settings</button>
     </form>
 
     
