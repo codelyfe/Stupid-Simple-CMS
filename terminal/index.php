@@ -57,6 +57,9 @@
 
     <div id="terminal">
     <!-- | SPACE | -->
+
+
+
         <pre id="terminal-output">
             <!-- Terminal output goes here -->
         </pre>
@@ -67,6 +70,11 @@
         <label for="directory-path">Directory Path:</label>
         <input type="text" id="directory-path" placeholder="Example: ../">
         <button class="btn btn-dark" id="change-path">Change Path</button>
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn btn-light" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Windows OS Commands
+        </button>
 
         <script>
             $(document).ready(function() {
@@ -91,24 +99,41 @@
 
 
 
-    
-    <div class="container" style="background-color:white;padding:50px;border-radius:10px;margin-bottom:50px;">
 
-    <code>
-    <?php
-    $filename = 'help.txt';
-    $fileContent = file_get_contents($filename);
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">HELP</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" style="background: #1a1a1a;">
+           
 
-    // Check if the file content was read successfully
-    if ($fileContent !== false) {
-        echo nl2br($fileContent); // Use nl2br to display line breaks in HTML
-    } else {
-        echo 'Failed to read the file.';
-    }
-    ?> 
-    </code>
+            <code style="color:white;">
+                <?php
+                $filename = 'help.txt';
+                $fileContent = file_get_contents($filename);
 
+                // Check if the file content was read successfully
+                if ($fileContent !== false) {
+                    echo nl2br($fileContent); // Use nl2br to display line breaks in HTML
+                } else {
+                    echo 'Failed to read the file.';
+                }
+                ?> 
+            </code>
+
+        </div>
+        <div class="modal-footer">
+            <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Close</button>
+        </div>
+        </div>
     </div>
+    </div>
+    
+
 
 
 
