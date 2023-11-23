@@ -47,7 +47,7 @@ else {
             <li><a href="<?php echo $websiteUrl; ?>index.php" class="dropdown-item"><i class="fa-regular fa-rectangle-list" style="color: #000000;"></i> Blog</a></li>
             <li><hr class="dropdown-divider"></li>
 
-            <li><a href="<?php echo $websiteUrl; ?>add-article.php" class="dropdown-item"><i class="fa-solid fa-feather" style="color: #ffc107;"></i> Add Article</a></li>
+            <li><a href="<?php echo $websiteUrl; ?>add-article.php" style="background: black;color: white;" class="dropdown-item"><i class="fa-solid fa-feather" style="color: #ffc107;"></i> Add Article</a></li>
 
             <li><hr class="dropdown-divider"></li>
 
@@ -61,6 +61,3 @@ else {
 
     </div>
 </nav>
-
-
-
