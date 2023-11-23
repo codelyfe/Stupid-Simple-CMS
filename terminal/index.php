@@ -54,12 +54,9 @@
 <a href="<?php //echo $websiteUrl; ?>index.php" class="btn btn-dark"><i class="fa-regular fa-rectangle-list" style="color: #ffc107;"></i> Blog</a>
 -->
 </h1>
-<br />
 
     <div id="terminal">
-
-
-
+    <!-- | SPACE | -->
         <pre id="terminal-output">
             <!-- Terminal output goes here -->
         </pre>
@@ -89,9 +86,7 @@
                 });
             });
         </script>
-
-
-
+    <!-- | SPACE | -->
     </div>
 
 
