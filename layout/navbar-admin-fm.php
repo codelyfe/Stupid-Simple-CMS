@@ -35,7 +35,7 @@ else {
           <i class="fa-solid fa-gear" style="color: black;"></i> MENU
           </a>
           <ul class="dropdown-menu">
-            <li><a href="<?php echo $websiteUrl; ?>admin/" class="dropdown-item"><i class="fa-solid fa-gear" style="color: #000000;"></i> General Settings</a></li> 
+            <li><a href="<?php echo $websiteUrl; ?>admin/" class="dropdown-item"><i class="fa-solid fa-wrench" style="color: #000000;"></i> General Settings</a></li> 
             <li><a href="<?php echo $websiteUrl; ?>terminal/" class="dropdown-item"><i class="fa-solid fa-code" style="color: #000000;"></i> Terminal</a></li> 
             <li><a href="<?php echo $websiteUrl; ?>file-manager/" class="dropdown-item"><i class="fa-solid fa-folder-open" style="color: #000000;"></i> File Manager</a><l/i> 
             <li><a href="<?php echo $websiteUrl; ?>design-blog.php" class="dropdown-item"><i class="fa-solid fa-brush" style="color: #000000;"></i> Design Blog</a></li>
