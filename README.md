@@ -93,6 +93,7 @@ Download and extract all of the files to your web server.
 - QR Code for Articles
 - Help Desk
 - Share on social media
+- Meta Data Builder
 
 ### Adding an Article
 ![StupidSimpleCMS Logo](https://i.ibb.co/nrLx0P4/Screenshot-11-18-2023-18-30-13.png)
