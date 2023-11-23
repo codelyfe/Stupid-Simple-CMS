@@ -19,7 +19,7 @@ MYSQL: No Database Needed
 
    ----------
 
-Watch the video on YouTube: [Stupid Simple CMS](https://youtu.be/GXIfVdy0rN0)   
+Watch Demo on YouTube: [Stupid Simple CMS](https://youtu.be/BGoWF6s8YxU)   
 Donate: [Support The Developer](https://www.paypal.me/codelyfe) 
 
 
