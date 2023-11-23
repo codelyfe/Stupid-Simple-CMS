@@ -45,7 +45,7 @@
 
     
                 
-                    <form style="padding-top: 70px;" data-bss-recipient="3880bf3f1a582d89bf30ba7f2503f3a1">
+                    <form style="padding-top: 70px;" data-bss-recipient="bfee68937b5b1f5d74264de72b538b3e">
                         <div class="form-group mb-3">
                             <h1 class="text-center">Contact Stupid Simple CMS</h1>
                         </div>
