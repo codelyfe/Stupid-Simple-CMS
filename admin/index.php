@@ -54,11 +54,22 @@
 
         <label for="greeting-txt">Greeting Text ( Login Page ):</label>
         <input class="form-control" type="text" id="greeting-txt" name="greeting-txt" /><br><br>
+
+        <label for="meta-txt-desc">Meta Description:</label>
+        <input class="form-control" type="text" id="meta-txt-desc" name="meta-txt-desc" /><br><br>
         
         <button class="btn btn-dark" type="submit">Save Settings</button>
     </form>
 
-    
+    <?php
+    //$descIndex = "Hello";
+
+     //echo '<meta name="description" content="' . $descIndex . '">';
+     //echo '<meta property="og:title" content="' . $descIndex . '">';
+     //echo '<meta property="og:description" content="' . $descIndex . '">';
+     //echo '<meta property="og:image" content="' . $descIndex . '">'; // 
+     //echo '<meta content="' . $descIndex . '" itemprop="image">';
+    ?>
     
     <script>
         $(document).ready(function() {
@@ -71,6 +82,7 @@
                     $('#copyright-info').val(data.copyright);
                     $('#website-url').val(data.websiteurl);
                     $('#greeting-txt').val(data.greetingtxt);
+                    $('#meta-txt-desc').val(data.metatxtdesc);
                 },
                 error: function() {
                     console.log('Error fetching settings');

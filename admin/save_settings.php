@@ -8,6 +8,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $xml->copyright = $_POST['copyright-info'];
         $xml->websiteurl = $_POST['website-url'];
         $xml->greetingtxt = $_POST['greeting-txt'];
+        $xml->metatxtdesc = $_POST['meta-txt-desc'];
+        
 
         if ($xml->asXML($settingsFile)) {
             echo 'Settings saved successfully';

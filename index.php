@@ -5,10 +5,38 @@
 ┗┛┗┛┻┛┗┛┗┛┗┛┻ ┗┛
 */              
 ?>
+<?php
+// Path to your XML file
+$xmlFile = 'admin/site-settings.xml';
+
+// Load XML file
+$xml = simplexml_load_file($xmlFile);
+
+if ($xml !== false) {
+$siteTitle = (string)$xml->title;
+$siteCopyright = (string)$xml->copyright;
+$websiteUrl = (string)$xml->websiteurl;
+$metatxtdesc = (string)$xml->metatxtdesc;
+
+$currentYear = date('Y');
+} 
+else {
+ echo 'Failed to load XML file.';
+}
+?>
 <!DOCTYPE html>
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <?php
+     echo '<meta name="description" content="' . $metatxtdesc . '">';
+     echo '<meta property="og:title" content="' . $siteTitle . '">';
+     echo '<meta property="og:description" content="' . $metatxtdesc . '">';
+     //echo '<meta property="og:image" content="' . $descIndex . '">'; // 
+     //echo '<meta content="' . $descIndex . '" itemprop="image">';
+    ?>
+
     <link rel="stylesheet" type="text/css" href="css/custom.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">

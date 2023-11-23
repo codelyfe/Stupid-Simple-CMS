@@ -7,12 +7,16 @@ if ($xml) {
     $copyright = (string) $xml->copyright;
     $websiteurl = (string) $xml->websiteurl;
     $greetingtxt = (string) $xml->greetingtxt;
+    $metatxtdesc = (string) $xml->metatxtdesc;
+    
 
     $settings = array(
         'title' => $title,
         'copyright' => $copyright,
         'websiteurl' => $websiteurl,
-        'greetingtxt' => $greetingtxt
+        'greetingtxt' => $greetingtxt,
+        'metatxtdesc' => $metatxtdesc
+
     );
 
     header('Content-Type: application/json');
