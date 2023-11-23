@@ -57,6 +57,9 @@
 
         <label for="meta-txt-desc">Meta Description:</label>
         <input class="form-control" type="text" id="meta-txt-desc" name="meta-txt-desc" /><br><br>
+
+        <label for="meta-img">Meta Image URL:</label>
+        <input class="form-control" type="text" id="meta-img" name="meta-img" /><br><br>
         
         <button class="btn btn-dark" type="submit">Save Settings</button>
     </form>
@@ -83,6 +86,8 @@
                     $('#website-url').val(data.websiteurl);
                     $('#greeting-txt').val(data.greetingtxt);
                     $('#meta-txt-desc').val(data.metatxtdesc);
+                    $('#meta-img').val(data.metaimg);
+
                 },
                 error: function() {
                     console.log('Error fetching settings');

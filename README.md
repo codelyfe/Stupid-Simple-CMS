@@ -3,7 +3,7 @@
 
 ### Last Updated: (11-23-2023)
 
-## Version 1.2.0
+## Version 1.2.1
 
 ```
 PHP: 7.4 => 8.0+
@@ -39,6 +39,8 @@ Download and extract all of the files to your web server.
     <copyright>Codelyfe.github.io</copyright>
     <websiteurl>https://shipwr3ck.com/blog/</websiteurl>
     <greetingtxt>Join the virtual story today!</greetingtxt>
+    <metatxtdesc>Stupid simple CMS made for bloggers.</metatxtdesc>
+    <metaimg>https://image-url.com/duck.png</metaimg>
 </settings>
 
 ```

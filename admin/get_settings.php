@@ -8,6 +8,7 @@ if ($xml) {
     $websiteurl = (string) $xml->websiteurl;
     $greetingtxt = (string) $xml->greetingtxt;
     $metatxtdesc = (string) $xml->metatxtdesc;
+    $metaimg = (string) $xml->metaimg;
     
 
     $settings = array(
@@ -15,7 +16,8 @@ if ($xml) {
         'copyright' => $copyright,
         'websiteurl' => $websiteurl,
         'greetingtxt' => $greetingtxt,
-        'metatxtdesc' => $metatxtdesc
+        'metatxtdesc' => $metatxtdesc,
+        'metaimg' => $metaimg
 
     );
 

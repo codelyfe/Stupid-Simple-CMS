@@ -9,6 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $xml->websiteurl = $_POST['website-url'];
         $xml->greetingtxt = $_POST['greeting-txt'];
         $xml->metatxtdesc = $_POST['meta-txt-desc'];
+        $xml->metaimg = $_POST['meta-img'];
         
 
         if ($xml->asXML($settingsFile)) {

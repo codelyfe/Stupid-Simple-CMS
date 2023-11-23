@@ -17,6 +17,7 @@ $siteTitle = (string)$xml->title;
 $siteCopyright = (string)$xml->copyright;
 $websiteUrl = (string)$xml->websiteurl;
 $metatxtdesc = (string)$xml->metatxtdesc;
+$metaimg = (string)$xml->metaimg;
 
 $currentYear = date('Y');
 } 
@@ -33,8 +34,8 @@ else {
      echo '<meta name="description" content="' . $metatxtdesc . '">';
      echo '<meta property="og:title" content="' . $siteTitle . '">';
      echo '<meta property="og:description" content="' . $metatxtdesc . '">';
-     //echo '<meta property="og:image" content="' . $descIndex . '">'; // 
-     //echo '<meta content="' . $descIndex . '" itemprop="image">';
+     echo '<meta property="og:image" content="' . $metaimg . '">'; 
+     echo '<meta content="' . $metaimg . '" itemprop="image">';
     ?>
 
     <link rel="stylesheet" type="text/css" href="css/custom.css">
