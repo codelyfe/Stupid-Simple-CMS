@@ -23,14 +23,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <?php require_once '../layout/header-admin-fm.php'; ?>
     <style>
-        li{
-            /*font-size: 26px;
+        .listIt{
+            font-size: 26px;
             background: var(--bs-gray-800);
             color: white;
             padding: 20px;
             margin-bottom: 10px;
             border-radius: 10px;
-            list-style: none;*/
+            list-style: none;
         }
     </style>
 </head>
