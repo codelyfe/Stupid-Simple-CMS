@@ -40,11 +40,10 @@
 
 <br />
 
-    <div class="container" style="background-color:white;padding:50px;border-radius:10px;">
+    <div class="container" style="background-color:white;padding-bottom:50px;border-radius:10px;">
 
 
-        <div class="row">
-            <div class="col">
+    
                 
                     <form style="padding-top: 70px;" data-bss-recipient="3880bf3f1a582d89bf30ba7f2503f3a1">
                         <div class="form-group mb-3">
@@ -56,8 +55,7 @@
                         <div class="form-group mb-3"><button class="btn btn-dark btn-lg" style="width: 50%;margin-left: 25%;" type="submit">Contact us</button></div>
                     </form>
                 
-            </div>
-        </div>
+    
 
     </div>
    
