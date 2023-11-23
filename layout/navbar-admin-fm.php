@@ -28,54 +28,35 @@ else {
         <a class="navbar-brand" href="<?php echo $websiteUrl; ?>">
             <?php echo $siteTitle; ?> (Admin)
         </a>
-        <a class="navbar-link btn btn-danger" href="logout.php">
-            <?php echo $logoutbutton; ?>
-        </a>
+        
+    
+        <li class="nav-item btn btn-light dropdown" style="list-style: none;">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="fa-solid fa-gear" style="color: black;"></i> MENU
+          </a>
+          <ul class="dropdown-menu">
+            <li><a href="<?php echo $websiteUrl; ?>admin/" class="dropdown-item"><i class="fa-solid fa-gear" style="color: #000000;"></i> General Settings</a></li> 
+            <li><a href="<?php echo $websiteUrl; ?>terminal/" class="dropdown-item"><i class="fa-solid fa-code" style="color: #000000;"></i> Terminal</a></li> 
+            <li><a href="<?php echo $websiteUrl; ?>file-manager/" class="dropdown-item"><i class="fa-solid fa-folder-open" style="color: #000000;"></i> File Manager</a><l/i> 
+            <li><a href="<?php echo $websiteUrl; ?>design-blog.php" class="dropdown-item"><i class="fa-solid fa-brush" style="color: #000000;"></i> Design Blog</a></li>
+            
+            <li><a href="<?php echo $websiteUrl; ?>editor-js.php" class="dropdown-item"><i class="fa-brands fa-js" style="color: #000000;"></i> Custom JS</a></li> 
+            <li><a href="<?php echo $websiteUrl; ?>editor-css.php" class="dropdown-item"><i class="fa-brands fa-css3" style="color: #000000;"></i> Custom CSS</a></li> 
+            
+            <li><a href="<?php echo $websiteUrl; ?>admin-edit.php" class="dropdown-item"><i class="fa-solid fa-pen-to-square" style="color: #000000;"></i> Edit Articles</a></li> 
+            <li><a href="<?php echo $websiteUrl; ?>index.php" class="dropdown-item"><i class="fa-regular fa-rectangle-list" style="color: #000000;"></i> Blog</a></li>
+            <li><hr class="dropdown-divider"></li>
 
-        <!-- Add your other navigation items here -->
+            <li><a href="<?php echo $websiteUrl; ?>add-article.php" class="dropdown-item"><i class="fa-solid fa-feather" style="color: #ffc107;"></i> Add Article</a></li>
 
-        <!-- Mega Menu
-            <li class="nav-item dropdown mega-menu">
-                <a class="nav-link dropdown-toggle" href="#" id="megaMenu" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Mega Menu
-                </a>
-                <div class="dropdown-menu" aria-labelledby="megaMenu">
-                    <div class="row">
-                    
-                        <div class="col">
-                            <h5>Column 1</h5>
-                            <ul class="list-unstyled">
-                                <li><a href="#">Link 1</a></li>
-                                <li><a href="#">Link 2</a></li>
-                                <li><a href="#">Link 3</a></li>
-                            </ul>
-                        </div>
-
-                     
-                        <div class="col">
-                            <h5>Column 2</h5>
-                            <ul class="list-unstyled">
-                                <li><a href="#">Link 4</a></li>
-                                <li><a href="#">Link 5</a></li>
-                                <li><a href="#">Link 6</a></li>
-                            </ul>
-                        </div>
-
-                    
-                        <div class="col">
-                            <h5>Column 3</h5>
-                            <ul class="list-unstyled">
-                                <li><a href="#">Link 7</a></li>
-                                <li><a href="#">Link 8</a></li>
-                                <li><a href="#">Link 9</a></li>
-                            </ul>
-                        </div>
-
-                     
-
-                    </div>
-                </div>
-            </li> -->
+            <li><hr class="dropdown-divider"></li>
+            <li>
+            <a class="dropdown-item btn btn-danger" href="logout.php">
+                <?php echo $logoutbutton; ?>
+            </a>
+            </li>
+          </ul>
+        </li>
 
     </div>
 </nav>
