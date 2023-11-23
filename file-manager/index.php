@@ -69,7 +69,7 @@
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <div class="modal-body">
-                <img src="" id="zoomedImage" class="img-fluid">
+                <img style="width: 100%; height: auto; background-position: center; background-repeat: no-repeat; background-size: cover; position: relative;" src="" id="zoomedImage" class="img-fluid">
             </div>
         </div>
     </div>

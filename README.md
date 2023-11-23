@@ -3,6 +3,8 @@
 
 ### Last Updated: (11-22-2023)
 
+## Version 1.1.3
+
 ```
 PHP: 7.4 => 8.0+
 MYSQL: No Database Needed
