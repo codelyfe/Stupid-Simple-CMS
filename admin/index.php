@@ -26,7 +26,7 @@
 <body>
     <?php require_once '../layout/navbar-admin-fm.php'; ?>
     <br /><br/>
-    <h1 class="mx-auto" style="text-align: center;color:white;">General Blog Settings <br />
+    <h1 class="mx-auto" style="text-align: center;color:white;"><i class="fa-solid fa-gear" style="color: #ffc107;"></i> General Blog Settings <br />
     <!--
     <a href="<?php //echo $websiteUrl; ?>terminal/" class="btn btn-dark"><i class="fa-solid fa-code" style="color: #ffc107;"></i> Terminal</a> 
     <a href="<?php //echo $websiteUrl; ?>add-article.php" class="btn btn-dark"><i class="fa-solid fa-feather" style="color: #ffc107;"></i> Add Article</a> 
