@@ -106,6 +106,7 @@
     </script>
 
     </div>
-
+    <br/>
+    <?php require_once '../layout/footer.php'; ?>
 </body>
 </html>
