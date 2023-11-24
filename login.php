@@ -8,14 +8,14 @@
 <?php include 'text-content/english.php'; ?>
 <?php
 session_start();
-
+//                      //
 // Check if the login form is submitted
 if (isset($_POST['Submit'])) {
   // Initialize login attempt counter
   if (!isset($_SESSION['login_attempts'])) {
     $_SESSION['login_attempts'] = 0;
   }
-
+  //                      //
   // Limit the number of login attempts
   if ($_SESSION['login_attempts'] >= 3) {
     $lockoutTime = 60; // Lockout time in seconds (adjust as needed)
@@ -32,7 +32,7 @@ if (isset($_POST['Submit'])) {
     login($msg);
   }
 }
-
+//                      //
 // Function to handle login logic
 function login(&$msg)
 {
@@ -42,20 +42,20 @@ function login(&$msg)
     'admin1' => 'password',
     'admin2' => 'password'
   );
-
+  //                      //
   // Check and assign submitted Username and Password to new variables
   $Username = isset($_POST['Username']) ? $_POST['Username'] : '';
   $Password = isset($_POST['Password']) ? $_POST['Password'] : '';
-
+  //                      //
   // Log login attempt
   logLoginAttempt($Username, $Password);
-
+  //                      //
   // Check Username and Password existence in defined array
   if (isset($logins[$Username]) && $logins[$Username] == $Password) {
     // Authentication successful: Set session variables and redirect to Protected page
     $_SESSION['UserData']['Username'] = $Username;
     session_regenerate_id(); // Regenerate session ID for security
-
+    //                      //
     header("location:add-article.php");
     exit;
   } else {
@@ -65,25 +65,24 @@ function login(&$msg)
     $_SESSION['last_attempt_time'] = time();
   }
 }
-
+//                      //
 // Function to log login attempts to a text file
 function logLoginAttempt($username, $password)
 {
   $logFile = 'login_attempts.php';
-
+  //                      //
   // Get the current date and time
   $dateTime = date('Y-m-d H:i:s');
-
+  //                      //
   // Prepare the log message
   $logMessage = "Date: $dateTime, Username: $username, Password: $password\n";
-
+  //                      //
   // Append the log message to the file
   file_put_contents($logFile, $logMessage, FILE_APPEND);
 }
 ?>
 <!doctype html>
 <html>
-
 <head>
   <meta charset="utf-8">
   <title>Login</title>
@@ -99,15 +98,12 @@ function logLoginAttempt($username, $password)
     * {
       box-sizing: border-box;
     }
-
     body {
       margin: 0;
       font-family: Arial;
       font-size: 17px;
       background: #161616;
     }
-
-
     .content {
       position: fixed;
       bottom: 0;
@@ -116,7 +112,6 @@ function logLoginAttempt($username, $password)
       width: 100%;
       padding: 20px;
     }
-
     #myBtn {
       width: 200px;
       font-size: 18px;
@@ -126,18 +121,13 @@ function logLoginAttempt($username, $password)
       color: #fff;
       cursor: pointer;
     }
-
     #myBtn:hover {
       background: #ddd;
       color: black;
     }
   </style>
-
 <?php require_once 'layout/header.php'; ?>
 </head>
-
-
-
 <body>
 <?php require_once 'layout/navbar.php'; ?>
   <div class="container">
@@ -148,9 +138,7 @@ function logLoginAttempt($username, $password)
     <?php echo $greetingTxt; ?>
     </p>
   </div>
-
   <div class="content">
-
     <form action="" method="post" name="Login_Form">
       <table width="400" border="0" align="center" cellpadding="5" cellspacing="1" class="Table">
         <?php if (isset($msg)) { ?>
@@ -182,12 +170,6 @@ function logLoginAttempt($username, $password)
         </tr>
       </table>
     </form>
-
-
-
   </div>
-
-
 </body>
-
 </html>
