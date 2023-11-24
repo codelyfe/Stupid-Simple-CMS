@@ -558,17 +558,23 @@ else {
             <br />
             <?php if (!empty($article['image_url'])) : ?>
                 <a href="<?php echo $article['image_url']; ?>" data-bs-toggle="modal" data-bs-target="#imageModal">
-                  <img style="width: 100%; height: auto; background-position: center; background-repeat: no-repeat; background-size: cover; position: relative;" src="<?php echo $article['image_url']; ?>" alt="Article Image" class="img-fluid mb-3">
+                  <img style="border-radius: 10px;width: 100%; height: auto; background-position: center; background-repeat: no-repeat; background-size: cover; position: relative;" src="<?php echo $article['image_url']; ?>" alt="Article Image" class="img-fluid mb-3">
                 </a>
             <?php endif; ?>
 
             <!-- Display only the first 150 characters of the content -->
-            <p><?php echo substr($article['content'], 0, 150); ?>... <br /><br /><a class="article-btn btn" style="float: right;" href="article.php?id=<?php echo $articleId; ?>"><?php echo $readmore; ?></a></p>
-            <?php
-              $qrurl = 'https://chart.googleapis.com/chart?cht=qr&chl=';    
-              $are7 = '80x80';
-              echo '<img src="'.$qrurl.$websiteUrl.'article.php?id='.$articleId.'&chs='.$are7.'&choe=UTF-8&chld=L|2" alt="">';
-            ?> 
+            <p style="background:black;color:white;padding: 13px;border-radius: 10px;"><?php echo substr($article['content'], 0, 150); ?>...
+              <div style="float:right;">
+              <?php
+                $qrurl = 'https://chart.googleapis.com/chart?cht=qr&chl=';    
+                $are7 = '80x80';
+                echo '<img src="'.$qrurl.$websiteUrl.'article.php?id='.$articleId.'&chs='.$are7.'&choe=UTF-8&chld=L|2" alt="">';
+              ?> 
+              </div>
+            </p>
+            <br />
+            <a class="article-btn btn" style="float: right;" href="article.php?id=<?php echo $articleId; ?>"><?php echo $readmore; ?></a>
+            
             <br />
             <p class="text-muted badge bg-dark" style="color:white !important;"><?php echo $category; ?><?php echo $article['category']; ?></p>
             <p class="text-muted badge bg-dark" style="color:white !important;"><?php echo $createdat; ?><?php echo $article['created_at']; ?></p>
