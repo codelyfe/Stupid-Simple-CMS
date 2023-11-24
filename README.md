@@ -139,5 +139,8 @@ Download and extract all of the files to your web server.
 ### Social Sharing Buttons
 ![StupidSimpleCMS1 Logo](https://i.ibb.co/CWyBQ9S/Screenshot-11-23-2023-09-06-18.png)
 
+### NEW: Theme Change
+![StupidSimpleCMS1 Logo](https://i.ibb.co/G7YvkJy/Screenshot-11-23-2023-21-28-28.png)
+
 
 #### Created by Randal Burger ( codelyfe.github.io )
