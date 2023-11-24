@@ -3,7 +3,7 @@
 
 ### Last Updated: (11-23-2023)
 
-## Version 1.2.1
+## Version 1.2.2
 
 ```
 PHP: 7.4 => 8.0+
