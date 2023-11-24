@@ -550,11 +550,19 @@ else {
         $article = json_decode($content, true);
         $articleId = pathinfo($file, PATHINFO_FILENAME); // Extract article ID from filename
         ?>
-        <div class="article border p-3 text-left" style="margin: 32px;">
+        <div class="article border p-3 text-left" style="margin: 32px;">       
             <h2 style="text-align:center !important;">
                 <?php echo $article['title']; ?>
                 <!--<a class="" style="text-align:center;" href="article.php?id=<?php //echo $articleId; ?>"><?php //echo $article['title']; ?></a>-->
             </h2>
+
+            <div style="float:right;">
+              <br />
+              <p class="text-muted badge bg-dark" style="color:white !important;"><?php echo $category; ?><?php echo $article['category']; ?></p>
+              <p class="text-muted badge bg-dark" style="color:white !important;"><?php echo $createdat; ?><?php echo $article['created_at']; ?></p>
+              <br />
+            </div>
+
             <br />
             <?php if (!empty($article['image_url'])) : ?>
                 <a href="<?php echo $article['image_url']; ?>" data-bs-toggle="modal" data-bs-target="#imageModal">
@@ -575,10 +583,7 @@ else {
             <br />
             <a class="article-btn btn" style="float: right;" href="article.php?id=<?php echo $articleId; ?>"><?php echo $readmore; ?></a>
             
-            <br />
-            <p class="text-muted badge bg-dark" style="color:white !important;"><?php echo $category; ?><?php echo $article['category']; ?></p>
-            <p class="text-muted badge bg-dark" style="color:white !important;"><?php echo $createdat; ?><?php echo $article['created_at']; ?></p>
-            <br />
+
 
             <!-- Social Buttons -->
             <a class="btn btn-secondary" href="#" onclick="copyToClipboard('<?php echo $websiteUrl; ?>article.php?id=<?php echo $articleId; ?>')" style="text-decoration: none;box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0), 0 1px 2px rgba(0, 0, 0, 0);border: 1px solid rgba(204, 204, 204, 0);border-bottom-color: rgba(179, 179, 179, 0);background-color: rgba(245, 245, 245, 0);background-image: linear-gradient(to bottom,rgba(255, 255, 255, 0),rgba(230, 230, 230, 0));">
