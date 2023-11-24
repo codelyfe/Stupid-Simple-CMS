@@ -119,7 +119,7 @@
         <label for="content">Content:</label>
         <textarea placeholder="What story can we share?" id="content" name="content" class="form-control" required></textarea>
 
-        <label for="image_url"><i class="fa-solid fa-image"></i> Image URL: Save on space and bandwidth by using a <br/>
+        <label for="image_url"><i class="fa-solid fa-image"></i> Image URL ( JPG, GIF, PNG ): Save on space and bandwidth by using a <br/>
         ( 3rd Party ) <a href="https://imgbb.com" style="color: var(--bs-yellow);text-decoration: none;font-weight: 500;" target="_blank">Upload Images Here</a>
         <br /> or use <a href="./file-manager/" style="color: var(--bs-yellow);text-decoration: none;font-weight: 500;" target="_blank">file manager</a> to upload images and copy url into your post. 
         </label>
