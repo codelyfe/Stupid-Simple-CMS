@@ -154,7 +154,7 @@ function logLoginAttempt($username, $password)
         <tr>
           <td>
             <p>Are you in the wrong place? <a class="btn btn-danger" style="text-decoration:none !important;"
-                href="../"><i class="fa fa-comment" aria-hidden="true"></i>Go Back</a></p>
+                href="../">Go Back</a></p>
           </td>
         </tr>
         <tr>
