@@ -551,13 +551,8 @@ else {
         $articleId = pathinfo($file, PATHINFO_FILENAME); // Extract article ID from filename
         ?>
         <div class="article border p-3 text-left" style="margin: 32px;">       
-            <h2 style="text-align:center !important;">
-                <?php echo $article['title']; ?>
-                <!--<a class="" style="text-align:center;" href="article.php?id=<?php //echo $articleId; ?>"><?php //echo $article['title']; ?></a>-->
-            </h2>
 
             <div style="float:right;">
-              <br />
               <p class="text-muted badge bg-dark" style="color:white !important;"><?php echo $category; ?><?php echo $article['category']; ?></p>
               <p class="text-muted badge bg-dark" style="color:white !important;"><?php echo $createdat; ?><?php echo $article['created_at']; ?></p>
               <br />
@@ -569,6 +564,11 @@ else {
                   <img style="border-radius: 10px;width: 100%; height: auto; background-position: center; background-repeat: no-repeat; background-size: cover; position: relative;" src="<?php echo $article['image_url']; ?>" alt="Article Image" class="img-fluid mb-3">
                 </a>
             <?php endif; ?>
+
+            <h2 style="">
+                <?php echo $article['title']; ?>
+                <!--<a class="" style="text-align:center;" href="article.php?id=<?php //echo $articleId; ?>"><?php //echo $article['title']; ?></a>-->
+            </h2>
 
             <!-- Display only the first 150 characters of the content -->
             <p style="background:black;color:white;padding: 13px;border-radius: 10px;"><?php echo substr($article['content'], 0, 150); ?>...
