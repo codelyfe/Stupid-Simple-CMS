@@ -553,8 +553,8 @@ else {
         <div class="article border p-3 text-left" style="margin: 32px;">       
 
             <div style="float:right;">
-              <p class="text-muted badge bg-dark" style="color:white !important;"><?php echo $category; ?><?php echo $article['category']; ?></p>
-              <p class="text-muted badge bg-dark" style="color:white !important;"><?php echo $createdat; ?><?php echo $article['created_at']; ?></p>
+              <p class="text-muted badge bg-dark blog-cat" style="color:white !important;"><?php echo $category; ?><?php echo $article['category']; ?></p>
+              <p class="text-muted badge bg-dark blog-created" style="color:white !important;"><?php echo $createdat; ?><?php echo $article['created_at']; ?></p>
               <br />
             </div>
 
@@ -565,13 +565,13 @@ else {
                 </a>
             <?php endif; ?>
 
-            <h2 style="">
+            <h2  class="blog-title">
                 <?php echo $article['title']; ?>
                 <!--<a class="" style="text-align:center;" href="article.php?id=<?php //echo $articleId; ?>"><?php //echo $article['title']; ?></a>-->
             </h2>
 
             <!-- Display only the first 150 characters of the content -->
-            <p style="background:black;color:white;padding: 13px;border-radius: 10px;"><?php echo substr($article['content'], 0, 150); ?>...
+            <p style="background:black;color:white;padding: 13px;border-radius: 10px;" class="blog-content"><?php echo substr($article['content'], 0, 150); ?>...
               <div style="float:right;">
               <?php
                 $qrurl = 'https://chart.googleapis.com/chart?cht=qr&chl=';    
@@ -586,13 +586,13 @@ else {
 
 
             <!-- Social Buttons -->
-            <a class="btn btn-secondary" href="#" onclick="copyToClipboard('<?php echo $websiteUrl; ?>article.php?id=<?php echo $articleId; ?>')" style="text-decoration: none;box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0), 0 1px 2px rgba(0, 0, 0, 0);border: 1px solid rgba(204, 204, 204, 0);border-bottom-color: rgba(179, 179, 179, 0);background-color: rgba(245, 245, 245, 0);background-image: linear-gradient(to bottom,rgba(255, 255, 255, 0),rgba(230, 230, 230, 0));">
+            <a class="btn btn-secondary blog-clipboard" href="#" onclick="copyToClipboard('<?php echo $websiteUrl; ?>article.php?id=<?php echo $articleId; ?>')" style="text-decoration: none;box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0), 0 1px 2px rgba(0, 0, 0, 0);border: 1px solid rgba(204, 204, 204, 0);border-bottom-color: rgba(179, 179, 179, 0);background-color: rgba(245, 245, 245, 0);background-image: linear-gradient(to bottom,rgba(255, 255, 255, 0),rgba(230, 230, 230, 0));">
                 <i class="fa-regular fa-clipboard" style="color:black;font-size:30px;"></i>
             </a>
-            <a class="btn btn-secondary" style="text-decoration: none;box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0), 0 1px 2px rgba(0, 0, 0, 0);border: 1px solid rgba(204, 204, 204, 0);border-bottom-color: rgba(179, 179, 179, 0);background-color: rgba(245, 245, 245, 0);background-image: linear-gradient(to bottom,rgba(255, 255, 255, 0),rgba(230, 230, 230, 0));" href="https://www.facebook.com/sharer/sharer.php?app_id=113869198637480&sdk=joey&title=<?php echo $article['title']; ?>&u=<?php echo $websiteUrl; ?>article.php?id=<?php echo $articleId; ?>" target="_blank">
+            <a class="btn btn-secondary blog-fb" style="text-decoration: none;box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0), 0 1px 2px rgba(0, 0, 0, 0);border: 1px solid rgba(204, 204, 204, 0);border-bottom-color: rgba(179, 179, 179, 0);background-color: rgba(245, 245, 245, 0);background-image: linear-gradient(to bottom,rgba(255, 255, 255, 0),rgba(230, 230, 230, 0));" href="https://www.facebook.com/sharer/sharer.php?app_id=113869198637480&sdk=joey&title=<?php echo $article['title']; ?>&u=<?php echo $websiteUrl; ?>article.php?id=<?php echo $articleId; ?>" target="_blank">
                 <i class="fa-brands fa-square-facebook" style="color:black;font-size:30px;"></i>
             </a>
-            <a class="btn btn-secondary" style="text-decoration: none;box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0), 0 1px 2px rgba(0, 0, 0, 0);border: 1px solid rgba(204, 204, 204, 0);border-bottom-color: rgba(179, 179, 179, 0);background-color: rgba(245, 245, 245, 0);background-image: linear-gradient(to bottom,rgba(255, 255, 255, 0),rgba(230, 230, 230, 0));" href="https://trello.com/add-card?mode=popup&url=<?php echo $websiteUrl; ?>article.php?id=<?php echo $articleId; ?>&name=<?php echo $article['title']; ?>&desc=<?php echo $websiteUrl; ?>article.php?id=<?php echo $articleId; ?>" target="_blank">
+            <a class="btn btn-secondary blog-trello" style="text-decoration: none;box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0), 0 1px 2px rgba(0, 0, 0, 0);border: 1px solid rgba(204, 204, 204, 0);border-bottom-color: rgba(179, 179, 179, 0);background-color: rgba(245, 245, 245, 0);background-image: linear-gradient(to bottom,rgba(255, 255, 255, 0),rgba(230, 230, 230, 0));" href="https://trello.com/add-card?mode=popup&url=<?php echo $websiteUrl; ?>article.php?id=<?php echo $articleId; ?>&name=<?php echo $article['title']; ?>&desc=<?php echo $websiteUrl; ?>article.php?id=<?php echo $articleId; ?>" target="_blank">
                 <i class="fa-brands fa-trello" style="color:black;font-size:30px;"></i>
             </a>
 

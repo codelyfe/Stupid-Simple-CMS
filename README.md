@@ -1,9 +1,9 @@
 # Stupid Simple CMS ( Blogger )
  Stupid Simple CMS - Created to be simple. Blog posting CMS.
 
-### Last Updated: (11-23-2023)
+### Last Updated: (11-25-2023)
 
-## Version 1.2.3
+## Version 1.2.4
 
 ```
 PHP: 7.4 => 8.0+
@@ -45,6 +45,22 @@ Download and extract all of the files to your web server.
 
 ```
 
+### Predifined classes to style blog elements
+
+```
+blog-title
+
+blog-cat
+
+blog-clipboard
+
+blog-fb
+
+blog-trello
+
+blog-content
+
+```
 
 ### Configure Site Settings
 
