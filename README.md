@@ -1,7 +1,7 @@
 # Stupid Simple CMS ( Blogger )
  Stupid Simple CMS - Created to be simple. Blog posting CMS.
 
-### Last Updated: (11-25-2023)
+### Last Updated: (12-12-2023)
 
 ## Version 1.2.4
 
@@ -143,7 +143,7 @@ blog-content
 ### Unlimited Theme Possibilities
 ![StupidSimpleCMS1 Logo](https://i.ibb.co/NndgSMZ/Screenshot-11-18-2023-18-37-53.png)
 
-### Terminal ( Beta )
+### Terminal ( Beta ) ( Removed till repaired )
 ![StupidSimpleCMS1 Logo](https://i.ibb.co/BBgLDgw/Screenshot-11-18-2023-21-50-19.png)
 
 ### Share articles using QR code
