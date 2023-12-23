@@ -10,8 +10,6 @@ PHP: 7.4 => 8.0+
 MYSQL: No Database Needed
 ```
 
- DEMO: https://shipwr3ck.com/blog/
-
 ![StupidSimpleCMS Logo](https://i.ibb.co/HpKWcSK/Screenshot-11-12-2023-20-34-08.png)
 
 [![Build Status](https://travis-ci.org/joemccann/dillinger.svg?branch=master)](https://github.com/codelyfe/Stupid-Simple-CMS)
