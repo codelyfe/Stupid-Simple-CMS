@@ -39,18 +39,16 @@
 
     <?php
     // Check if custom.css exists and load its content into $cssContent
+    require_once __DIR__ . '/includes/store.php';
     $filePath = 'css/custom.css';
-    if (file_exists($filePath)) {
-        $cssContent = file_get_contents($filePath);
-    } else {
-        $cssContent = ''; // Set default CSS content if custom.css doesn't exist
+    $cssContent = asset_get('custom.css');
+    if ($cssContent === null) {
+        $cssContent = is_file($filePath) ? file_get_contents($filePath) : '';
     }
 
     if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['css_content'])) {
-        // Update $cssContent if the form is submitted
         $cssContent = $_POST['css_content'];
-
-        // Save the updated CSS content to custom.css
+        asset_put('custom.css', $cssContent);
         file_put_contents($filePath, $cssContent);
     }
     ?>

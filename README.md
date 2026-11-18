@@ -1,13 +1,13 @@
 # Stupid Simple CMS ( Blogger )
  Stupid Simple CMS - Created to be simple. Blog posting CMS.
 
-### Last Updated: (12-22-2023)
+### Last Updated: (11-18-2026)
 
-## Version 1.2.5
+## Version 1.3.0
 
 ```
-PHP: 7.4 => 8.0+
-MYSQL: No Database Needed
+PHP: 8.4 (8.0+ still runs)
+Database: SQLite (data/cms.sqlite). No MySQL.
 ```
 
 ![StupidSimpleCMS Logo](https://i.ibb.co/HpKWcSK/Screenshot-11-12-2023-20-34-08.png)
@@ -22,26 +22,28 @@ Donate: [Support The Developer](https://www.paypal.me/codelyfe)
 
 
 ## Installing Stupid Simple CMS
-Download and extract all of the files to your web server.
+Download and extract all of the files to your web server. It can live at the domain root or in a subfolder such as `/stupid-simple-cms/`. The blog URL is detected from that path.
 
-- WWW/ <---- or 
-- htdocs/ <----
+The web server needs permission to create and write `data/cms.sqlite`.
 
-
-### Edit site-settings.xml within the admin folder. ( Set WebsiteURL for website to work correct )
+Docker:
 
 ```
-<?xml version="1.0"?>
-<settings>
-    <title>Stupid Simple CMS</title>
-    <copyright>Codelyfe.github.io</copyright>
-    <websiteurl>https://shipwr3ck.com/blog/</websiteurl>
-    <greetingtxt>Join the virtual story today!</greetingtxt>
-    <metatxtdesc>Stupid simple CMS made for bloggers.</metatxtdesc>
-    <metaimg>https://image-url.com/duck.png</metaimg>
-</settings>
-
+docker build -t stupid-simple-cms .
+docker run -p 8080:80 stupid-simple-cms
 ```
+
+The image is `php:8.4-apache` with SQLite, OPcache, and compressed static files.
+
+### First admin
+
+There is no built-in username or password. Open **Submit an Article**. If no admin exists yet, that page asks you to create one. The password is stored with `password_hash` in SQLite. Later visits use the same page as the login.
+
+### Site settings
+
+Title, copyright, greeting, and meta fields are edited in Admin → Settings and saved in SQLite. The blog URL field is read-only and filled in automatically.
+
+Existing `admin/site-settings.xml`, `theme.xml`, and `blog-posts/*.json` files are imported into SQLite the first time a page loads.
 
 ### Predifined classes to style blog elements
 
@@ -72,44 +74,30 @@ blog-content
 
 ### Setting up users
 
-- login.php | Edit section seen in code below:
+Create the admin from **Submit an Article** the first time. Do not edit a password array in `login.php`.
 
-```php
-    $logins = array(
-        'admin' => 'password',
-        'admin1' => 'password',
-        'admin2' => 'password'
-    );
-```
+### Updating
 
-### Updating to the newest version of Stupid Simple CMS consists of saving all the .xml files, your username and password array seen in example above, and the blog-posts folder until you upload the new version of Stupid Simple CMS to your websites file server, then replacing the new .xml files and blog-posts folder with the ones you saved. 
+Keep `data/cms.sqlite` and the `file-manager` uploads when you replace the code. Those hold posts, settings, the theme, the admin login, and saved custom CSS/JS.
 
 ### Features
 
+- Public blog with a centered card layout, search, and share buttons
+- Article pages that stay centered and are not covered by the background overlay
+- Admin bar: Write, Articles, Settings, Design, Files, View blog, Log out
+- First-run admin account, password hashed in SQLite
+- Blog URL detected for the domain root or a subfolder
+- Posts, site settings, and theme colors stored in SQLite
+- Custom CSS and JS saved in SQLite and written back to `css/custom.css` and `js/custom.js`
 - ADA Compliant Tool
-- Blog Posting
-- Live Ajax Editing on Admin Side
-- Zoom in image
-- Delete Articles
-- View Article on seperate page
-- Simple Blog Designer ( More features coming soon )
-```
--- Font Color ( Body )
--- Background Color ( Body )
--- Background image ( Body )
--- Background Color ( .article ) 
--- Background Color ( .article-btn ) 
--- Font Color ( .article-btn ) 
-
-* Settings are stored in theme.xml *
-```
-- Custom JS editor
-- Custom CSS editor
-- File Manager ( Delete | Copy Url | Rename )
-- QR Code for Articles
-- Help Desk
-- Share on social media
-- Meta Data Builder
+- Live Ajax editing on the admin side
+- Zoom in on an image
+- Delete articles, with a confirm step
+- Simple blog designer (font, background, article, and button colors)
+- File manager (upload, copy URL, rename, delete) without the faded overlay
+- Help desk
+- Meta description and image
+- Docker image on PHP 8.4
 
 ### Adding an Article
 ![StupidSimpleCMS Logo](https://i.ibb.co/nrLx0P4/Screenshot-11-18-2023-18-30-13.png)

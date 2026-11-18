@@ -1,6 +1,10 @@
 FROM php:8.4-apache
 
-RUN a2enmod rewrite headers deflate expires \
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends libsqlite3-dev \
+    && docker-php-ext-install pdo_sqlite \
+    && rm -rf /var/lib/apt/lists/* \
+    && a2enmod rewrite headers deflate expires \
     && { \
         echo "opcache.enable=1"; \
         echo "opcache.enable_cli=0"; \

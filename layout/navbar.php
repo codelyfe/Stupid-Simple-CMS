@@ -6,22 +6,13 @@ include "settings/global.php"; // Make sure $selectlang is defined in this file
 include "text-content/{$selectlang}.php";
 ?>
 <?php
-// Path to your XML file
-$xmlFile = 'admin/site-settings.xml';
-
-// Load XML file
-$xml = simplexml_load_file($xmlFile);
-
-if ($xml !== false) {
-$siteTitle = (string)$xml->title;
-$siteCopyright = (string)$xml->copyright;
-$websiteUrl = (string)$xml->websiteurl;
-$greetingTxt = (string)$xml->greetingtxt;
+require_once __DIR__ . '/../includes/store.php';
+$site = site_settings();
+$siteTitle = $site['title'];
+$siteCopyright = $site['copyright'];
+$websiteUrl = $site['websiteurl'];
+$greetingTxt = $site['greetingtxt'];
 $currentYear = date('Y');
-} 
-else {
- echo 'Failed to load XML file.';
-}
 ?>
 <!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-dark">

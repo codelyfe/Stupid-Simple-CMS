@@ -14,15 +14,11 @@
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
         <?php
-        $articlesDir = 'blog-posts';
+        require_once __DIR__ . '/includes/store.php';
         $articleId = $_GET['id'] ?? null;
+        $article = $articleId ? article_get($articleId) : null;
 
-        if ($articleId) {
-            $filename = "$articlesDir/$articleId.json";
-
-            if (file_exists($filename)) {
-                $content = file_get_contents($filename);
-                $article = json_decode($content, true);
+        if ($article) {
 
                 // Set dynamic title and description meta tags
                 echo '<title>' . htmlspecialchars($article['title']) . '</title>';
@@ -31,7 +27,6 @@
                 echo '<meta property="og:description" content="' . htmlspecialchars(strip_tags($article['content'])) . '">';
                 echo '<meta property="og:image" content="' . htmlspecialchars(strip_tags($article['image_url'])) . '">'; // 
                 echo '<meta content="' . htmlspecialchars(strip_tags($article['image_url'])) . '" itemprop="image">';
-            }
         }
         ?>
 
@@ -167,7 +162,7 @@
     <body>
         <?php require_once 'layout/navbar.php'; ?>
         <?php
-        if ($articleId && file_exists($filename)) {
+        if ($article) {
             ?>
             <div class="article border p-3">
                 <h2 style="text-align:center !important;">

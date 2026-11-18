@@ -6,24 +6,14 @@
 */              
 ?>
 <?php
-// Path to your XML file
-$xmlFile = 'admin/site-settings.xml';
-
-// Load XML file
-$xml = simplexml_load_file($xmlFile);
-
-if ($xml !== false) {
-$siteTitle = (string)$xml->title;
-$siteCopyright = (string)$xml->copyright;
-$websiteUrl = (string)$xml->websiteurl;
-$metatxtdesc = (string)$xml->metatxtdesc;
-$metaimg = (string)$xml->metaimg;
-
+require_once __DIR__ . '/includes/store.php';
+$site = site_settings();
+$siteTitle = $site['title'];
+$siteCopyright = $site['copyright'];
+$websiteUrl = $site['websiteurl'];
+$metatxtdesc = $site['metatxtdesc'];
+$metaimg = $site['metaimg'];
 $currentYear = date('Y');
-} 
-else {
- echo 'Failed to load XML file.';
-}
 ?>
 <!DOCTYPE html>
 <html>
@@ -460,20 +450,8 @@ else {
     </form>
 
     <?php
-    $articlesDir = 'blog-posts';
-
-    // Fetch articles from the directory
-    $articleFiles = glob("$articlesDir/*.json");
-
-    // Sort articles based on file modification time (most recent first)
-    usort($articleFiles, function ($a, $b) {
-        return filemtime($b) - filemtime($a);
-    });
-
-    foreach ($articleFiles as $file) {
-        $content = file_get_contents($file);
-        $article = json_decode($content, true);
-        $articleId = pathinfo($file, PATHINFO_FILENAME); // Extract article ID from filename
+    foreach (articles_all() as $article) {
+        $articleId = $article['id'];
         ?>
         <article class="article text-left">
             <div class="article-meta">

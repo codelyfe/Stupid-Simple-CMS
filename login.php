@@ -8,9 +8,24 @@
 <?php include 'text-content/english.php'; ?>
 <?php
 session_start();
-//                      //
-// Check if the login form is submitted
-if (isset($_POST['Submit'])) {
+require_once __DIR__ . '/includes/store.php';
+$setup = !admin_exists();
+if ($setup && isset($_POST['CreateAdmin'])) {
+  $username = trim($_POST['Username'] ?? '');
+  $password = $_POST['Password'] ?? '';
+  $again = $_POST['PasswordAgain'] ?? '';
+  if ($username === '' || strlen($password) < 8) {
+    $msg = "<span style='color:red'>Use a name and a password of at least 8 characters.</span>";
+  } elseif ($password !== $again) {
+    $msg = "<span style='color:red'>Those passwords do not match.</span>";
+  } elseif (user_create($username, $password)) {
+    $_SESSION['UserData']['Username'] = $username;
+    session_regenerate_id(true);
+    header('location:add-article.php');
+    exit;
+  }
+}
+if (isset($_POST['Submit']) && !$setup) {
   // Initialize login attempt counter
   if (!isset($_SESSION['login_attempts'])) {
     $_SESSION['login_attempts'] = 0;
@@ -36,22 +51,9 @@ if (isset($_POST['Submit'])) {
 // Function to handle login logic
 function login(&$msg)
 {
-  // Define username and associated password array
-  $logins = array(
-    'admin' => 'password',
-    'admin1' => 'password',
-    'admin2' => 'password'
-  );
-  //                      //
-  // Check and assign submitted Username and Password to new variables
   $Username = isset($_POST['Username']) ? $_POST['Username'] : '';
   $Password = isset($_POST['Password']) ? $_POST['Password'] : '';
-  //                      //
-  // Log login attempt
-  logLoginAttempt($Username, $Password);
-  //                      //
-  // Check Username and Password existence in defined array
-  if (isset($logins[$Username]) && $logins[$Username] == $Password) {
+  if (user_check($Username, $Password)) {
     // Authentication successful: Set session variables and redirect to Protected page
     $_SESSION['UserData']['Username'] = $Username;
     session_regenerate_id(); // Regenerate session ID for security
@@ -133,12 +135,17 @@ function logLoginAttempt($username, $password)
   <div class="login-shell">
     <div class="login-card">
       <h1><?php echo htmlspecialchars((string) $siteTitle); ?></h1>
-      <p class="lede"><?php echo htmlspecialchars((string) $greetingTxt); ?></p>
+      <p class="lede"><?php echo $setup ? 'No admin yet. Create one to start writing.' : htmlspecialchars((string) $greetingTxt); ?></p>
       <form action="" method="post" name="Login_Form">
         <?php if (isset($msg)) { echo $msg; } ?>
         <input name="Username" type="text" class="Input form-control" placeholder="Username" autocomplete="username">
-        <input name="Password" type="password" class="Input form-control" placeholder="Password" autocomplete="current-password">
-        <input name="Submit" type="submit" value="Login" class="btn-login">
+        <input name="Password" type="password" class="Input form-control" placeholder="Password" autocomplete="<?php echo $setup ? 'new-password' : 'current-password'; ?>">
+        <?php if ($setup): ?>
+          <input name="PasswordAgain" type="password" class="Input form-control" placeholder="Repeat password" autocomplete="new-password">
+          <input name="CreateAdmin" type="submit" value="Create admin" class="btn-login">
+        <?php else: ?>
+          <input name="Submit" type="submit" value="Login" class="btn-login">
+        <?php endif; ?>
         <p class="lede" style="margin-top:1rem;margin-bottom:0;"><a href="./">Back to the blog</a></p>
       </form>
     </div>

@@ -38,19 +38,17 @@
 <div class="container" style="background:white;padding:50px;border-radius:10px;">
 
 <?php
+require_once __DIR__ . '/includes/store.php';
 $filePath = 'js/custom.js'; // Path to your JS file
 
-if (file_exists($filePath)) {
-    $jsContent = file_get_contents($filePath);
-} else {
-    $jsContent = ''; // Default JS content if custom.js doesn't exist
+$jsContent = asset_get('custom.js');
+if ($jsContent === null) {
+    $jsContent = is_file($filePath) ? file_get_contents($filePath) : '';
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['js_content'])) {
-    // Update $jsContent if the form is submitted
     $jsContent = $_POST['js_content'];
-
-    // Save the updated JS content to custom.js
+    asset_put('custom.js', $jsContent);
     file_put_contents($filePath, $jsContent);
 }
 ?>

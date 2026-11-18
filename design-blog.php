@@ -25,10 +25,13 @@
         <?php require_once 'layout/header-admin.php'; ?>
     </head>
 
-    <body>
+    <body class="admin-body">
         <?php require_once 'layout/navbar-admin.php'; ?>
-        <br /><br/>
-        <h1 class="mx-auto" style="text-align: center;color:white;"><i class="fa-solid fa-brush" style="color: #ffc107;"></i> Blog Design Panel <br />
+        <main class="admin-page">
+        <h1>Design</h1>
+        <p class="admin-lead">Colors and the background image. Custom CSS and JS live under this section.</p>
+        <p class="admin-lead"><a href="editor-css.php">Custom CSS</a> · <a href="editor-js.php">Custom JS</a></p>
+        <h1 class="mx-auto" style="display:none;">
         <!--
         <a href="<?php //echo $websiteUrl; ?>terminal/" class="btn btn-dark"><i class="fa-solid fa-code" style="color: #ffc107;"></i> Terminal</a> 
         <a href="<?php //echo $websiteUrl; ?>file-manager/" class="btn btn-dark"><i class="fa-solid fa-folder-open" style="color: #ffc107;"></i> File Manager</a> 
@@ -39,7 +42,7 @@
         -->
         </h1>
         <br />
-        <div class="container" style="background-color:white;padding:50px;border-radius:10px;">
+        <div class="admin-panel">
 
 
             <br /><br />
@@ -49,7 +52,8 @@
             $xmlFile = 'theme.xml';
 
             // Load XML file
-            $xml = simplexml_load_file($xmlFile);
+            require_once __DIR__ . '/includes/store.php';
+            $xml = theme_bag();
 
             if ($xml !== false) {
 
@@ -78,7 +82,8 @@
             $xmlFile = 'theme.xml';
 
             // Load XML file
-            $xml = simplexml_load_file($xmlFile);
+            require_once __DIR__ . '/includes/store.php';
+            $xml = theme_bag();
 
             if ($xml !== false) {
                 // Background Color
@@ -110,7 +115,8 @@
             $xmlFile = 'theme.xml';
 
             // Load XML file
-            $xml = simplexml_load_file($xmlFile);
+            require_once __DIR__ . '/includes/store.php';
+            $xml = theme_bag();
 
             if ($xml !== false) {
 
@@ -141,7 +147,8 @@
             $xmlFile = 'theme.xml';
 
             // Load XML file
-            $xml = simplexml_load_file($xmlFile);
+            require_once __DIR__ . '/includes/store.php';
+            $xml = theme_bag();
 
             if ($xml !== false) {
 
@@ -171,7 +178,8 @@
             $xmlFile = 'theme.xml';
 
             // Load XML file
-            $xml = simplexml_load_file($xmlFile);
+            require_once __DIR__ . '/includes/store.php';
+            $xml = theme_bag();
 
             if ($xml !== false) {
 
@@ -201,7 +209,8 @@
             $xmlFile = 'theme.xml';
 
             // Load XML file
-            $xml = simplexml_load_file($xmlFile);
+            require_once __DIR__ . '/includes/store.php';
+            $xml = theme_bag();
 
             if ($xml !== false) {
 
@@ -320,6 +329,7 @@
             }
         </script>
         <script src="vendors/bootstrap-5.3.0/bootstrap@5.3.0_dist_js_bootstrap.bundle.min.js"></script>
+        </main>
         <?php require_once 'layout/footer.php'; ?>
     </body>
 

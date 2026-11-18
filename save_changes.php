@@ -1,59 +1,29 @@
-    <?php
-    /*
-    ┏┓┏┓┳┓┏┓┓ ┓┏┏┓┏┓
-    ┃ ┃┃┃┃┣ ┃ ┗┫┣ ┣ 
-    ┗┛┗┛┻┛┗┛┗┛┗┛┻ ┗┛
-    */              
-    ?>
-    <?php
-    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $xmlFile = 'theme.xml'; // Replace with your XML file name/location
-        $xml = simplexml_load_file($xmlFile);
-        //                      //
-        // Change background color
-        if (isset($_POST['background'])) {
-            $xml->background = $_POST['background'];
-        }
-        //                      //
-        // Change font color
-        if (isset($_POST['fontcolor'])) {
-            $xml->fontcolor = $_POST['fontcolor'];
-        }
-        //                      //
-        // Article Background Color
-        if (isset($_POST['article_background_color'])) {
-            $xml->article_background_color = $_POST['article_background_color'];
-        }
-        //                      //
-        // Article Button Background Color
-        if (isset($_POST['article_btn_background_color'])) {
-            $xml->article_btn_background_color = $_POST['article_btn_background_color'];
-        }
-        //                      //
-        // Article Button Font Color
-        if (isset($_POST['article_btn_font_color'])) {
-            $xml->article_btn_font_color = $_POST['article_btn_font_color'];
-        }
-        //                      //
-        // Change background image (URL)
-        if (isset($_POST['background_image_url'])) {
-            $imageUrl = $_POST['background_image_url'];
-            //                      //
-            // Validate the URL (optional)
-            if (filter_var($imageUrl, FILTER_VALIDATE_URL)) {
-                // Update XML with the new image URL directly
-                $xml->background_image = $imageUrl;
-                $xml->asXML($xmlFile);
-                //                      //
-                echo 'Background image URL updated successfully!';
-            } else {
-                echo 'Invalid URL format!';
-            }
-        }
-        //                      //
-        // Save changes to XML file
-        $xml->asXML($xmlFile);
-    } else {
-        echo 'Invalid request';
+<?php
+require_once __DIR__ . '/includes/store.php';
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    echo 'Invalid request';
+    exit;
+}
+$map = [
+    'background' => 'background',
+    'fontcolor' => 'fontcolor',
+    'article_background_color' => 'article_background_color',
+    'article_btn_background_color' => 'article_btn_background_color',
+    'article_btn_font_color' => 'article_btn_font_color',
+];
+foreach ($map as $key => $field) {
+    if (isset($_POST[$field])) {
+        setting_put($key, $_POST[$field]);
     }
-    ?>
+}
+if (isset($_POST['background_image_url'])) {
+    $imageUrl = $_POST['background_image_url'];
+    if (!filter_var($imageUrl, FILTER_VALIDATE_URL)) {
+        echo 'Invalid URL format!';
+        exit;
+    }
+    setting_put('background_image', $imageUrl);
+    echo 'Background image URL updated successfully!';
+    exit;
+}
+echo 'Saved';

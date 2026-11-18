@@ -32,20 +32,9 @@
         $category = $purifier->purify($category);
 
         // Create a unique filename based on timestamp
-        $filename = 'blog-posts/' . time() . '.json';
-
-        // Save the article to the file
-        $article = [
-            'title' => $title,
-            'content' => $content,
-            'image_url' => $imageUrl,
-            'category' => $category, // Include category in the article
-            'created_at' => date('Y-m-d H:i:s'),
-        ];
-
-        // Check if the file was written successfully
-        if (file_put_contents($filename, json_encode($article))) {
-            header('Location: add-article.php');
+        require_once __DIR__ . '/includes/store.php';
+        if (article_create($title, $content, $imageUrl, $category)) {
+            header('Location: add-article.php?saved=1');
             exit;
         } else {
             $error_message = 'Error saving the article. Please try again.';
@@ -92,27 +81,19 @@
         </style>
         <?php require_once 'layout/header-admin.php'; ?>
     </head>
-    <body>
+    <body class="admin-body">
     <?php require_once 'layout/navbar-admin.php'; ?>
-    <br /><br />
-    <p style="text-align: center;">Welcome, <?php echo htmlspecialchars($username); ?>! Are you ready to tell your story?</p>
-    <h1 class="mx-auto" style="text-align: center;"><i class="fa-solid fa-feather" style="color: #ffc107;"></i> Add Article <br /> 
-    <!--
-    <a href="<?php //echo $websiteUrl; ?>admin/" class="btn btn-dark"><i class="fa-solid fa-gear" style="color: #ffc107;"></i> General Settings</a> 
-    <a href="<?php //echo $websiteUrl; ?>terminal/" class="btn btn-dark"><i class="fa-solid fa-code" style="color: #ffc107;"></i> Terminal</a> 
-    <a href="<?php //echo $websiteUrl; ?>file-manager/" class="btn btn-dark"><i class="fa-solid fa-folder-open" style="color: #ffc107;"></i> File Manager</a> 
-    <a href="<?php //echo $websiteUrl; ?>design-blog.php" class="btn btn-dark"><i class="fa-solid fa-brush" style="color: #ffc107;"></i> Design Blog</a> 
-    -->
-    <a href="<?php echo $websiteUrl; ?>admin-edit.php" class="btn btn-dark"><i class="fa-solid fa-pen-to-square" style="color: #ffc107;"></i> Edit Articles</a> 
-    <a href="<?php echo $websiteUrl; ?>index.php" class="btn btn-dark"><i class="fa-regular fa-rectangle-list" style="color: #ffc107;"></i> Blog</a></h1>
-    <br/>
+    <main class="admin-page">
+    <h1>Write</h1>
+    <p class="admin-lead">Welcome, <?php echo htmlspecialchars($username); ?>. Publish a post, then it shows up under Articles.</p>
+    <?php if (!empty($_GET['saved'])): ?>
+        <p class="admin-lead">Published. <a href="admin-edit.php">Open it in Articles</a>.</p>
+    <?php endif; ?>
     <?php if (isset($error_message)): ?>
-        <div class="alert alert-danger" role="alert">
-            <?php echo $error_message; ?>
-        </div>
+        <div class="alert alert-danger" role="alert"><?php echo $error_message; ?></div>
     <?php endif; ?>
 
-    <form method="post" action="add-article.php" style="background: black;padding: 30px; border-radius: 10px;">
+    <form class="admin-panel" method="post" action="add-article.php">
         <label for="title">Title:</label>
         <input placeholder="Interesting Title" type="text" id="title" name="title" class="form-control" required>
 
@@ -128,8 +109,9 @@
         <label for="category">Category:</label>
         <input placeholder="News" type="text" id="category" name="category" class="form-control">
 
-        <button type="submit" class="btn btn-dark">Submit</button>
+        <button type="submit" class="admin-save">Publish</button>
     </form>
+    </main>
 
     <!-- Bootstrap JS (optional) -->
     <script src="vendors/bootstrap-5.3.0/bootstrap@5.3.0_dist_js_bootstrap.bundle.min.js"></script>

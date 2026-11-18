@@ -39,55 +39,32 @@
         </style>
         <?php require_once 'layout/header-admin.php'; ?>
     </head>
-    <body class="text-center">
+    <body class="admin-body">
         <?php require_once 'layout/navbar-admin.php'; ?>
-        <br /><br />
-        <h1 class="mb-4"><i class="fa-solid fa-pen-to-square" style="color: #ffc107;"></i> Article Editor <br /> 
-        <a href="<?php echo $websiteUrl; ?>add-article.php" class="btn btn-dark"><i class="fa-solid fa-feather" style="color: #ffc107;"></i> Submit an Article</a> 
-        <a href="<?php echo $websiteUrl; ?>index.php" class="btn btn-dark"><i class='fa-regular fa-rectangle-list' style="color: #ffc107;"></i> <?php echo $blogbutton; ?></a></h1>
-
-        <div class="mx-auto" style="max-width: 800px;">
-            <!-- Search Bar -->
-            <div class="input-group mb-3" style="padding: 32px;">
+        <main class="admin-page">
+        <h1>Articles</h1>
+        <p class="admin-lead">Click Edit, change the text in place, then Save. Delete asks before it removes a post.</p>
+            <form class="search-bar" onsubmit="return false;" style="margin-bottom:1rem;">
                 <input type="text" class="form-control" placeholder="Search articles" id="searchInputAdmin">
-                <button class="btn btn-outline-warning" type="button" id="searchButtonAdmin"><?php echo $searchbutton; ?></button>
-            </div>
+                <button type="button" id="searchButtonAdmin"><?php echo $searchbutton; ?></button>
+            </form>
 
             <?php
-            $articlesDir = 'blog-posts';
+            require_once __DIR__ . '/includes/store.php';
 
-            // Handle article deletion
             if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete'])) {
-                $fileToDelete = $_POST['delete'];
-
-                // Validate and sanitize the filename
-                $fileToDelete = preg_replace('/[^a-zA-Z0-9_.]/', '', $fileToDelete);
-
-                $filePath = "$articlesDir/$fileToDelete.json"; // Update file extension to json
-
-                if (file_exists($filePath)) {
-                    unlink($filePath);
-                    echo '<div class="alert alert-success">File deleted successfully.</div>';
+                if (article_delete($_POST['delete'])) {
+                    echo '<div class="alert alert-success">Article deleted.</div>';
                 } else {
-                    echo '<div class="alert alert-danger">File not found or could not be deleted.</div>';
+                    echo '<div class="alert alert-danger">Article not found.</div>';
                 }
             }
 
-            // Fetch articles from the directory
-            $articleFiles = glob("$articlesDir/*.json"); // Update file extension to json
-
-            // Sort articles based on file modification time (most recent first)
-            usort($articleFiles, function ($a, $b) {
-                return filemtime($b) - filemtime($a);
-            });
-
-            foreach ($articleFiles as $file) {
-                $content = file_get_contents($file);
-                $article = json_decode($content, true);
-                $articleId = pathinfo($file, PATHINFO_FILENAME); // Extract article ID from filename
+            foreach (articles_all() as $article) {
+                $articleId = $article['id'];
                 ?>
 
-                <div class="article border p-3 text-left"  style="margin: 32px;" data-article-id="<?php echo $articleId; ?>">
+                <div class="article text-left edit-card" data-article-id="<?php echo $articleId; ?>">
                     <h2 class="editable" data-field="title" data-article-id="<?php echo $articleId; ?>">
                         <?php echo $article['title']; ?>
                     </h2>
@@ -114,16 +91,14 @@
                     </p>
                     
                     <p class="text-muted">Created at: <?php echo $article['created_at']; ?></p>
-                    <button class="btn btn-primary edit-btn" data-article-id="<?php echo $articleId; ?>">Edit <i class="fa-solid fa-file-pen"></i></button>
-                    <button class="btn btn-success save-btn" data-article-id="<?php echo $articleId; ?>" style="display: none;">Save</button>
-                    <br /><br />
-                    <!-- Delete button for the current article -->
-                    <form method="post" action="">
+                    <div class="article-tools">
+                    <button class="admin-save edit-btn" data-article-id="<?php echo $articleId; ?>" type="button">Edit</button>
+                    <button class="admin-save save-btn" data-article-id="<?php echo $articleId; ?>" style="display: none;" type="button">Save</button>
+                    <form method="post" action="" onsubmit="return confirm('Delete this article?');">
                         <input type="hidden" name="delete" value="<?php echo $articleId; ?>">
-                        <button type="submit" class="btn btn-danger">Delete <i class="fa-solid fa-trash-can"></i></button>
+                        <button type="submit" class="admin-save" style="background:#8d2b2b;">Delete</button>
                     </form>
-
-                    <br /><br />
+                    </div>
                 </div>
 
             <?php
@@ -133,7 +108,7 @@
 
 
 
-        </div>
+        </main>
 
         <!-- Bootstrap JS (optional) -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
