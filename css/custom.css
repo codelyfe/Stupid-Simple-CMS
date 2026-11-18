@@ -9,6 +9,7 @@
   --nav: rgba(16, 18, 22, 0.88);
   --shadow: 0 18px 50px rgba(20, 16, 10, 0.18);
   --radius: 18px;
+  --veil: 0.72;
   --sans: "Source Sans 3", "Segoe UI", sans-serif;
   --serif: "Fraunces", Georgia, serif;
 }
@@ -32,7 +33,8 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(180deg, rgba(12, 14, 18, 0.45), rgba(12, 14, 18, 0.2) 28%, rgba(12, 14, 18, 0.55));
+  background: #12151a;
+  opacity: var(--veil);
   z-index: 0;
 }
 
@@ -68,7 +70,7 @@ body::before {
 .page-wrap {
   position: relative;
   z-index: 1;
-  max-width: 760px;
+  max-width: var(--measure, 760px);
   margin: 2.5rem auto 4rem;
   padding: 0 1.25rem;
 }
@@ -132,7 +134,7 @@ body::before {
 .article img.img-fluid {
   width: 100%;
   max-height: 320px;
-  height: 320px;
+  height: var(--photo, 320px);
   object-fit: cover;
   border-radius: 14px;
   margin-bottom: 0.9rem;
@@ -145,7 +147,10 @@ body::before {
   font-size: 1.85rem;
   line-height: 1.15;
   margin: 0 0 0.6rem;
+  color: var(--heading, var(--ink));
 }
+
+.article h2 { color: var(--heading, inherit); }
 
 .blog-content {
   background: transparent !important;

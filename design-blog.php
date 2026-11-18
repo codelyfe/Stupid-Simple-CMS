@@ -43,6 +43,55 @@
         </h1>
         <br />
         <div class="admin-panel">
+            <?php
+            require_once __DIR__ . '/includes/store.php';
+            $accent = setting('accent', '#c45c26');
+            $navColor = setting('nav_color', '#101216');
+            $headingColor = setting('heading_color', '#14181f');
+            $cardRadius = setting('card_radius', '18');
+            $overlay = setting('overlay', '72');
+            $typeface = setting('typeface', 'fraunces');
+            $contentWidth = setting('content_width', '760');
+            $imageHeight = setting('image_height', '320');
+            ?>
+            <h2>Look</h2>
+            <p class="hint">Start from a preset, then adjust type, width, photos, and color.</p>
+            <div class="article-tools" style="margin-bottom:0.8rem;">
+              <button class="admin-save" type="button" onclick="applyPreset('paper')">Paper</button>
+              <button class="admin-save" type="button" onclick="applyPreset('night')">Night</button>
+              <button class="admin-save" type="button" onclick="applyPreset('coast')">Coast</button>
+              <button class="admin-save" type="button" onclick="applyPreset('ink')">Ink</button>
+            </div>
+            <label for="typeface">Title type</label>
+            <select class="form-control" id="typeface">
+              <option value="fraunces" <?php if ($typeface === 'fraunces') echo 'selected'; ?>>Fraunces</option>
+              <option value="newsreader" <?php if ($typeface === 'newsreader') echo 'selected'; ?>>Newsreader</option>
+              <option value="libre" <?php if ($typeface === 'libre') echo 'selected'; ?>>Libre Baskerville</option>
+            </select>
+            <label for="content_width">Column</label>
+            <select class="form-control" id="content_width">
+              <option value="640" <?php if ($contentWidth === '640') echo 'selected'; ?>>Narrow</option>
+              <option value="760" <?php if ($contentWidth === '760') echo 'selected'; ?>>Reading</option>
+              <option value="980" <?php if ($contentWidth === '980') echo 'selected'; ?>>Wide</option>
+            </select>
+            <label for="image_height">Photo crop</label>
+            <select class="form-control" id="image_height">
+              <option value="180" <?php if ($imageHeight === '180') echo 'selected'; ?>>Short</option>
+              <option value="320" <?php if ($imageHeight === '320') echo 'selected'; ?>>Medium</option>
+              <option value="460" <?php if ($imageHeight === '460') echo 'selected'; ?>>Tall</option>
+            </select>
+            <label for="accent">Accent</label>
+            <input class="form-control" type="color" id="accent" value="<?php echo htmlspecialchars($accent); ?>">
+            <label for="nav_color">Navigation bar</label>
+            <input class="form-control" type="color" id="nav_color" value="<?php echo htmlspecialchars($navColor); ?>">
+            <label for="heading_color">Article titles</label>
+            <input class="form-control" type="color" id="heading_color" value="<?php echo htmlspecialchars($headingColor); ?>">
+            <label for="card_radius">Card roundness <span class="hint" id="radius-readout"><?php echo htmlspecialchars($cardRadius); ?>px</span></label>
+            <input class="form-control" type="range" id="card_radius" min="0" max="36" value="<?php echo htmlspecialchars($cardRadius); ?>">
+            <label for="overlay">Photo veil <span class="hint" id="overlay-readout"><?php echo htmlspecialchars($overlay); ?>%</span></label>
+            <input class="form-control" type="range" id="overlay" min="0" max="90" value="<?php echo htmlspecialchars($overlay); ?>">
+            <button class="admin-save" type="button" onclick="saveLook()">Save look</button>
+            <hr/>
 
 
             <br /><br />
@@ -236,6 +285,50 @@
         </div>
 
         <script>
+
+            function lookData() {
+                return {
+                    accent: $('#accent').val(),
+                    nav_color: $('#nav_color').val(),
+                    heading_color: $('#heading_color').val(),
+                    card_radius: $('#card_radius').val(),
+                    overlay: $('#overlay').val(),
+                    typeface: $('#typeface').val(),
+                    content_width: $('#content_width').val(),
+                    image_height: $('#image_height').val()
+                };
+            }
+            function saveLook() {
+                $.ajax({
+                    type: 'POST',
+                    url: 'save_changes.php',
+                    data: lookData(),
+                    success: function () { alert('Look saved.'); }
+                });
+            }
+            var presets = {
+                paper: { accent:'#c45c26', nav_color:'#101216', heading_color:'#14181f', card_radius:18, overlay:72, typeface:'fraunces', content_width:'760', image_height:'320', fontcolor:'#14181f', background:'#1c1c1c', article_background_color:'#fffdf8', article_btn_background_color:'#14181f', article_btn_font_color:'#ffffff' },
+                night: { accent:'#d4a017', nav_color:'#07080b', heading_color:'#f4efe6', card_radius:8, overlay:82, typeface:'newsreader', content_width:'640', image_height:'180', fontcolor:'#f4efe6', background:'#07080b', article_background_color:'#171a21', article_btn_background_color:'#d4a017', article_btn_font_color:'#171a21' },
+                coast: { accent:'#1f6f8b', nav_color:'#0e2430', heading_color:'#14323c', card_radius:28, overlay:45, typeface:'libre', content_width:'760', image_height:'320', fontcolor:'#14323c', background:'#d7e6ea', article_background_color:'#f7fbfc', article_btn_background_color:'#1f6f8b', article_btn_font_color:'#ffffff' },
+                ink: { accent:'#f2f2f2', nav_color:'#111111', heading_color:'#111111', card_radius:0, overlay:20, typeface:'libre', content_width:'980', image_height:'460', fontcolor:'#111111', background:'#f4f1ea', article_background_color:'#ffffff', article_btn_background_color:'#111111', article_btn_font_color:'#ffffff' }
+            };
+            function applyPreset(name) {
+                var p = presets[name];
+                if (!p) return;
+                $('#accent').val(p.accent);
+                $('#nav_color').val(p.nav_color);
+                $('#heading_color').val(p.heading_color);
+                $('#card_radius').val(p.card_radius);
+                $('#overlay').val(p.overlay);
+                $('#typeface').val(p.typeface);
+                $('#content_width').val(p.content_width);
+                $('#image_height').val(p.image_height);
+                $('#radius-readout').text(p.card_radius + 'px');
+                $('#overlay-readout').text(p.overlay + '%');
+                $.ajax({ type:'POST', url:'save_changes.php', data:p, success:function(){ alert(name + ' applied.'); } });
+            }
+            $('#card_radius').on('input', function () { $('#radius-readout').text(this.value + 'px'); });
+            $('#overlay').on('input', function () { $('#overlay-readout').text(this.value + '%'); });
 
             function changeArticleBtnFontColor() {
                 var color = $('#article_btn_font_color').val();

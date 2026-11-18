@@ -14,6 +14,14 @@ $theme = [
     'article_btn_background' => setting('article_btn_background_color'),
     'article_btnfc_background' => setting('article_btn_font_color'),
     'background_image' => setting('background_image'),
+    'accent' => setting('accent', '#c45c26'),
+    'nav_color' => setting('nav_color', '#101216'),
+    'heading_color' => setting('heading_color', '#14181f'),
+    'card_radius' => setting('card_radius', '18'),
+    'overlay' => setting('overlay', '72'),
+    'typeface' => setting('typeface', 'fraunces'),
+    'content_width' => setting('content_width', '760'),
+    'image_height' => setting('image_height', '320'),
 ];
 
 $element = $_GET['element'];
