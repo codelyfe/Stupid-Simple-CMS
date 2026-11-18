@@ -1,9 +1,4 @@
-<div class="footer" style="margin-bottom:50px;padding-bottom:50px !important;">
-    <div class="container">
-        <p class="text-muted badge bg-dark" style="color:white !important;float:right;">Powered by <a
-                href="https://github.com/codelyfe/Stupid-Simple-CMS" target="_blank"
-                style="text-decoration: none;color: #ffc107;">Stupid Simple CMS</a><br/>
-                Copyright © <?php echo $siteCopyright; ?> <?php echo $currentYear; ?>
-            </p>
-    </div>
-</div>
+<footer class="site-footer">
+    <p>Powered by <a href="https://github.com/codelyfe/Stupid-Simple-CMS" target="_blank" rel="noopener">Stupid Simple CMS</a>
+        · Copyright © <?php echo htmlspecialchars((string) $siteCopyright); ?> <?php echo $currentYear; ?></p>
+</footer>

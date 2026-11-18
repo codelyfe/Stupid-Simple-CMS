@@ -1,3 +1,13 @@
+<?php
+if (!empty($_SERVER['SCRIPT_NAME'])) {
+    $cmsBase = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'])), '/') . '/';
+    echo '<base href="' . htmlspecialchars($cmsBase, ENT_QUOTES) . '">';
+}
+?>
+<link rel="stylesheet" href="css/custom.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,620&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
     /* Add your custom styles here if needed */
     body {

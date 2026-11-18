@@ -130,46 +130,18 @@ function logLoginAttempt($username, $password)
 </head>
 <body>
 <?php require_once 'layout/navbar.php'; ?>
-  <div class="container">
-    <h1 class="mb-4" style="color:white;text-align: center;margin-top:190px;">
-      <?php echo $siteTitle; ?>
-    </h1>
-    <p class="mb-4" style="color:white;text-align: center;">
-    <?php echo $greetingTxt; ?>
-    </p>
-  </div>
-  <div class="content">
-    <form action="" method="post" name="Login_Form">
-      <table width="400" border="0" align="center" cellpadding="5" cellspacing="1" class="Table">
-        <?php if (isset($msg)) { ?>
-          <tr>
-            <td colspan="2" align="center" valign="top">
-              <?php echo $msg; ?>
-            </td>
-          </tr>
-        <?php } ?>
-        <!--<tr>
-      <td colspan="2" align="left" valign="top"><h3>Welcome To Our Chat Platform</h3></td>
-      </tr>-->
-        <tr>
-          <td>
-            <p>Are you in the wrong place? <a class="btn btn-danger" style="text-decoration:none !important;"
-                href="../">Go Back</a></p>
-          </td>
-        </tr>
-        <tr>
-          <!--<td align="right" valign="top">Username</td>-->
-          <td><input name="Username" type="text" class="Input form-control" placeholder="Username"></td>
-        </tr>
-        <tr>
-          <!--<td align="right">Password</td>-->
-          <td><input name="Password" type="password" class="Input form-control" placeholder="Password"></td>
-        </tr>
-        <tr>
-          <td><input name="Submit" type="submit" value="Login" class="btn btn-dark"></td>
-        </tr>
-      </table>
-    </form>
+  <div class="login-shell">
+    <div class="login-card">
+      <h1><?php echo htmlspecialchars((string) $siteTitle); ?></h1>
+      <p class="lede"><?php echo htmlspecialchars((string) $greetingTxt); ?></p>
+      <form action="" method="post" name="Login_Form">
+        <?php if (isset($msg)) { echo $msg; } ?>
+        <input name="Username" type="text" class="Input form-control" placeholder="Username" autocomplete="username">
+        <input name="Password" type="password" class="Input form-control" placeholder="Password" autocomplete="current-password">
+        <input name="Submit" type="submit" value="Login" class="btn-login">
+        <p class="lede" style="margin-top:1rem;margin-bottom:0;"><a href="./">Back to the blog</a></p>
+      </form>
+    </div>
   </div>
 </body>
 </html>

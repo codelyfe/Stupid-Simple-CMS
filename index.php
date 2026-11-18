@@ -29,6 +29,10 @@ else {
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <?php
+    $cmsBase = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/')), '/') . '/';
+    echo '<base href="' . htmlspecialchars($cmsBase, ENT_QUOTES) . '">';
+    ?>
 
     <?php
      echo '<meta name="description" content="' . $metatxtdesc . '">';
@@ -51,100 +55,23 @@ else {
     
     <script>
     $(document).ready(function() {
-
       $.ajax({
-            type: 'GET',
-            url: 'get_content.php',
-            data: { element: 'background_image' },
-            success: function(response) {
-                console.log('Background image URL:', response); // Log received image URL
-                $('body').css('background-image', 'url(' + response + ')');
-            },
-            error: function(xhr, status, error) {
-                console.error('Error fetching background image:', error);
-            }
-        });
-
-        $.ajax({
-            type: 'GET',
-            url: 'get_content.php',
-            data: { element: 'background' },
-            success: function(response) {
-                $('body').css('background-color', response);
-            },
-            error: function(xhr, status, error) {
-                console.error('Error fetching background color:', error);
-            }
-        });
-
-        $.ajax({
-            type: 'GET',
-            url: 'get_content.php',
-            data: { element: 'fontcolor' },
-            success: function(response) {
-                $('body').css('color', response);
-            },
-            error: function(xhr, status, error) {
-                console.error('Error fetching color:', error);
-            }
-        });
-
-        // Fetch current article background color from XML file
-        $.ajax({
-                type: 'GET',
-                url: 'get_content.php',
-                data: {
-                    element: 'article_background' // This should match the key in get_content.php
-                },
-                success: function(response) {
-                     console.log('DIV Background Color:', response);
-                    // Update the background color of .article elements
-                    $('.article').css('background-color', response);
-                    
-                },
-                error: function(xhr, status, error) {
-                    console.error('Error fetching content:', error);
-                }
-            });
-
-        //article-btn
-        $.ajax({
-                type: 'GET',
-                url: 'get_content.php',
-                data: {
-                    element: 'article_btn_background' // This should match the key in get_content.php
-                },
-                success: function(response) {
-                     console.log('DIV Button Background Color:', response);
-                    // Update the background color of .article elements
-                    $('.article-btn').css('background-color', response);
-                    
-                },
-                error: function(xhr, status, error) {
-                    console.error('Error fetching content:', error);
-                }
-            });
-
-        //article-btn-font-color
-        $.ajax({
-                type: 'GET',
-                url: 'get_content.php',
-                data: {
-                    element: 'article_btnfc_background' // This should match the key in get_content.php
-                },
-                success: function(response) {
-                     console.log('DIV Button Font Color:', response);
-                    // Update the font color of .article elements
-                    $('.article-btn').css('color', response);
-                    
-                },
-                error: function(xhr, status, error) {
-                    console.error('Error fetching content:', error);
-                }
-            });            
-
-
-
+        type: 'GET',
+        url: 'get_content.php',
+        dataType: 'json',
+        data: { element: 'all' },
+        success: function(theme) {
+          if (!theme) return;
+          if (theme.background_image) {
+            $('body').css('background-image', 'url(' + theme.background_image + ')');
+          }
+          if (theme.background) $('body').css('background-color', theme.background);
+          if (theme.fontcolor) $('body').css('color', theme.fontcolor);
+          if (theme.article_background) $('.article').css('background-color', theme.article_background);
+          if (theme.article_btn_background) $('.article-btn').css('background-color', theme.article_btn_background);
+          if (theme.article_btnfc_background) $('.article-btn').css('color', theme.article_btnfc_background);
+        }
+      });
     });
     </script>
   <style>
@@ -525,14 +452,12 @@ else {
 
 <!--| TEST CONTENT BELOW THIS LINE |-->
 <?php require_once 'layout/navbar.php'; ?>
-<br /><br />
 
-<div class="mx-auto" style="max-width: 800px;"> <!-- Add mx-auto class and set max-width -->
-    <!-- Search Bar -->
-    <div class="input-group mb-3" style="padding: 32px;">
+<div class="page-wrap">
+    <form class="search-bar" onsubmit="return false;">
         <input type="text" class="form-control" placeholder="Search articles" id="searchInput">
-        <button class="btn btn-light" type="button" id="searchButton"><?php echo $searchbutton; ?></button>
-    </div>
+        <button type="button" id="searchButton"><?php echo $searchbutton; ?></button>
+    </form>
 
     <?php
     $articlesDir = 'blog-posts';
@@ -550,51 +475,34 @@ else {
         $article = json_decode($content, true);
         $articleId = pathinfo($file, PATHINFO_FILENAME); // Extract article ID from filename
         ?>
-        <div class="article border p-3 text-left" style="margin: 32px;">       
-
-            <div style="float:right;">
-              <p class="text-muted badge bg-dark blog-cat" style="color:white !important;"><?php echo $category; ?><?php echo $article['category']; ?></p>
-              <p class="text-muted badge bg-dark blog-created" style="color:white !important;"><?php echo $createdat; ?><?php echo $article['created_at']; ?></p>
-              <br />
+        <article class="article text-left">
+            <div class="article-meta">
+              <span class="badge blog-cat"><?php echo $category; ?><?php echo htmlspecialchars((string) $article['category']); ?></span>
+              <span class="badge blog-created"><?php echo $createdat; ?><?php echo htmlspecialchars((string) $article['created_at']); ?></span>
             </div>
 
-            <br />
             <?php if (!empty($article['image_url'])) : ?>
-                <a href="<?php echo $article['image_url']; ?>" data-bs-toggle="modal" data-bs-target="#imageModal">
-                  <img style="border-radius: 10px;width: 100%; height: auto; background-position: center; background-repeat: no-repeat; background-size: cover; position: relative;" src="<?php echo $article['image_url']; ?>" alt="Article Image" class="img-fluid mb-3">
+                <a href="<?php echo htmlspecialchars($article['image_url']); ?>" data-bs-toggle="modal" data-bs-target="#imageModal">
+                  <img src="<?php echo htmlspecialchars($article['image_url']); ?>" alt="" class="img-fluid" loading="lazy">
                 </a>
             <?php endif; ?>
 
-            <h2  class="blog-title">
-                <?php echo $article['title']; ?>
-                <!--<a class="" style="text-align:center;" href="article.php?id=<?php //echo $articleId; ?>"><?php //echo $article['title']; ?></a>-->
-            </h2>
+            <h2 class="blog-title"><?php echo htmlspecialchars((string) $article['title']); ?></h2>
 
-            <!-- Display only the first 150 characters of the content -->
-            <p style="background:black;color:white;padding: 13px;border-radius: 10px;" class="blog-content"><?php echo substr($article['content'], 0, 150); ?>...
-              <div style="float:right;">
-              <?php
-                $qrurl = 'https://chart.googleapis.com/chart?cht=qr&chl=';    
-                $are7 = '80x80';
-                echo '<img src="'.$qrurl.$websiteUrl.'article.php?id='.$articleId.'&chs='.$are7.'&choe=UTF-8&chld=L|2" alt="">';
-              ?> 
-              </div>
-            </p>
-            <br />
-            <a class="article-btn btn" style="float: right;" href="article.php?id=<?php echo $articleId; ?>"><?php echo $readmore; ?></a>
-            
+            <p class="blog-content"><?php echo htmlspecialchars(substr(strip_tags((string) $article['content']), 0, 150)); ?>...</p>
 
-
-            <!-- Social Buttons -->
-            <a class="btn btn-secondary blog-clipboard" href="#" onclick="copyToClipboard('<?php echo $websiteUrl; ?>article.php?id=<?php echo $articleId; ?>')" style="text-decoration: none;box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0), 0 1px 2px rgba(0, 0, 0, 0);border: 1px solid rgba(204, 204, 204, 0);border-bottom-color: rgba(179, 179, 179, 0);background-color: rgba(245, 245, 245, 0);background-image: linear-gradient(to bottom,rgba(255, 255, 255, 0),rgba(230, 230, 230, 0));">
-                <i class="fa-regular fa-clipboard" style="color:black;font-size:30px;"></i>
+            <div class="article-actions">
+            <a class="share-btn blog-clipboard" href="#" onclick="copyToClipboard('<?php echo $websiteUrl; ?>article.php?id=<?php echo $articleId; ?>'); return false;">
+                <i class="fa-regular fa-clipboard"></i>
             </a>
-            <a class="btn btn-secondary blog-fb" style="text-decoration: none;box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0), 0 1px 2px rgba(0, 0, 0, 0);border: 1px solid rgba(204, 204, 204, 0);border-bottom-color: rgba(179, 179, 179, 0);background-color: rgba(245, 245, 245, 0);background-image: linear-gradient(to bottom,rgba(255, 255, 255, 0),rgba(230, 230, 230, 0));" href="https://www.facebook.com/sharer/sharer.php?app_id=113869198637480&sdk=joey&title=<?php echo $article['title']; ?>&u=<?php echo $websiteUrl; ?>article.php?id=<?php echo $articleId; ?>" target="_blank">
-                <i class="fa-brands fa-square-facebook" style="color:black;font-size:30px;"></i>
+            <a class="share-btn blog-fb" href="https://www.facebook.com/sharer/sharer.php?u=<?php echo $websiteUrl; ?>article.php?id=<?php echo $articleId; ?>" target="_blank" rel="noopener">
+                <i class="fa-brands fa-facebook"></i>
             </a>
-            <a class="btn btn-secondary blog-trello" style="text-decoration: none;box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0), 0 1px 2px rgba(0, 0, 0, 0);border: 1px solid rgba(204, 204, 204, 0);border-bottom-color: rgba(179, 179, 179, 0);background-color: rgba(245, 245, 245, 0);background-image: linear-gradient(to bottom,rgba(255, 255, 255, 0),rgba(230, 230, 230, 0));" href="https://trello.com/add-card?mode=popup&url=<?php echo $websiteUrl; ?>article.php?id=<?php echo $articleId; ?>&name=<?php echo $article['title']; ?>&desc=<?php echo $websiteUrl; ?>article.php?id=<?php echo $articleId; ?>" target="_blank">
-                <i class="fa-brands fa-trello" style="color:black;font-size:30px;"></i>
+            <a class="share-btn blog-trello" href="https://trello.com/add-card?mode=popup&url=<?php echo $websiteUrl; ?>article.php?id=<?php echo $articleId; ?>&name=<?php echo urlencode((string) $article['title']); ?>" target="_blank" rel="noopener">
+                <i class="fa-brands fa-trello"></i>
             </a>
+            <a class="article-btn btn" href="article.php?id=<?php echo $articleId; ?>"><?php echo $readmore; ?></a>
+            </div>
 
 
             <script>
@@ -608,8 +516,7 @@ else {
                     alert('Link copied to clipboard: ' + text);
                 }
             </script>
-            <!-- Social Buttons-->
-        </div>
+        </article>
         <?php
     }
     ?>

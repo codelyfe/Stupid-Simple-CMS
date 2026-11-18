@@ -21,7 +21,7 @@ else {
 }
 ?>
 <!-- Navigation Bar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark admin-nav">
     <div class="container">
         <a class="navbar-brand" href="<?php echo $websiteUrl; ?>">
             <?php echo $siteTitle; ?> (Admin)
